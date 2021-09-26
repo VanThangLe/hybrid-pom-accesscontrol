@@ -8,7 +8,7 @@
 	<parameter name="url" value="http://www.facebook.com/" />
   
 	  <test name="Run on CHROME">
-	  <parameter name="brower" value="chrome" />
+	  <parameter name="browser" value="chrome" />
 	    <classes>
 	      <class name="displayAndUndisplay.Level_12_Register_Login_Assert_Verify"/>
 	    </classes>
