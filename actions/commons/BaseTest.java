@@ -31,7 +31,7 @@ public class BaseTest {
 		FIREFOX, CHROME, EDGE, COCCOC;
 	}
 
-	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
+	protected WebDriver getBrowserDriver(String browserName, String url) {
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
 
 		switch (browser) {
@@ -58,7 +58,7 @@ public class BaseTest {
 			throw new RuntimeException("Browser name is not correct!");
 		}
 
-		driver.get(appUrl);
+		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		return driver;
 	}
