@@ -23,8 +23,8 @@ public class Level_04_Register_Login_Muliple_Browser extends BaseTest {
 	
 	@Parameters({"browser", "url"} )
 	@BeforeClass
-	public void beforeClass(String browserName, String url) {
-		driver = getBrowserDriver(browserName, url);
+	public void beforeClass(String browserName, String appUrl) {
+		driver = getBrowserDriver(browserName, appUrl);
 		homePage = new HomePageObject(driver);
 		
 		firstName = "Automation";

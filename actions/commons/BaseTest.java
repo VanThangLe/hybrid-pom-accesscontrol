@@ -28,10 +28,10 @@ public class BaseTest {
 	}
 
 	private enum Browser {
-		FIREFOX, CHROME, EDGE, COCCOC;
+		FIREFOX, CHROME, EDGE, COCCOC, SAFARI;
 	}
 
-	protected WebDriver getBrowserDriver(String browserName, String url) {
+	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
 
 		switch (browser) {
@@ -58,7 +58,7 @@ public class BaseTest {
 			throw new RuntimeException("Browser name is not correct!");
 		}
 
-		driver.get(url);
+		driver.get(appUrl);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		return driver;
 	}
@@ -154,29 +154,12 @@ public class BaseTest {
 		log.info("---------- END delete file in folder ----------");
 	}
 
-	protected void cleanDriverInstance() {
-		try {
-			// Browser
-			if (driver != null) {
-				// IE browser
-				driver.manage().deleteAllCookies();
-				driver.quit();
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 	@AfterSuite(alwaysRun = true)
-	public void cleanExcutableDriver() {
+	public void cleanDriverInstance() {
 		String cmd = "";
 		try {
-			// Executable driver
-			// Get ra tên của OS và convert qua chữ thường
 			String osName = System.getProperty("os.name").toLowerCase();
 			log.info("OS name = " + osName);
-
-			// Quit driver executable file in Task Manager
 			if (driver.toString().contains("chrome")) {
 				if (osName.contains("windows")) {
 					cmd = "taskkill /F /FI \"IMAGENAME eq chromedriver*\"";

@@ -20,9 +20,9 @@ public class Level_14_Register_Login_Log_Share_State extends BaseTest {
 	
 	@Parameters({"browser", "url"} )
 	@BeforeClass
-	public void beforeClass(String browserName, String url) {
-		log.info("Pre-condition - Open browser '" + browserName + "'and navigate to '" + url + "'");
-		driver = getBrowserDriver(browserName, url);
+	public void beforeClass(String browserName, String appUrl) {
+		log.info("Pre-condition - Open browser '" + browserName + "'and navigate to '" + appUrl + "'");
+		driver = getBrowserDriver(browserName, appUrl);
 		homePage = PageGenerator.getHomePage(driver);
 		
 		log.info("Pre-condition - Step 01: Click to Login link");

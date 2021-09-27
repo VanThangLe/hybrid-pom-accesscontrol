@@ -24,8 +24,8 @@ public class Level_06_Page_Generator_03_Init_Page_Generator_Class extends BaseTe
 	
 	@Parameters({"browser", "url"} )
 	@BeforeClass
-	public void beforeClass(String browserName, String url) {
-		driver = getBrowserDriver(browserName, url);
+	public void beforeClass(String browserName, String appUrl) {
+		driver = getBrowserDriver(browserName, appUrl);
 		homePage = PageGenerator.getHomePage(driver);
 		firstName = "Automation";
 		lastName = "FC";

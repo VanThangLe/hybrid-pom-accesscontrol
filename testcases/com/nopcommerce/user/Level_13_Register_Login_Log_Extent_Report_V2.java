@@ -26,8 +26,8 @@ public class Level_13_Register_Login_Log_Extent_Report_V2 extends BaseTest {
 	
 	@Parameters({"browser", "url"} )
 	@BeforeClass
-	public void beforeClass(String browserName, String url) {
-		driver = getBrowserDriver(browserName, url);
+	public void beforeClass(String browserName, String appUrl) {
+		driver = getBrowserDriver(browserName, appUrl);
 		emailAddress = "automation" + getRandomNumber() + "@mail.net";
 		password = "123456";
 	}

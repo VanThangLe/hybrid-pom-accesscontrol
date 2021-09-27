@@ -24,8 +24,8 @@ public class Level_05_Register_Login_Page_Page_Factory extends BaseTest {
 	
 	@Parameters({"browser", "url"} )
 	@BeforeClass
-	public void beforeClass(String browserName, String url) {
-		driver = getBrowserDriver(browserName, url);
+	public void beforeClass(String browserName, String appUrl) {
+		driver = getBrowserDriver(browserName, appUrl);
 		homePage = new HomePageObject(driver);
 		
 		firstName = "Automation";

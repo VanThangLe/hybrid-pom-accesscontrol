@@ -24,8 +24,8 @@ public class Level_06_Page_Generator_02_Init_Page_Object_Class extends BaseTest 
 	
 	@Parameters({"browser", "url"} )
 	@BeforeClass
-	public void beforeClass(String browserName, String url) {
-		driver = getBrowserDriver(browserName, url);
+	public void beforeClass(String browserName, String appUrl) {
+		driver = getBrowserDriver(browserName, appUrl);
 		homePage = new HomePageObject(driver);
 		
 		firstName = "Automation";
