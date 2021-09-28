@@ -461,8 +461,8 @@ public class BasePage {
 	}
 	
 	public void openSiderBarPageByPageName(WebDriver driver, String pageName) {
-		waitForElementClickAble(driver, BasePageUI.DYNAMIC_SIDE_BAR_PAGE_LINK, pageName);
-		clickToElement(driver, BasePageUI.DYNAMIC_SIDE_BAR_PAGE_LINK, pageName);
+		waitForElementClickAble(driver, BasePageUI.DYNAMIC_SIDE_BAR_PAGE_BY_NAME, pageName);
+		clickToElement(driver, BasePageUI.DYNAMIC_SIDE_BAR_PAGE_BY_NAME, pageName);
 	}
 	
 	public void openFooterPageByPageName(WebDriver driver, String pageName) {
