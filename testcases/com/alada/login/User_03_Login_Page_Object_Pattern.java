@@ -50,7 +50,7 @@ public class User_03_Login_Page_Object_Pattern {
 		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextbox(), "Vui lòng nhập email hợp lệ");
 	}
 	
-	@Test
+	@Test  
 	public void TC_03_Login_With_Email_Not_Registed() {
 		loginPage.enterToEmailTextbox("automation" + getRandomNumber() + "@hotmail.com");
 		loginPage.enterToPasswordTextbox("123456");
