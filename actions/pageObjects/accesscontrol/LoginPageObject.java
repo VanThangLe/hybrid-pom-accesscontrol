@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 
-public class AddEmployeePO extends BasePage {
+public class LoginPageObject extends BasePage {
 //	private WebDriver driver;
 
-	public AddEmployeePO(WebDriver driver) {
+	public LoginPageObject(WebDriver driver) {
 		super();
 //		this.driver = driver;
 	}

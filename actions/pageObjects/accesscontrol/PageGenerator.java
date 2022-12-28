@@ -3,23 +3,19 @@ package pageObjects.accesscontrol;
 import org.openqa.selenium.WebDriver;
 
 public class PageGenerator {
-	public static LoginPO getLoginPage(WebDriver driver) {
-		return new LoginPO(driver);
+	public static LoginPageObject getLoginPage(WebDriver driver) {
+		return new LoginPageObject(driver);
 	}
 	
-	public static AddEmployeePO getAddEmployeePage(WebDriver driver) {
-		return new AddEmployeePO(driver);
+	public static AddUserPageObject getAddEmployeePage(WebDriver driver) {
+		return new AddUserPageObject(driver);
 	}
 	
-	public static DashboardPO getDashboardPage(WebDriver driver) {
-		return new DashboardPO(driver);
+	public static DashboardPageObject getDashboardPage(WebDriver driver) {
+		return new DashboardPageObject(driver);
 	}
 	
-	public static EmployeeListPO getEmployeeListPage(WebDriver driver) {
-		return new EmployeeListPO(driver);
-	}
-	
-	public static MyInfoPO getMyInfoPage(WebDriver driver) {
-		return new MyInfoPO(driver);
+	public static UserListPageObject getEmployeeListPage(WebDriver driver) {
+		return new UserListPageObject(driver);
 	}
 }

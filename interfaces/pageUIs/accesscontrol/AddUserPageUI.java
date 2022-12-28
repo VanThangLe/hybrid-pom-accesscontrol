@@ -1,5 +1,5 @@
 package pageUIs.accesscontrol;
 
-public class EmployeeListPageUI {
+public class AddUserPageUI {
 
 }
