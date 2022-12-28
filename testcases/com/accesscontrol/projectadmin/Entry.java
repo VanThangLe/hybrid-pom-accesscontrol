@@ -10,7 +10,7 @@ import commons.BaseTest;
 import commons.GlobalConstants;
 import pageObjects.accesscontrol.PageGenerator;
 
-public class FaceIDReader extends BaseTest {
+public class Entry extends BaseTest {
 	WebDriver driver;
 
 	@Parameters({ "browser", "url" })

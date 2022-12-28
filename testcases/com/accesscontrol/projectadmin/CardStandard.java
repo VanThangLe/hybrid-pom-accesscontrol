@@ -10,7 +10,7 @@ import commons.BaseTest;
 import commons.GlobalConstants;
 import pageObjects.accesscontrol.PageGenerator;
 
-public class Door extends BaseTest {
+public class CardStandard extends BaseTest {
 	WebDriver driver;
 
 	@Parameters({ "browser", "url" })

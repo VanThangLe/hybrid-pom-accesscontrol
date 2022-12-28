@@ -10,7 +10,7 @@ import commons.BaseTest;
 import commons.GlobalConstants;
 import pageObjects.accesscontrol.PageGenerator;
 
-public class StandardCard extends BaseTest {
+public class FaceReader extends BaseTest {
 	WebDriver driver;
 
 	@Parameters({ "browser", "url" })
