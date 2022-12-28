@@ -1,4 +1,4 @@
-package pageObjects.orangehrm;
+package pageObjects.accesscontrol;
 
 import org.openqa.selenium.WebDriver;
 

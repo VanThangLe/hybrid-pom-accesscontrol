@@ -1,13 +1,13 @@
-package pageObjects.orangehrm;
+package pageObjects.accesscontrol;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 
-public class AddEmployeePO extends BasePage {
+public class EmployeeListPO extends BasePage {
 //	private WebDriver driver;
 
-	public AddEmployeePO(WebDriver driver) {
+	public EmployeeListPO(WebDriver driver) {
 		super();
 //		this.driver = driver;
 	}

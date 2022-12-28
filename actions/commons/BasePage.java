@@ -17,9 +17,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pageObjects.orangehrm.DashboardPO;
-import pageObjects.orangehrm.LoginPO;
-import pageObjects.orangehrm.PageGenerator;
+import pageObjects.accesscontrol.DashboardPO;
+import pageObjects.accesscontrol.LoginPO;
+import pageObjects.accesscontrol.PageGenerator;
 import pageUIs.accesscontrol.BasePageUI;
 
 public class BasePage {

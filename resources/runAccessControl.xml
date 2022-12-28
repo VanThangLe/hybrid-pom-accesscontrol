@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="OrangeHRM" parallel="tests" thread-count="1">
-	<parameter name="url" value="https://opensource-demo.orangehrmlive.com/" />
+	<parameter name="url" value="https://dev.acs.elifetech.vn:4433/admin/login" />
 
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -12,7 +12,8 @@
 	<test name="Run on CHROME">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.orangehrm.employee.Employee" />
+			<class name="com.accesscontrol.superadmin.Project" />
+			<class name="com.accesscontrol.superadmin.Account" />
 		</classes>
 	</test>
 

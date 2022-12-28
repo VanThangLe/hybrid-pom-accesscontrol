@@ -1,4 +1,4 @@
-package com.accesscontrol.employee;
+package com.accesscontrol.projectadmin;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -8,26 +8,10 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import commons.GlobalConstants;
-import pageObjects.orangehrm.AddEmployeePO;
-import pageObjects.orangehrm.DashboardPO;
-import pageObjects.orangehrm.EmployeeListPO;
-import pageObjects.orangehrm.LoginPO;
-import pageObjects.orangehrm.PageGenerator;
-import pageObjects.orangehrm.MyInfoPO;
+import pageObjects.accesscontrol.PageGenerator;
 
-public class Employee extends BaseTest {
+public class UserGroup extends BaseTest {
 	WebDriver driver;
-	LoginPO loginPage;
-	AddEmployeePO addEmployeePage;
-	DashboardPO dashboardPage;
-	EmployeeListPO employeeListPage;
-	MyInfoPO myInfoPage;
-	String empFirstName, empLastName, employeeID, statusValue, empFullName, empUserName, empPassword;
-	String editEmpFirstName, editEmpLastName, editEmpGender, editEmpMaritalStatus, editEmpNationality;
-	String editEmpContactStreet1, editEmpContactStreet2, editEmpCity, editEmpProvince, editEmpZipCode, editEmpCountry, editEmpTelephone, editEmpMobile, editEmpWorkTelephone, editEmpWorkEmail, editEmpOthEmail;
-	String empEmgContactsName, empEmgContactsRelationship, empEmgContactsHomeTelephone, empEmgContactsMobile, empEmgContactsWorkTelephone;
-	String empDependentName, empDependentRelationship, empDependentDoB;
-	String avatarFilePath = GlobalConstants.UPLOAD_FOLDER_PATH + "a.jpg";
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -36,46 +20,6 @@ public class Employee extends BaseTest {
 		driver = getBrowserDriver(browserName, appUrl);
 		loginPage = PageGenerator.getLoginPage(driver);
 
-		//Employee_01_Add_New_Employee
-		statusValue = "Enabled";
-		empFirstName = "Thang";
-		empLastName = "Le";
-		empFullName = empFirstName + " " + empLastName;
-		empUserName = "thanglevan";
-		empPassword = "12345678";
-		
-		//Employee_03_Personal_Details
-		editEmpFirstName = "VanThang";
-		editEmpLastName = "Le";
-		editEmpGender = "Male";
-		editEmpMaritalStatus = "Married";
-		editEmpNationality = "Vietnamese";
-		
-		//Employee_04_Contact_Details
-		editEmpContactStreet1 = "Duy Tan";
-		editEmpContactStreet2 = "Xuan Thuy";
-		editEmpCity = "Ha Noi";
-		editEmpProvince = "Ha Noi";
-		editEmpZipCode = "10000";
-		editEmpCountry = "Viet Nam";
-		editEmpTelephone = "0973956843";
-		editEmpMobile = "0973956843";
-		editEmpWorkTelephone = "0973956843";
-		editEmpWorkEmail = "thang.le.fc@gmail.com";
-		editEmpOthEmail = "thanglv@a89.com.vn";
-		
-		//Employee_05_Emergency_Details
-		empEmgContactsName = "Huyen";
-		empEmgContactsRelationship = "Wife";
-		empEmgContactsHomeTelephone = "0973956843";
-		empEmgContactsMobile = "0973956843";
-		empEmgContactsWorkTelephone = "0973956843";
-		
-		//Employee_06_Assigned_Dependents
-		empDependentName = "Dang";
-		empDependentRelationship = "Child";
-		empDependentDoB = "2022-09-13";
-		
 		log.info("Pre-condition: Step 02 - Login with Admin role");
 		dashboardPage = loginPage.loginToSystem(driver, GlobalConstants.ADMIN_USERNAME, GlobalConstants.ADMIN_PASSWORD);
 	}
