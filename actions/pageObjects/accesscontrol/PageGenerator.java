@@ -7,7 +7,7 @@ public class PageGenerator {
 		return new LoginPageObject(driver);
 	}
 	
-	public static AddUserPageObject getAddEmployeePage(WebDriver driver) {
+	public static AddUserPageObject getAddUserPage(WebDriver driver) {
 		return new AddUserPageObject(driver);
 	}
 	
@@ -15,7 +15,7 @@ public class PageGenerator {
 		return new DashboardPageObject(driver);
 	}
 	
-	public static UserListPageObject getEmployeeListPage(WebDriver driver) {
+	public static UserListPageObject getUserListPage(WebDriver driver) {
 		return new UserListPageObject(driver);
 	}
 }

@@ -26,7 +26,7 @@ public class ExtentTestListener implements IReporter {
 
 	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
-		htmlReport = new ExtentHtmlReporter(System.getProperty("user.dir") + "/ExtentReport/ExtentReport.html");
+		htmlReport = new ExtentHtmlReporter(System.getProperty("user.dir") + "/ExtentReportV4/ExtentReport.html");
 		htmlReport.config().setTheme(Theme.DARK);
 		htmlReport.config().enableTimeline(true);
 		htmlReport.config().setDocumentTitle("AccessControl HTML Report");

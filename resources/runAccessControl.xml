@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="OrangeHRM" parallel="tests" thread-count="1">
+<!DOCTYPE xml>
+<suite name="AccessControl" parallel="tests" thread-count="1">
 	<parameter name="url" value="https://dev.acs.elifetech.vn:4433/admin/login" />
 
 	<listeners>
@@ -10,7 +11,7 @@
 	</listeners>
 
 	<test name="Run on CHROME">
-		<parameter name="browser" value="chrome" />
+		<parameter name="browserName" value="chrome" />
 		<classes>
 			<!-- <class name="com.accesscontrol.superadmin.Project" />
 			<class name="com.accesscontrol.superadmin.Account" /> -->
@@ -26,5 +27,4 @@
 			<class name="com.accesscontrol.projectadmin.Permission" />
 		</classes>
 	</test>
-
 </suite>
