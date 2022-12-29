@@ -10,3 +10,13 @@
 [INFO ] [2022-03-14 18:53:46,728] Post-condition: Close browser 'chrome'
 [INFO ] [2022-03-14 18:53:46,728] OS name = windows 10
 [INFO ] [2022-03-14 18:53:46,834] OS name = windows 10
+[INFO ] [2022-12-29 11:17:55,449] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 11:17:55,450] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 11:17:55,653] OS name = windows 10
+[INFO ] [2022-12-29 11:20:48,972] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 11:20:48,972] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 11:20:49,014] OS name = windows 10
+[INFO ] [2022-12-29 11:32:07,006] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 11:32:07,006] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 11:32:07,021] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 11:32:14,629] Pre-condition: Step 02 - Login with Admin role
