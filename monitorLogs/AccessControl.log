@@ -1,0 +1,12 @@
+[INFO ] [2022-03-14 18:11:11,477] ---------- START delete file in folder ----------
+[INFO ] [2022-03-14 18:11:11,477] ---------- END delete file in folder ----------
+[INFO ] [2022-03-14 18:11:11,488] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://opensource-demo.orangehrmlive.com'
+[INFO ] [2022-03-14 18:11:18,379] Post-condition: Close browser 'chrome'
+[INFO ] [2022-03-14 18:11:18,379] OS name = windows 10
+[INFO ] [2022-03-14 18:11:18,498] OS name = windows 10
+[INFO ] [2022-03-14 18:53:42,440] ---------- START delete file in folder ----------
+[INFO ] [2022-03-14 18:53:42,441] ---------- END delete file in folder ----------
+[INFO ] [2022-03-14 18:53:42,453] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://opensource-demo.orangehrmlive.com'
+[INFO ] [2022-03-14 18:53:46,728] Post-condition: Close browser 'chrome'
+[INFO ] [2022-03-14 18:53:46,728] OS name = windows 10
+[INFO ] [2022-03-14 18:53:46,834] OS name = windows 10

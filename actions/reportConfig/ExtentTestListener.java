@@ -26,11 +26,11 @@ public class ExtentTestListener implements IReporter {
 
 	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
-		htmlReport = new ExtentHtmlReporter(System.getProperty("user.dir") + "/ExtentReportV4/ExtentReport.html");
+		htmlReport = new ExtentHtmlReporter(System.getProperty("user.dir") + "/ExtentReport/ExtentReport.html");
 		htmlReport.config().setTheme(Theme.DARK);
 		htmlReport.config().enableTimeline(true);
-		htmlReport.config().setDocumentTitle("NopCommerce HTML Report");
-		htmlReport.config().setReportName("NopCommerce HTML Report");
+		htmlReport.config().setDocumentTitle("AccessControl HTML Report");
+		htmlReport.config().setReportName("AccessControl HTML Report");
 		htmlReport.config().setEncoding("utf-8");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReport);
