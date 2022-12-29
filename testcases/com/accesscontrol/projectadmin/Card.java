@@ -17,11 +17,11 @@ public class Card extends BaseTest {
 	LoginPageObject loginPage;
 	DashboardPageObject dashboardPage;
 
-	@Parameters({ "browserName", "url" })
+	@Parameters({ "browserName", "appUrl" })
 	@BeforeClass
-	public void beforeClass(String browserName, String url) {
-		log.info("Pre-condition: Step 01 - Open browser '" + browserName + "'and navigate to '" + url + "'");
-		driver = getBrowserDriver(browserName, url);
+	public void beforeClass(String browserName, String appUrl) {
+		log.info("Pre-condition: Step 01 - Open browser '" + browserName + "'and navigate to '" + appUrl + "'");
+		driver = getBrowserDriver(browserName, appUrl);
 		loginPage = PageGenerator.getLoginPage(driver);
 
 		log.info("Pre-condition: Step 02 - Login with Admin role");

@@ -4,19 +4,17 @@
 	<parameter name="url" value="https://dev.acs.elifetech.vn:4433/admin/login" />
 
 	<listeners>
-		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 		<listener class-name="commons.MethodListener" />
-		<listener class-name="reportConfig.ExtentTestListener" />
+		<listener class-name="reportConfig.ExtentListener" />
 	</listeners>
 
 	<test name="Run on CHROME">
-		<parameter name="browserName" value="chrome" />
+		<parameter name="browser" value="chrome" />
 		<classes>
 			<!-- <class name="com.accesscontrol.superadmin.Project" />
 			<class name="com.accesscontrol.superadmin.Account" /> -->
 			<class name="com.accesscontrol.projectadmin.User" />
-			<class name="com.accesscontrol.projectadmin.UserGroup" />
+			<!-- <class name="com.accesscontrol.projectadmin.UserGroup" />
 			<class name="com.accesscontrol.projectadmin.UserType" />
 			<class name="com.accesscontrol.projectadmin.CardStandard" />
 			<class name="com.accesscontrol.projectadmin.Card" />
@@ -24,7 +22,7 @@
 			<class name="com.accesscontrol.projectadmin.FaceReader" />
 			<class name="com.accesscontrol.projectadmin.Controller" />
 			<class name="com.accesscontrol.projectadmin.Entry" />
-			<class name="com.accesscontrol.projectadmin.Permission" />
+			<class name="com.accesscontrol.projectadmin.Permission" /> -->
 		</classes>
 	</test>
 </suite>
