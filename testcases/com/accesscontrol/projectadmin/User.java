@@ -8,14 +8,18 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import commons.GlobalConstants;
+import pageObjects.accesscontrol.AddUserPageObject;
 import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
+import pageObjects.accesscontrol.UserListPageObject;
 
 public class User extends BaseTest {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	DashboardPageObject dashboardPage;
+	UserListPageObject userListPage;
+	AddUserPageObject addUserPage;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -30,7 +34,21 @@ public class User extends BaseTest {
 
 	@Test
 	public void User_01_Add_New_User() {
+		log.info("User_01 - Step 01: Open 'Danh sách người dùng' menu");
+		dashboardPage.openMenuPage(driver, "Danh sách người dùng ");
+		userListPage = PageGenerator.getUserListPage(driver);
 		
+		log.info("User_01 - Step 02: Click 'Thêm người dùng'");
+		userListPage.clickToButtonByIDName(driver, "Thêm người dùng");
+		addUserPage = PageGenerator.getAddUserPage(driver);
+		
+		log.info("User_01 - Step 03: Enter valid data to required fields");
+		addUserPage.enterToTextboxByIDName(driver, "name-them-nguoi-dung-text-field", "User 00001");
+		addUserPage.enterToTextboxByIDName(driver, "phone-them-nguoi-dung-text-field", "0000000001");
+		addUserPage.selectItemInDropdownByID(driver, "gender", "Nam");
+		
+		log.info("User_01 - Step 04: Click 'Thêm người dùng'");
+		addUserPage.clickToButtonByIDName(driver, "Thêm người dùng");
 	}
 
 	@Test
@@ -43,8 +61,9 @@ public class User extends BaseTest {
 		
 	}
 
+	
 	@Parameters({ "browser" })
-	@AfterClass(alwaysRun = true)
+	@AfterClass(alwaysRun = true) 
 	public void cleanBrowser(String browserName) {
 		log.info("Post-condition: Close browser '" + browserName + "'");
 		cleanDriverInstance();

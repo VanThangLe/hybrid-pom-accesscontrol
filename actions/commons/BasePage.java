@@ -526,19 +526,19 @@ public class BasePage {
 		isJQueryAJAXLoadedSuccess(driver);
 	}
 	
-	public void clickToButtonByID(WebDriver driver, String buttonIDName) {
-		waitForElementClickAble(driver, BasePageUI.BUTTON_BY_ID, buttonIDName);
-		clickToElement(driver, BasePageUI.BUTTON_BY_ID, buttonIDName);
+	public void clickToButtonByIDName(WebDriver driver, String buttonIDName) {
+		waitForElementClickAble(driver, BasePageUI.BUTTON_BY_ID_NAME, buttonIDName);
+		clickToElement(driver, BasePageUI.BUTTON_BY_ID_NAME, buttonIDName);
 	}
 	
-	public void enterToTextboxByID(WebDriver driver, String textboxIDName, String value) {
-		waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_ID, textboxIDName);
-		sendkeyToElement(driver, BasePageUI.TEXTBOX_BY_ID, value, textboxIDName);
+	public void enterToTextboxByIDName(WebDriver driver, String textboxIDName, String value) {
+		waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_ID_NAME, textboxIDName);
+		sendkeyToElement(driver, BasePageUI.TEXTBOX_BY_ID_NAME, value, textboxIDName);
 	}
 	
 	public String getTextboxValueByID(WebDriver driver, String textboxIDName) {
-		waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_ID, textboxIDName);
-		return getAttributeValue(driver, BasePageUI.TEXTBOX_BY_ID, "value", textboxIDName);
+		waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_ID_NAME, textboxIDName);
+		return getAttributeValue(driver, BasePageUI.TEXTBOX_BY_ID_NAME, "value", textboxIDName);
 	}
 	
 	public void selectItemInDropdownByID(WebDriver driver, String dropdownID, String valueItem) {
@@ -577,21 +577,14 @@ public class BasePage {
 		return getElementText(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, tableID, rowIndex, String.valueOf(columnIndex));
 	}
 	
-	public LoginPageObject logoutToSystem(WebDriver driver) {
-		waitForElementClickAble(driver, BasePageUI.WELCOME_USER_LINK);
-		clickToElement(driver, BasePageUI.WELCOME_USER_LINK);
-		waitForElementClickAble(driver, BasePageUI.LOGOUT_LINK);
-		clickToElement(driver, BasePageUI.LOGOUT_LINK);
-		return PageGenerator.getLoginPage(driver);
-	}
-	
-	public DashboardPageObject loginToSystem(WebDriver driver, String username, String password) {
-		waitForElementVisible(driver, BasePageUI.USERNAME_LOGIN_TEXTBOX);
-		sendkeyToElement(driver, BasePageUI.USERNAME_LOGIN_TEXTBOX, username);
-		sendkeyToElement(driver, BasePageUI.PASSWORD_LOGIN_TEXTBOX, password);
-		clickToElement(driver, BasePageUI.LOGIN_BUTTON);
-		return PageGenerator.getDashboardPage(driver);
-	}
+	/*
+	 * public LoginPageObject logoutToSystem(WebDriver driver) {
+	 * waitForElementClickAble(driver, BasePageUI.WELCOME_USER_LINK);
+	 * clickToElement(driver, BasePageUI.WELCOME_USER_LINK);
+	 * waitForElementClickAble(driver, BasePageUI.LOGOUT_LINK);
+	 * clickToElement(driver, BasePageUI.LOGOUT_LINK); return
+	 * PageGenerator.getLoginPage(driver); }
+	 */
 	
 	public void uploadImage(WebDriver driver, String filePath) {
 		getWebElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(filePath);
@@ -605,5 +598,13 @@ public class BasePage {
 	public boolean isFieldEnabledByID(WebDriver driver, String fieldID) {
 		waitForElementVisible(driver, BasePageUI.ANY_FIELD_BY_ID, fieldID);
 		return isElementEnabled(driver, BasePageUI.ANY_FIELD_BY_ID, fieldID);
+	}
+	
+	public DashboardPageObject loginToSystem(WebDriver driver, String email, String password) {
+		waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_ID_NAME, "email");
+		sendkeyToElement(driver, BasePageUI.TEXTBOX_BY_ID_NAME, email, "email");
+		sendkeyToElement(driver, BasePageUI.TEXTBOX_BY_ID_NAME, password, "password");
+		clickToElement(driver, BasePageUI.LOGIN_BUTTON);
+		return PageGenerator.getDashboardPage(driver);
 	}
 }

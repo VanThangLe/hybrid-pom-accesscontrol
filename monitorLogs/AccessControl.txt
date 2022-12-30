@@ -1,4 +1,6 @@
-[INFO ] [2022-12-29 11:32:07,006] ---------- START delete file in folder ----------
-[INFO ] [2022-12-29 11:32:07,006] ---------- END delete file in folder ----------
-[INFO ] [2022-12-29 11:32:07,021] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
-[INFO ] [2022-12-29 11:32:14,629] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 22:56:28,349] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 22:56:28,350] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 22:56:28,360] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 22:56:42,229] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 22:56:42,716] User_01 - Step 01: Open 'Danh sách ng??i dùng' menu
+[INFO ] [2022-12-29 22:56:43,932] User_01 - Step 02: Click 'Thêm ng??i dùng'

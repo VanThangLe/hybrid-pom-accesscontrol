@@ -20,3 +20,79 @@
 [INFO ] [2022-12-29 11:32:07,006] ---------- END delete file in folder ----------
 [INFO ] [2022-12-29 11:32:07,021] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
 [INFO ] [2022-12-29 11:32:14,629] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 13:48:20,682] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 13:48:20,683] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 13:48:20,693] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 13:48:32,312] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 13:48:32,822] Post-condition: Close browser 'chrome'
+[INFO ] [2022-12-29 13:48:32,822] OS name = windows 10
+[INFO ] [2022-12-29 13:48:33,580] OS name = windows 10
+[INFO ] [2022-12-29 13:58:12,056] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 13:58:12,057] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 13:58:12,067] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 13:58:19,509] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 13:58:19,934] User_01 - Step 01: Open 'Danh sách ng??i dùng' menu
+[INFO ] [2022-12-29 15:53:33,575] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 15:53:33,575] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 15:53:33,624] OS name = windows 10
+[INFO ] [2022-12-29 15:53:43,111] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 15:53:43,111] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 15:53:43,120] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 15:53:51,360] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 15:53:51,846] User_01 - Step 01: Open 'Danh sách ng??i dùng' menu
+[INFO ] [2022-12-29 15:54:22,255] Post-condition: Close browser 'chrome'
+[INFO ] [2022-12-29 15:54:22,255] OS name = windows 10
+[INFO ] [2022-12-29 15:54:23,048] OS name = windows 10
+[INFO ] [2022-12-29 15:55:04,986] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 15:55:04,987] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 15:55:04,995] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 15:55:18,221] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 15:55:18,651] User_01 - Step 01: Open 'Danh sách ng??i dùng' menu
+[INFO ] [2022-12-29 15:55:48,836] OS name = windows 10
+[INFO ] [2022-12-29 16:47:41,831] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 16:47:41,831] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 16:47:41,840] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 16:47:51,202] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 16:47:51,666] User_01 - Step 01: Open 'Danh sách ng??i dùng' menu
+[INFO ] [2022-12-29 16:47:52,874] User_01 - Step 02: Click 'Thêm ng??i dùng'
+[INFO ] [2022-12-29 16:47:52,874] User_01 - Step 03: Enter valid data to required fields
+[INFO ] [2022-12-29 16:47:52,874] User_01 - Step 04: Click 'Thêm ng??i dùng'
+[INFO ] [2022-12-29 16:47:52,882] Post-condition: Close browser 'chrome'
+[INFO ] [2022-12-29 16:47:52,882] OS name = windows 10
+[INFO ] [2022-12-29 16:47:53,620] OS name = windows 10
+[INFO ] [2022-12-29 17:30:49,245] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 17:30:49,246] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 17:30:49,254] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 17:30:55,795] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 17:30:56,224] User_01 - Step 01: Open 'Danh sách ng??i dùng' menu
+[INFO ] [2022-12-29 17:30:57,257] User_01 - Step 02: Click 'Thêm ng??i dùng'
+[INFO ] [2022-12-29 22:01:47,471] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 22:01:47,472] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 22:01:47,531] OS name = windows 10
+[INFO ] [2022-12-29 22:01:53,317] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 22:01:53,317] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 22:01:53,328] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 22:02:10,993] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 22:14:53,807] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 22:14:53,808] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 22:14:53,817] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 22:15:09,696] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 22:17:02,148] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 22:17:02,149] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 22:17:02,160] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 22:17:23,884] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 22:44:36,161] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 22:44:36,162] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 22:44:36,175] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 22:44:57,366] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 22:45:28,089] Post-condition: Close browser 'chrome'
+[INFO ] [2022-12-29 22:45:28,089] OS name = windows 10
+[INFO ] [2022-12-29 22:45:28,902] OS name = windows 10
+[INFO ] [2022-12-29 22:47:50,746] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 22:47:50,747] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 22:56:28,349] ---------- START delete file in folder ----------
+[INFO ] [2022-12-29 22:56:28,350] ---------- END delete file in folder ----------
+[INFO ] [2022-12-29 22:56:28,360] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2022-12-29 22:56:42,229] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2022-12-29 22:56:42,716] User_01 - Step 01: Open 'Danh sách ng??i dùng' menu
+[INFO ] [2022-12-29 22:56:43,932] User_01 - Step 02: Click 'Thêm ng??i dùng'
