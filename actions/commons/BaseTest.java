@@ -70,7 +70,7 @@ public class BaseTest {
 		Random rand = new Random();
 		return rand.nextInt(9999);
 	}
-
+	
 	private boolean checkTrue(boolean condition) {
 		boolean pass = true;
 		try {

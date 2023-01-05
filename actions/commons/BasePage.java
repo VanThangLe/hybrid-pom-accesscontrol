@@ -536,9 +536,9 @@ public class BasePage {
 		sendkeyToElement(driver, BasePageUI.TEXTBOX_BY_ID_NAME, value, textboxIDName);
 	}
 	
-	public String getTextboxValueByID(WebDriver driver, String textboxIDName) {
-		waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_ID_NAME, textboxIDName);
-		return getAttributeValue(driver, BasePageUI.TEXTBOX_BY_ID_NAME, "value", textboxIDName);
+	public String getValueFieldByAttribute(WebDriver driver, String attribute) {
+		waitForElementVisible(driver, BasePageUI.VALUE_FIELD_BY_ATTRIBUTE, attribute);
+		return getAttributeValue(driver, BasePageUI.VALUE_FIELD_BY_ATTRIBUTE, "value", attribute);
 	}
 	
 	public void selectItemInDropdownByID(WebDriver driver, String dropdownID, String valueItem) {
@@ -562,7 +562,7 @@ public class BasePage {
 	}
 	
 	public void clickToRadioByLabel(WebDriver driver, String radioLabelName) {
-		waitForElementClickAble(driver, BasePageUI.RADIO_BY_LABEL, radioLabelName);
+		waitForElementClickAble(driver, BasePageUI.RADIO_BY_LABEL, radioLabelName); 
 		checkToCheckboxOrRadio(driver, BasePageUI.RADIO_BY_LABEL, radioLabelName);
 	}
 	
@@ -571,28 +571,27 @@ public class BasePage {
 		return isElementSelected(driver, BasePageUI.RADIO_BY_LABEL, radioLabelName);
 	}
 	
-	public String getValueInTableIDAtColumnNameAndRowIndex(WebDriver driver, String tableID, String headerName, String rowIndex) {
-		int columnIndex = getElementSize(driver, BasePageUI.TABLE_HEADER_BY_ID_AND_NAME, tableID, headerName) + 1;
-		waitForElementVisible(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, tableID, rowIndex, String.valueOf(columnIndex));
-		return getElementText(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, tableID, rowIndex, String.valueOf(columnIndex));
-	}
+	//public String getValueAtColumnIndexAndRowIndex(WebDriver driver, String rowIndex, String columnIndex) {
+		//String columnIndex = String.valueOf(getElementSize(driver,BasePageUI.TABLE_HEADER_BY_NAME, headerName));
+		//waitForElementVisible(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, rowIndex, columnIndex);
+		//return getElementText(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, rowIndex, columnIndex);
+	//}
 	
-	/*
-	 * public LoginPageObject logoutToSystem(WebDriver driver) {
-	 * waitForElementClickAble(driver, BasePageUI.WELCOME_USER_LINK);
-	 * clickToElement(driver, BasePageUI.WELCOME_USER_LINK);
-	 * waitForElementClickAble(driver, BasePageUI.LOGOUT_LINK);
-	 * clickToElement(driver, BasePageUI.LOGOUT_LINK); return
-	 * PageGenerator.getLoginPage(driver); }
-	 */
+	public LoginPageObject logoutToSystem(WebDriver driver) {
+		waitForElementClickAble(driver, BasePageUI.LOGOUT_LINK);
+		clickToElement(driver, BasePageUI.LOGOUT_LINK);
+		waitForElementClickAble(driver, BasePageUI.LOGOUT_BUTTON);
+		clickToElement(driver, BasePageUI.LOGOUT_BUTTON);
+		return PageGenerator.getLoginPage(driver);
+	}
 	
 	public void uploadImage(WebDriver driver, String filePath) {
 		getWebElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(filePath);
 	}
 	
-	public boolean isSuccessMessageDisplayed(WebDriver driver, String messageValue) {
-		waitForElementVisible(driver, BasePageUI.SUCCESS_MESSAGE_VALUE, messageValue);
-		return isElementDisplayed(driver, BasePageUI.SUCCESS_MESSAGE_VALUE, messageValue);
+	public boolean isSuccessMessageDisplayed(WebDriver driver) {
+		waitForElementVisible(driver, BasePageUI.SUCCESS_MESSAGE);
+		return isElementDisplayed(driver, BasePageUI.SUCCESS_MESSAGE);
 	}
 	
 	public boolean isFieldEnabledByID(WebDriver driver, String fieldID) {
@@ -604,7 +603,7 @@ public class BasePage {
 		waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_ID_NAME, "email");
 		sendkeyToElement(driver, BasePageUI.TEXTBOX_BY_ID_NAME, email, "email");
 		sendkeyToElement(driver, BasePageUI.TEXTBOX_BY_ID_NAME, password, "password");
-		clickToElement(driver, BasePageUI.LOGIN_BUTTON);
+		clickToElement(driver, BasePageUI.BUTTON_BY_ID_NAME, "Đăng nhập");
 		return PageGenerator.getDashboardPage(driver);
 	}
 }

@@ -18,4 +18,8 @@ public class PageGenerator {
 	public static UserListPageObject getUserListPage(WebDriver driver) {
 		return new UserListPageObject(driver);
 	}
+
+	public static DetailUserPageObject getDetailUserPage(WebDriver driver) {
+		return new DetailUserPageObject(driver);
+	}
 }

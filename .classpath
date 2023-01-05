@@ -30,6 +30,5 @@
 	<classpathentry kind="lib" path="libExtentVer4/jcommander-1.48.jar"/>
 	<classpathentry kind="lib" path="libExtentVer4/mongodb-driver-3.3.0.jar"/>
 	<classpathentry kind="lib" path="libExtentVer4/mongodb-driver-core-3.3.0.jar"/>
-	<classpathentry kind="lib" path="libWebDriverManager/commons-codec-1.13.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
