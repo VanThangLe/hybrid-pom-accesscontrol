@@ -3,7 +3,7 @@ package pageObjects.accesscontrol.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.accesscontrol.DetailUserPageUI;
+import pageUIs.accesscontrol.user.DetailUserPageUI;
 
 public class DetailUserPageObject extends BasePage {
 	private WebDriver driver;
