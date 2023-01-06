@@ -12,6 +12,8 @@ public class BasePageUI {
 	public static final String MENU_BY_PAGE_NAME = "//div[@class='sidebar-menu pb-24 space-y-6']//span[contains(text(),'%s')]";
 	public static final String ANY_FIELD_BY_ID = "//*[@id='%s']";
 
+	public static final String ASSIGN_DROPDOWN = "//div[@class='w-full']";
+	public static final String EDIT_ICON = "//a[starts-with(@class,'rounded')]";
 	public static final String UPLOAD_FILE = "//input[@type='file']"; 
 	public static final String SUCCESS_MESSAGE = "//div[@class='toasted nova success']";
 }

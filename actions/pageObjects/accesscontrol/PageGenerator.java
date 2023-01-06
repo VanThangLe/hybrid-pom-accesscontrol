@@ -43,6 +43,7 @@ import pageObjects.accesscontrol.user.DetailUserPageObject;
 import pageObjects.accesscontrol.user.EditUserPageObject;
 import pageObjects.accesscontrol.user.UserListPageObject;
 import pageObjects.accesscontrol.usergroup.AddUserGroupPageObject;
+import pageObjects.accesscontrol.usergroup.AssignUserPageObject;
 import pageObjects.accesscontrol.usergroup.DetailUserGroupPageObject;
 import pageObjects.accesscontrol.usergroup.EditUserGroupPageObject;
 import pageObjects.accesscontrol.usergroup.UserGroupListPageObject;
@@ -250,5 +251,9 @@ public class PageGenerator {
 
 	public static EditUserTypePageObject getEditUserTypePage(WebDriver driver) {
 		return new EditUserTypePageObject(driver);
+	}
+
+	public static AssignUserPageObject getAssignUserPage(WebDriver driver) {
+		return new AssignUserPageObject(driver);
 	}
 }

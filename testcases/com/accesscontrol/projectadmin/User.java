@@ -6,8 +6,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.accesscontrol.common.Login;
+
 import commons.BaseTest;
-import commons.GlobalConstants;
 import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
@@ -33,21 +34,23 @@ public class User extends BaseTest {
 		driver = getBrowserDriver(browserName, appUrl);
 		loginPage = PageGenerator.getLoginPage(driver);
 
-		log.info("Pre-condition: Step 02 - Login with Admin role");
-		dashboardPage = loginPage.loginToSystem(GlobalConstants.PROJECT_ADMIN_EMAIL, GlobalConstants.PROJECT_ADMIN_PASSWORD);
+		log.info("Pre-condition: Step 02 - Set login page cookie");
+		loginPage.setAllCookies(driver, Login.loginPageCookie);
+		loginPage.sleepInSecond(2);
+		loginPage.refreshCurrentPage(driver);
 		
-		userName = "User 00001";
-		userNameUpdate = "User 00001 Update";
+		userName = "User 1";
+		userNameUpdate = "User 1 Update";
 	}
 
 	@Test
 	public void User_01_Add_New_User() {
 		log.info("User_01 - Step 01: Open 'Danh sách người dùng' menu");
-		dashboardPage.openMenuPage(driver, "Danh sách người dùng ");
+		dashboardPage.openMenuPage(driver, "Danh sách người dùng");
 		userListPage = PageGenerator.getUserListPage(driver);
 		
 		log.info("User_01 - Step 02: Click 'Thêm Người dùng'");
-		dashboardPage.clickToButtonByIDName(driver, "Thêm Người dùng");
+		userListPage.clickToButtonByIDName(driver, "Thêm Người dùng");
 		addUserPage = PageGenerator.getAddUserPage(driver);
 		
 		log.info("User_01 - Step 03: Enter valid data to required fields");
@@ -56,7 +59,7 @@ public class User extends BaseTest {
 		log.info("User_01 - Step 04: Click 'Thêm Người dùng'");
 		addUserPage.clickToButtonByIDName(driver, "Thêm Người dùng");
 		
-		log.info("User_01 - Step 05: Verify detail User");
+		log.info("User_01 - Step 05: Verify detail user");
 		detailUserPage = PageGenerator.getDetailUserPage(driver);
 		verifyTrue(detailUserPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "name"), userName);
@@ -65,8 +68,8 @@ public class User extends BaseTest {
 
 	@Test
 	public void User_02_Edit_User() {
-		log.info("User_02 - Step 01: Click 'Sửa người dùng' icon");
-		detailUserPage.clickToEditIcon();
+		log.info("User_02 - Step 01: Click 'Sửa' icon");
+		detailUserPage.clickToEditIcon(driver);
 		editUserPage = PageGenerator.getEditUserPage(driver);
 		
 		log.info("User_02 - Step 02: Enter valid data to required fields");
@@ -75,7 +78,7 @@ public class User extends BaseTest {
 		log.info("User_02 - Step 03: Click 'Cập nhật Người dùng'");
 		editUserPage.clickToButtonByIDName(driver, "Cập nhật Người dùng");
 		
-		log.info("User_02 - Step 04: Verify detail User");
+		log.info("User_02 - Step 04: Verify detail user");
 		detailUserPage = PageGenerator.getDetailUserPage(driver);
 		verifyTrue(detailUserPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "name"), userNameUpdate);

@@ -311,3 +311,96 @@
 [INFO ] [2023-01-06 15:38:20,671] ---------- END delete file in folder ----------
 [INFO ] [2023-01-06 15:38:20,680] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
 [INFO ] [2023-01-06 15:38:27,741] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2023-01-06 15:56:39,472] ---------- START delete file in folder ----------
+[INFO ] [2023-01-06 15:56:39,473] ---------- END delete file in folder ----------
+[INFO ] [2023-01-06 15:56:39,483] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-06 15:56:48,539] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2023-01-06 15:56:48,980] User_01 - Step 01: Open 'Danh sách người dùng' menu
+[INFO ] [2023-01-06 15:56:50,234] User_01 - Step 02: Click 'Thêm Người dùng'
+[INFO ] [2023-01-06 16:00:00,938] ---------- START delete file in folder ----------
+[INFO ] [2023-01-06 16:00:00,939] ---------- END delete file in folder ----------
+[INFO ] [2023-01-06 16:00:00,948] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-06 16:00:09,944] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2023-01-06 16:00:10,381] User_01 - Step 01: Open 'Danh sách người dùng' menu
+[INFO ] [2023-01-06 16:00:11,644] User_01 - Step 02: Click 'Thêm Người dùng'
+[INFO ] [2023-01-06 16:00:12,235] User_01 - Step 03: Enter valid data to required fields
+[INFO ] [2023-01-06 16:00:12,824] User_01 - Step 04: Click 'Thêm Người dùng'
+[INFO ] [2023-01-06 16:00:12,966] User_01 - Step 05: Verify detail User
+[INFO ] [2023-01-06 16:00:14,210]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-01-06 16:00:15,859]  -------------------------- FAILED -------------------------- 
+[INFO ] [2023-01-06 16:03:49,525] ---------- START delete file in folder ----------
+[INFO ] [2023-01-06 16:03:49,525] ---------- END delete file in folder ----------
+[INFO ] [2023-01-06 16:03:49,535] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-06 16:03:57,638] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2023-01-06 16:03:58,117] User_01 - Step 01: Open 'Danh sách người dùng' menu
+[INFO ] [2023-01-06 16:03:59,417] User_01 - Step 02: Click 'Thêm Người dùng'
+[INFO ] [2023-01-06 16:04:00,097] User_01 - Step 03: Enter valid data to required fields
+[INFO ] [2023-01-06 16:04:00,699] User_01 - Step 04: Click 'Thêm Người dùng'
+[INFO ] [2023-01-06 16:04:00,807] User_01 - Step 05: Verify detail User
+[INFO ] [2023-01-06 16:04:02,132]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-01-06 16:04:03,737]  -------------------------- FAILED -------------------------- 
+[INFO ] [2023-01-06 16:04:06,756] User_02 - Step 01: Click 'Sửa người dùng' icon
+[INFO ] [2023-01-06 16:04:06,892] User_02 - Step 02: Enter valid data to required fields
+[INFO ] [2023-01-06 16:04:07,524] User_02 - Step 03: Click 'Cập nhật Người dùng'
+[INFO ] [2023-01-06 16:04:07,715] User_02 - Step 04: Verify detail User
+[INFO ] [2023-01-06 16:04:07,795]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-01-06 16:04:09,419]  -------------------------- FAILED -------------------------- 
+[INFO ] [2023-01-06 16:04:09,420] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-06 16:04:09,420] OS name = windows 10
+[INFO ] [2023-01-06 16:04:10,203] OS name = windows 10
+[INFO ] [2023-01-06 16:09:16,443] ---------- START delete file in folder ----------
+[INFO ] [2023-01-06 16:09:16,444] ---------- END delete file in folder ----------
+[INFO ] [2023-01-06 16:09:16,453] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-06 16:09:29,901] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2023-01-06 16:09:30,359] User_01 - Step 01: Open 'Danh sách người dùng' menu
+[INFO ] [2023-01-06 16:09:31,729] User_01 - Step 02: Click 'Thêm Người dùng'
+[INFO ] [2023-01-06 16:09:32,266] User_01 - Step 03: Enter valid data to required fields
+[INFO ] [2023-01-06 16:09:32,788] User_01 - Step 04: Click 'Thêm Người dùng'
+[INFO ] [2023-01-06 16:09:32,931] User_01 - Step 05: Verify detail User
+[INFO ] [2023-01-06 16:09:34,169]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-01-06 16:09:55,860] User_02 - Step 01: Click 'Sửa người dùng' icon
+[INFO ] [2023-01-06 16:09:56,025] User_02 - Step 02: Enter valid data to required fields
+[INFO ] [2023-01-06 16:09:56,675] User_02 - Step 03: Click 'Cập nhật Người dùng'
+[INFO ] [2023-01-06 16:09:56,834] User_02 - Step 04: Verify detail User
+[INFO ] [2023-01-06 16:09:57,026]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-01-06 16:10:18,681] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-06 16:10:18,681] OS name = windows 10
+[INFO ] [2023-01-06 16:10:19,467] OS name = windows 10
+[INFO ] [2023-01-06 16:23:28,193] ---------- START delete file in folder ----------
+[INFO ] [2023-01-06 16:23:28,194] ---------- END delete file in folder ----------
+[INFO ] [2023-01-06 16:23:28,203] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-06 16:23:36,039] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2023-01-06 16:23:36,453] User_01 - Step 01: Open 'Danh sách người dùng' menu
+[INFO ] [2023-01-06 16:23:37,618] User_01 - Step 02: Click 'Thêm Người dùng'
+[INFO ] [2023-01-06 16:23:38,354] User_01 - Step 03: Enter valid data to required fields
+[INFO ] [2023-01-06 16:23:39,227] User_01 - Step 04: Click 'Thêm Người dùng'
+[INFO ] [2023-01-06 16:23:39,360] User_01 - Step 05: Verify detail User
+[INFO ] [2023-01-06 16:23:40,671]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-01-06 16:24:02,313] User_02 - Step 01: Click 'Sửa người dùng' icon
+[INFO ] [2023-01-06 16:24:02,469] User_02 - Step 02: Enter valid data to required fields
+[INFO ] [2023-01-06 16:24:03,231] User_02 - Step 03: Click 'Cập nhật Người dùng'
+[INFO ] [2023-01-06 16:24:03,381] User_02 - Step 04: Verify detail User
+[INFO ] [2023-01-06 16:24:03,629]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-01-06 16:24:22,557] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-06 16:24:22,557] OS name = windows 10
+[INFO ] [2023-01-06 16:24:22,668] OS name = windows 10
+[INFO ] [2023-01-06 16:27:03,558] ---------- START delete file in folder ----------
+[INFO ] [2023-01-06 16:27:03,559] ---------- END delete file in folder ----------
+[INFO ] [2023-01-06 16:27:03,567] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-06 16:27:11,065] Pre-condition: Step 02 - Login with Admin role
+[INFO ] [2023-01-06 16:27:11,520] User_01 - Step 01: Open 'Danh sách người dùng' menu
+[INFO ] [2023-01-06 16:27:12,598] User_01 - Step 02: Click 'Thêm Người dùng'
+[INFO ] [2023-01-06 16:27:13,200] User_01 - Step 03: Enter valid data to required fields
+[INFO ] [2023-01-06 16:27:13,833] User_01 - Step 04: Click 'Thêm Người dùng'
+[INFO ] [2023-01-06 16:27:13,977] User_01 - Step 05: Verify detail User
+[INFO ] [2023-01-06 16:27:15,277]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-01-06 16:27:16,946]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-01-06 16:27:17,958] User_02 - Step 01: Click 'Sửa người dùng' icon
+[INFO ] [2023-01-06 16:27:18,074] User_02 - Step 02: Enter valid data to required fields
+[INFO ] [2023-01-06 16:27:18,946] User_02 - Step 03: Click 'Cập nhật Người dùng'
+[INFO ] [2023-01-06 16:27:19,077] User_02 - Step 04: Verify detail User
+[INFO ] [2023-01-06 16:27:19,144]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-01-06 16:27:20,956]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-01-06 16:27:20,957] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-06 16:27:20,957] OS name = windows 10
+[INFO ] [2023-01-06 16:27:21,696] OS name = windows 10

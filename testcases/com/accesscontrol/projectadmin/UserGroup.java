@@ -6,16 +6,29 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.accesscontrol.common.Login;
+
 import commons.BaseTest;
-import commons.GlobalConstants;
 import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
+import pageObjects.accesscontrol.usergroup.AddUserGroupPageObject;
+import pageObjects.accesscontrol.usergroup.AssignUserPageObject;
+import pageObjects.accesscontrol.usergroup.DetailUserGroupPageObject;
+import pageObjects.accesscontrol.usergroup.EditUserGroupPageObject;
+import pageObjects.accesscontrol.usergroup.UserGroupListPageObject;
 
 public class UserGroup extends BaseTest {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	DashboardPageObject dashboardPage;
+	UserGroupListPageObject userGroupListPage;
+	AddUserGroupPageObject addUserGroupPage;
+	DetailUserGroupPageObject detailUserGroupPage;
+	EditUserGroupPageObject editUserGroupPage;
+	AssignUserPageObject assignUserPage;
+	String userGroupName, userGroupCode;
+	String userGroupNameUpdate, userGroupCodeUpdate;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -24,23 +37,77 @@ public class UserGroup extends BaseTest {
 		driver = getBrowserDriver(browserName, appUrl);
 		loginPage = PageGenerator.getLoginPage(driver);
 
-		log.info("Pre-condition: Step 02 - Login with Admin role");
-		dashboardPage = loginPage.loginToSystem(GlobalConstants.PROJECT_ADMIN_EMAIL, GlobalConstants.PROJECT_ADMIN_PASSWORD);
+		log.info("Pre-condition: Step 02 - Set login page cookie");
+		loginPage.setAllCookies(driver, Login.loginPageCookie);
+		loginPage.sleepInSecond(2);
+		loginPage.refreshCurrentPage(driver);
+		
+		userGroupName = "Group 1";
+		userGroupCode = "groupcode1";
+		userGroupNameUpdate = "Group 1 Update";
+		userGroupCodeUpdate = "groupcode1update";
 	}
 
 	@Test
 	public void UserGroup_01_Add_New_UserGroup() {
+		log.info("UserGroup_01 - Step 01: Open 'Nhóm người dùng' menu");
+		dashboardPage.openMenuPage(driver, "Nhóm người dùng");
+		userGroupListPage = PageGenerator.getUserGroupListPage(driver);
 		
+		log.info("UserGroup_01 - Step 02: Click 'Thêm Nhóm người dùng'");
+		userGroupListPage.clickToButtonByIDName(driver, "Thêm Nhóm người dùng");
+		addUserGroupPage = PageGenerator.getAddUserGroupPage(driver);
+		
+		log.info("UserGroup_01 - Step 03: Enter valid data to required fields");
+		addUserGroupPage.enterToTextboxByIDName(driver, "role_name", userGroupName);
+		addUserGroupPage.enterToTextboxByIDName(driver, "role_code", userGroupCode);
+		
+		log.info("UserGroup_01 - Step 04: Click 'Thêm Nhóm người dùng'");
+		addUserGroupPage.clickToButtonByIDName(driver, "Thêm Nhóm người dùng");
+		
+		log.info("UserGroup_01 - Step 05: Verify detail user group");
+		detailUserGroupPage = PageGenerator.getDetailUserGroupPage(driver);
+		verifyTrue(detailUserGroupPage.isSuccessMessageDisplayed(driver));
+		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_name"), userGroupName);
+		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_code"), userGroupCode);
+		detailUserGroupPage.sleepInSecond(1);
 	}
 
 	@Test
 	public void UserGroup_02_Edit_UserGroup() {
+		log.info("UserGroup_02 - Step 01: Click 'Sửa' icon");
+		detailUserGroupPage.clickToEditIcon(driver);
+		editUserGroupPage = PageGenerator.getEditUserGroupPage(driver);
 		
+		log.info("UserGroup_02 - Step 02: Enter valid data to required fields");
+		editUserGroupPage.enterToTextboxByIDName(driver, "role_name", userGroupNameUpdate);
+		editUserGroupPage.enterToTextboxByIDName(driver, "role_code", userGroupCodeUpdate);
+		
+		log.info("UserGroup_02 - Step 03: Click 'Cập nhật Người dùng'");
+		editUserGroupPage.clickToButtonByIDName(driver, "Cập nhật Người dùng");
+		
+		log.info("UserGroup_02 - Step 04: Verify detail user group");
+		detailUserGroupPage = PageGenerator.getDetailUserGroupPage(driver);
+		verifyTrue(detailUserGroupPage.isSuccessMessageDisplayed(driver));
+		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_name"), userGroupNameUpdate);
+		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_code"), userGroupCodeUpdate);
 	}
 
 	@Test
 	public void UserGroup_03_Assign_User() {
+		log.info("UserGroup_03 - Step 01: Click 'Gắn Người dùng'");
+		detailUserGroupPage.clickToButtonByIDName(driver, "Gắn Người dùng");
+		assignUserPage = PageGenerator.getAssignUserPage(driver);
 		
+		log.info("UserGroup_03 - Step 02: Select user");
+		assignUserPage.selectItemInAssignDropdown(driver, "User 1 update");
+		
+		log.info("UserGroup_03 - Step 03: Click 'Gắn Người dùng'");
+		assignUserPage.clickToButtonByIDName(driver, "Gắn Người dùng");
+		detailUserGroupPage = PageGenerator.getDetailUserGroupPage(driver);
+		
+		log.info("UserGroup_03 - Step 04: Verify");
+//		verifyEquals(assignUserPage, addUserGroupPage);
 	}
 
 	@Parameters({ "browser" })

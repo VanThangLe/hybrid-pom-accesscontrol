@@ -543,6 +543,11 @@ public class BasePage {
 		selectItemInDefaultDropdown(driver, BasePageUI.DROPDOWN_BY_ID, valueItem, dropdownID);
 	}
 	
+	public void selectItemInAssignDropdown(WebDriver driver, String valueItem) {
+		waitForElementClickAble(driver, BasePageUI.ASSIGN_DROPDOWN);
+		selectItemInDefaultDropdown(driver, BasePageUI.ASSIGN_DROPDOWN, valueItem);
+	}
+	
 	public String getSelectedValueInDropdownByID(WebDriver driver, String dropdownID) {
 		waitForElementVisible(driver, BasePageUI.DROPDOWN_BY_ID, dropdownID);
 		return getFirstSelectedItemInDefaultDropdown(driver, BasePageUI.DROPDOWN_BY_ID, dropdownID);
@@ -585,5 +590,10 @@ public class BasePage {
 	public boolean isFieldEnabledByID(WebDriver driver, String fieldID) {
 		waitForElementVisible(driver, BasePageUI.ANY_FIELD_BY_ID, fieldID);
 		return isElementEnabled(driver, BasePageUI.ANY_FIELD_BY_ID, fieldID);
+	}
+	
+	public void clickToEditIcon(WebDriver driver) {
+		waitForElementClickAble(driver, BasePageUI.EDIT_ICON);
+		clickToElement(driver, BasePageUI.EDIT_ICON);
 	}
 }
