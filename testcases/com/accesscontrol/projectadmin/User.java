@@ -60,7 +60,7 @@ public class User extends BaseTest {
 		detailUserPage = PageGenerator.getDetailUserPage(driver);
 		verifyTrue(detailUserPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "name"), userName);
-		detailUserPage.sleepInSecond(5000);
+		detailUserPage.sleepInSecond(1);
 	}
 
 	@Test

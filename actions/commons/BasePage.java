@@ -535,7 +535,7 @@ public class BasePage {
 	
 	public String getValueFieldByAttribute(WebDriver driver, String attribute) {
 		waitForElementVisible(driver, BasePageUI.VALUE_FIELD_BY_ATTRIBUTE, attribute);
-		return getAttributeValue(driver, BasePageUI.VALUE_FIELD_BY_ATTRIBUTE, "value", attribute);
+		return getElementText(driver, BasePageUI.VALUE_FIELD_BY_ATTRIBUTE, attribute);
 	}
 	
 	public void selectItemInDropdownByID(WebDriver driver, String dropdownID, String valueItem) {

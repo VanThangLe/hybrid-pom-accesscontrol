@@ -1,7 +1,7 @@
 package pageUIs.accesscontrol;
 
 public class BasePageUI {
-	public static final String BUTTON_BY_ID_NAME = "//input[@id='%s']";
+	public static final String BUTTON_BY_ID_NAME = "//span[text()='%s']";
 	public static final String TEXTBOX_BY_ID_NAME = "//input[@dusk='%s']";
 	public static final String VALUE_FIELD_BY_ATTRIBUTE = "//div[@dusk='%s']/div/p";
 	public static final String DROPDOWN_BY_ID = "//select[@id='%s']";
