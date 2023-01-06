@@ -571,11 +571,10 @@ public class BasePage {
 		return isElementSelected(driver, BasePageUI.RADIO_BY_LABEL, radioLabelName);
 	}
 	
-	//public String getValueAtColumnIndexAndRowIndex(WebDriver driver, String rowIndex, String columnIndex) {
-		//String columnIndex = String.valueOf(getElementSize(driver,BasePageUI.TABLE_HEADER_BY_NAME, headerName));
-		//waitForElementVisible(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, rowIndex, columnIndex);
-		//return getElementText(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, rowIndex, columnIndex);
-	//}
+	public String getValueAtColumnIndexAndRowIndex(WebDriver driver, String rowIndex, String columnIndex) {
+		waitForElementVisible(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, rowIndex, columnIndex);
+		return getElementText(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, rowIndex, columnIndex);
+	}
 	
 	public LoginPageObject logoutToSystem(WebDriver driver) {
 		waitForElementClickAble(driver, BasePageUI.LOGOUT_LINK);

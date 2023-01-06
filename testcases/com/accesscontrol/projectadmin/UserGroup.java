@@ -39,12 +39,7 @@ public class UserGroup extends BaseTest {
 	}
 
 	@Test
-	public void UserGroup_03_Search_UserGroup() {
-		
-	}
-
-	@Test
-	public void UserGroup_04_Assign_User() {
+	public void UserGroup_03_Assign_User() {
 		
 	}
 

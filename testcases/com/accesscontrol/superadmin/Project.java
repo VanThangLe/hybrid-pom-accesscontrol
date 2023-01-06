@@ -38,11 +38,6 @@ public class Project extends BaseTest {
 		
 	}
 
-	@Test
-	public void Project_03_Search_Project() {
-		
-	}
-
 	@Parameters({ "browser" })
 	@AfterClass(alwaysRun = true)
 	public void cleanBrowser(String browserName) {

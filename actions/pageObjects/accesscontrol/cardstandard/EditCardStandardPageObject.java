@@ -2,10 +2,11 @@ package pageObjects.accesscontrol.cardstandard;
 
 import org.openqa.selenium.WebDriver;
 
-public class EditCardStandardPageObject {
+import commons.BasePage;
+
+public class EditCardStandardPageObject extends BasePage {
 
 	public EditCardStandardPageObject(WebDriver driver) {
-		// TODO Auto-generated constructor stub
-	}
 
+	}
 }

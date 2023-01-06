@@ -39,12 +39,7 @@ public class Card extends BaseTest {
 	}
 
 	@Test
-	public void Card_03_Search_Card() {
-		
-	}
-
-	@Test
-	public void Card_04_Assign_UserGroup() {
+	public void Card_03_Assign_UserGroup() {
 		
 	}
 

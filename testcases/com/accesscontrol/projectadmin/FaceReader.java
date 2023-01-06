@@ -38,11 +38,6 @@ public class FaceReader extends BaseTest {
 		
 	}
 
-	@Test
-	public void FaceReader_03_Search_FaceReader() {
-		
-	}
-
 	@Parameters({ "browser" })
 	@AfterClass(alwaysRun = true)
 	public void cleanBrowser(String browserName) {

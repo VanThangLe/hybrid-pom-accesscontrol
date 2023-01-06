@@ -39,17 +39,12 @@ public class Entry extends BaseTest {
 	}
 
 	@Test
-	public void Entry_03_Search_Entry() {
-		
-	}
-
-	@Test
-	public void Entry_04_Assign_Reader() {
+	public void Entry_03_Assign_Reader() {
 		
 	}
 	
 	@Test
-	public void Entry_05_Assign_UserGroup() {
+	public void Entry_04_Assign_UserGroup() {
 		
 	}
 

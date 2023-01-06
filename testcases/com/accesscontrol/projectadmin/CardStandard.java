@@ -38,11 +38,6 @@ public class CardStandard extends BaseTest {
 		
 	}
 
-	@Test
-	public void Account_03_Search_CardStandard() {
-		
-	}
-
 	@Parameters({ "browser" })
 	@AfterClass(alwaysRun = true)
 	public void cleanBrowser(String browserName) {

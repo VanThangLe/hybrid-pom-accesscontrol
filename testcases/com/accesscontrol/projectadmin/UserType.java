@@ -39,12 +39,7 @@ public class UserType extends BaseTest {
 	}
 
 	@Test
-	public void UserType_03_Search_UserType() {
-		
-	}
-
-	@Test
-	public void UserType_04_Assign_User() {
+	public void UserType_03_Assign_User() {
 		
 	}
 

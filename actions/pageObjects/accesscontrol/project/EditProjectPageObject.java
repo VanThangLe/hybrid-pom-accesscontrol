@@ -2,10 +2,11 @@ package pageObjects.accesscontrol.project;
 
 import org.openqa.selenium.WebDriver;
 
-public class EditProjectPageObject {
+import commons.BasePage;
 
+public class EditProjectPageObject extends BasePage {
+	
 	public EditProjectPageObject(WebDriver driver) {
-		// TODO Auto-generated constructor stub
-	}
 
+	}
 }

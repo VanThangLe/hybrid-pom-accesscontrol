@@ -39,12 +39,7 @@ public class CardReader extends BaseTest {
 	}
 
 	@Test
-	public void CardReader_03_Search_CardReader() {
-		
-	}
-
-	@Test
-	public void CardReader_04_Add_New_DO_Event() {
+	public void CardReader_03_Add_New_DO_Event() {
 		
 	}
 

@@ -38,11 +38,6 @@ public class Permission extends BaseTest {
 		
 	}
 
-	@Test
-	public void Permission_03_Search_Permission() {
-		
-	}
-
 	@Parameters({ "browser" })
 	@AfterClass(alwaysRun = true)
 	public void cleanBrowser(String browserName) {

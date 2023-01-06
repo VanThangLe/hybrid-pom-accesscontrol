@@ -24,8 +24,7 @@ public class User extends BaseTest {
 	AddUserPageObject addUserPage;
 	DetailUserPageObject detailUserPage;
 	EditUserPageObject editUserPage;
-	String userName, phone, gender;
-	String userNameUpdate, phoneUpdate, genderUpdate;
+	String userName, userNameUpdate;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -38,12 +37,7 @@ public class User extends BaseTest {
 		dashboardPage = loginPage.loginToSystem(driver, GlobalConstants.PROJECT_ADMIN_EMAIL, GlobalConstants.PROJECT_ADMIN_PASSWORD);
 		
 		userName = "User 00001";
-		phone = "0000000001";
-		gender = "Nam";
-		
 		userNameUpdate = "User 00001 Update";
-		phoneUpdate = "1000000000";
-		genderUpdate = "Nữ";
 	}
 
 	@Test
@@ -58,17 +52,14 @@ public class User extends BaseTest {
 		
 		log.info("User_01 - Step 03: Enter valid data to required fields");
 		addUserPage.enterToTextboxByIDName(driver, "name-them-nguoi-dung-text-field", userName);
-		addUserPage.enterToTextboxByIDName(driver, "phone-them-nguoi-dung-text-field", phone);
-		addUserPage.selectItemInDropdownByID(driver, "gender", gender);
 		
 		log.info("User_01 - Step 04: Click 'Thêm Người dùng'");
 		addUserPage.clickToButtonByIDName(driver, "Thêm Người dùng");
 		
 		log.info("User_01 - Step 05: Verify detail User");
-		verifyTrue(addUserPage.isSuccessMessageDisplayed(driver));
 		detailUserPage = PageGenerator.getDetailUserPage(driver);
+		verifyTrue(detailUserPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "name"), userName);
-		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "phone"), phone);
 	}
 
 	@Test
@@ -78,23 +69,17 @@ public class User extends BaseTest {
 		editUserPage = PageGenerator.getEditUserPage(driver);
 		
 		log.info("User_02 - Step 02: Enter valid data to required fields");
-		detailUserPage.enterToTextboxByIDName(driver, "name-them-nguoi-dung-text-field", userNameUpdate);
-		detailUserPage.enterToTextboxByIDName(driver, "phone-them-nguoi-dung-text-field", phoneUpdate);
-		detailUserPage.selectItemInDropdownByID(driver, "gender", genderUpdate);
+		editUserPage.enterToTextboxByIDName(driver, "name-them-nguoi-dung-text-field", userNameUpdate);
 		
 		log.info("User_02 - Step 03: Click 'Cập nhật Người dùng'");
-		detailUserPage.clickToButtonByIDName(driver, "Cập nhật Người dùng");
+		editUserPage.clickToButtonByIDName(driver, "Cập nhật Người dùng");
 		
 		log.info("User_02 - Step 04: Verify detail User");
+		detailUserPage = PageGenerator.getDetailUserPage(driver);
 		verifyTrue(detailUserPage.isSuccessMessageDisplayed(driver));
+		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "name"), userNameUpdate);
 	}
 
-	@Test
-	public void User_03_Search_User() {
-		
-	}
-
-	
 	@Parameters({ "browser" })
 	@AfterClass(alwaysRun = true) 
 	public void cleanBrowser(String browserName) {

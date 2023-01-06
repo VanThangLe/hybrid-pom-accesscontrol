@@ -39,12 +39,7 @@ public class Controller extends BaseTest {
 	}
 
 	@Test
-	public void Controller_03_Search_Controller() {
-		
-	}
-
-	@Test
-	public void Controller_04_Assign_CardReader() {
+	public void Controller_03_Assign_CardReader() {
 		
 	}
 	

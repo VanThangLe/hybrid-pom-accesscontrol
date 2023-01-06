@@ -2,10 +2,11 @@ package pageObjects.accesscontrol.usergroup;
 
 import org.openqa.selenium.WebDriver;
 
-public class EditUserGroupPageObject {
+import commons.BasePage;
 
+public class EditUserGroupPageObject extends BasePage {
+	
 	public EditUserGroupPageObject(WebDriver driver) {
-		// TODO Auto-generated constructor stub
-	}
 
+	}
 }

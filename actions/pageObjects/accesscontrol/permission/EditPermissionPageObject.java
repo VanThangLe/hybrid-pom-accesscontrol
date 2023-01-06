@@ -2,10 +2,11 @@ package pageObjects.accesscontrol.permission;
 
 import org.openqa.selenium.WebDriver;
 
-public class EditPermissionPageObject {
+import commons.BasePage;
 
+public class EditPermissionPageObject extends BasePage {
+	
 	public EditPermissionPageObject(WebDriver driver) {
-		// TODO Auto-generated constructor stub
+		
 	}
-
 }

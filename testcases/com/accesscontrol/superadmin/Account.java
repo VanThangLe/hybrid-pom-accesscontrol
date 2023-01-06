@@ -39,12 +39,7 @@ public class Account extends BaseTest {
 	}
 
 	@Test
-	public void Account_03_Search_Account() {
-		
-	}
-
-	@Test
-	public void Account_04_Assign_Project() {
+	public void Account_03_Assign_Project() {
 		
 	}
 
