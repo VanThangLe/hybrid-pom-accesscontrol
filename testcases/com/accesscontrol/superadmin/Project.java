@@ -39,7 +39,7 @@ public class Project extends BaseTest {
 	}
 
 	@Test
-	public void Project_03_Clone_Project() {
+	public void Project_03_Search_Project() {
 		
 	}
 

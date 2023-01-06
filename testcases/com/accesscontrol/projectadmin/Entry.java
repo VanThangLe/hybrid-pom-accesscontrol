@@ -39,7 +39,7 @@ public class Entry extends BaseTest {
 	}
 
 	@Test
-	public void Entry_03_Clone_Entry() {
+	public void Entry_03_Search_Entry() {
 		
 	}
 

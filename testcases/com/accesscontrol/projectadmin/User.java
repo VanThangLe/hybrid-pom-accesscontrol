@@ -22,7 +22,8 @@ public class User extends BaseTest {
 	UserListPageObject userListPage;
 	AddUserPageObject addUserPage;
 	DetailUserPageObject detailUserPage;
-	String userName, phone;
+	String userName, phone, gender;
+	String userNameUpdate, phoneUpdate, genderUpdate;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -36,6 +37,7 @@ public class User extends BaseTest {
 		
 		userName = "User 00001";
 		phone = "0000000001";
+		gender = "Nam";
 	}
 
 	@Test
@@ -65,12 +67,17 @@ public class User extends BaseTest {
 
 	@Test
 	public void User_02_Edit_User() {
+		log.info("User_02 - Step 01: Open 'Sửa người dùng' screen");
 		detailUserPage.clickToDetail();
 		
+		log.info("User_02 - Step 02: Enter valid data to required fields");
+		detailUserPage.enterToTextboxByIDName(driver, "name-them-nguoi-dung-text-field", userName);
+		detailUserPage.enterToTextboxByIDName(driver, "phone-them-nguoi-dung-text-field", phone);
+		detailUserPage.selectItemInDropdownByID(driver, "gender", "Nữ");
 	}
 
 	@Test
-	public void User_03_Clone_User() {
+	public void User_03_Search_User() {
 		
 	}
 

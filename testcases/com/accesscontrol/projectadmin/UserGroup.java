@@ -39,7 +39,7 @@ public class UserGroup extends BaseTest {
 	}
 
 	@Test
-	public void UserGroup_03_Clone_UserGroup() {
+	public void UserGroup_03_Search_UserGroup() {
 		
 	}
 

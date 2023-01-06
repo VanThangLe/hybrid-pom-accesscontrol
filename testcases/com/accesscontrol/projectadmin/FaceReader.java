@@ -39,7 +39,7 @@ public class FaceReader extends BaseTest {
 	}
 
 	@Test
-	public void FaceReader_03_Clone_FaceReader() {
+	public void FaceReader_03_Search_FaceReader() {
 		
 	}
 

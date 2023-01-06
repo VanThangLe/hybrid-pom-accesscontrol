@@ -39,7 +39,7 @@ public class Controller extends BaseTest {
 	}
 
 	@Test
-	public void Controller_03_Clone_Controller() {
+	public void Controller_03_Search_Controller() {
 		
 	}
 

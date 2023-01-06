@@ -39,7 +39,7 @@ public class CardReader extends BaseTest {
 	}
 
 	@Test
-	public void CardReader_03_Clone_CardReader() {
+	public void CardReader_03_Search_CardReader() {
 		
 	}
 

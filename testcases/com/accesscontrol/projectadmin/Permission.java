@@ -39,7 +39,7 @@ public class Permission extends BaseTest {
 	}
 
 	@Test
-	public void Permission_03_Clone_Permission() {
+	public void Permission_03_Search_Permission() {
 		
 	}
 

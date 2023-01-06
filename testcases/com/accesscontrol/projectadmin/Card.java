@@ -39,7 +39,7 @@ public class Card extends BaseTest {
 	}
 
 	@Test
-	public void Card_03_Clone_Card() {
+	public void Card_03_Search_Card() {
 		
 	}
 

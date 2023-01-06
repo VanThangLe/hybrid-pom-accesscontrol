@@ -39,7 +39,7 @@ public class Account extends BaseTest {
 	}
 
 	@Test
-	public void Account_03_Clone_Account() {
+	public void Account_03_Search_Account() {
 		
 	}
 
