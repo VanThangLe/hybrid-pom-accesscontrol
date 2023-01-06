@@ -17,9 +17,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pageObjects.accesscontrol.DashboardPageObject;
-import pageObjects.accesscontrol.LoginPageObject;
-import pageObjects.accesscontrol.PageGenerator;
 import pageUIs.accesscontrol.BasePageUI;
 
 public class BasePage {
@@ -576,14 +573,6 @@ public class BasePage {
 		return getElementText(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, rowIndex, columnIndex);
 	}
 	
-	public LoginPageObject logoutToSystem(WebDriver driver) {
-		waitForElementClickAble(driver, BasePageUI.LOGOUT_LINK);
-		clickToElement(driver, BasePageUI.LOGOUT_LINK);
-		waitForElementClickAble(driver, BasePageUI.LOGOUT_BUTTON);
-		clickToElement(driver, BasePageUI.LOGOUT_BUTTON);
-		return PageGenerator.getLoginPage(driver);
-	}
-	
 	public void uploadImage(WebDriver driver, String filePath) {
 		getWebElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(filePath);
 	}
@@ -596,13 +585,5 @@ public class BasePage {
 	public boolean isFieldEnabledByID(WebDriver driver, String fieldID) {
 		waitForElementVisible(driver, BasePageUI.ANY_FIELD_BY_ID, fieldID);
 		return isElementEnabled(driver, BasePageUI.ANY_FIELD_BY_ID, fieldID);
-	}
-	
-	public DashboardPageObject loginToSystem(WebDriver driver, String email, String password) {
-		waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_ID_NAME, "email");
-		sendkeyToElement(driver, BasePageUI.TEXTBOX_BY_ID_NAME, email, "email");
-		sendkeyToElement(driver, BasePageUI.TEXTBOX_BY_ID_NAME, password, "password");
-		clickToElement(driver, BasePageUI.BUTTON_BY_ID_NAME, "Đăng nhập");
-		return PageGenerator.getDashboardPage(driver);
 	}
 }

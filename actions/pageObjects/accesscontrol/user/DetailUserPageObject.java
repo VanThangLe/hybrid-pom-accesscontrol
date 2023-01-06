@@ -12,7 +12,7 @@ public class DetailUserPageObject extends BasePage {
 		this.driver = driver;
 	}
 
-	public void clickToDetail() {
+	public void clickToEditIcon() {
 		waitForElementClickAble(driver, DetailUserPageUI.EDIT_ICON);
 		clickToElement(driver, DetailUserPageUI.EDIT_ICON);
 	}

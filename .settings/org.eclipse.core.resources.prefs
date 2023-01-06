@@ -4,4 +4,5 @@ encoding//actions/commons/BaseTest.java=UTF-8
 encoding//actions/pageObjects/accesscontrol/LoginPageObject.java=UTF-8
 encoding//actions/pageObjects/accesscontrol/PageGenerator.java=UTF-8
 encoding//interfaces/pageUIs/accesscontrol/BasePageUI.java=UTF-8
+encoding//interfaces/pageUIs/accesscontrol/LoginPageUI.java=UTF-8
 encoding//resources/runAccessControl.xml=UTF-8

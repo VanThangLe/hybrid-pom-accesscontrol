@@ -34,7 +34,7 @@ public class User extends BaseTest {
 		loginPage = PageGenerator.getLoginPage(driver);
 
 		log.info("Pre-condition: Step 02 - Login with Admin role");
-		dashboardPage = loginPage.loginToSystem(driver, GlobalConstants.PROJECT_ADMIN_EMAIL, GlobalConstants.PROJECT_ADMIN_PASSWORD);
+		dashboardPage = loginPage.loginToSystem(GlobalConstants.PROJECT_ADMIN_EMAIL, GlobalConstants.PROJECT_ADMIN_PASSWORD);
 		
 		userName = "User 00001";
 		userNameUpdate = "User 00001 Update";
@@ -51,7 +51,7 @@ public class User extends BaseTest {
 		addUserPage = PageGenerator.getAddUserPage(driver);
 		
 		log.info("User_01 - Step 03: Enter valid data to required fields");
-		addUserPage.enterToTextboxByIDName(driver, "name-them-nguoi-dung-text-field", userName);
+		addUserPage.enterToTextboxByIDName(driver, "name", userName);
 		
 		log.info("User_01 - Step 04: Click 'Thêm Người dùng'");
 		addUserPage.clickToButtonByIDName(driver, "Thêm Người dùng");
@@ -60,16 +60,17 @@ public class User extends BaseTest {
 		detailUserPage = PageGenerator.getDetailUserPage(driver);
 		verifyTrue(detailUserPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "name"), userName);
+		detailUserPage.sleepInSecond(5000);
 	}
 
 	@Test
 	public void User_02_Edit_User() {
 		log.info("User_02 - Step 01: Click 'Sửa người dùng' icon");
-		detailUserPage.clickToDetail();
+		detailUserPage.clickToEditIcon();
 		editUserPage = PageGenerator.getEditUserPage(driver);
 		
 		log.info("User_02 - Step 02: Enter valid data to required fields");
-		editUserPage.enterToTextboxByIDName(driver, "name-them-nguoi-dung-text-field", userNameUpdate);
+		editUserPage.enterToTextboxByIDName(driver, "name", userNameUpdate);
 		
 		log.info("User_02 - Step 03: Click 'Cập nhật Người dùng'");
 		editUserPage.clickToButtonByIDName(driver, "Cập nhật Người dùng");

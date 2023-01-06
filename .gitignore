@@ -1,4 +1,6 @@
 /bin/
 /test-output/
-/monitorLogs/AccessControl.log
-/monitorLogs/AccessControl.txt
+/monitorLogs/
+/regressionLogs/
+/ExtentReportV4/
+/browserLogs/

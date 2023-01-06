@@ -25,7 +25,7 @@ public class CardStandard extends BaseTest {
 		loginPage = PageGenerator.getLoginPage(driver);
 
 		log.info("Pre-condition: Step 02 - Login with Admin role");
-		dashboardPage = loginPage.loginToSystem(driver, GlobalConstants.PROJECT_ADMIN_EMAIL, GlobalConstants.PROJECT_ADMIN_PASSWORD);
+		dashboardPage = loginPage.loginToSystem(GlobalConstants.PROJECT_ADMIN_EMAIL, GlobalConstants.PROJECT_ADMIN_PASSWORD);
 	}
 
 	@Test
