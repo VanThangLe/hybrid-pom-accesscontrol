@@ -8,12 +8,13 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import commons.GlobalConstants;
-import pageObjects.accesscontrol.AddUserPageObject;
 import pageObjects.accesscontrol.DashboardPageObject;
-import pageObjects.accesscontrol.DetailUserPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
-import pageObjects.accesscontrol.UserListPageObject;
+import pageObjects.accesscontrol.user.AddUserPageObject;
+import pageObjects.accesscontrol.user.DetailUserPageObject;
+import pageObjects.accesscontrol.user.EditUserPageObject;
+import pageObjects.accesscontrol.user.UserListPageObject;
 
 public class User extends BaseTest {
 	WebDriver driver;
@@ -22,6 +23,7 @@ public class User extends BaseTest {
 	UserListPageObject userListPage;
 	AddUserPageObject addUserPage;
 	DetailUserPageObject detailUserPage;
+	EditUserPageObject editUserPage;
 	String userName, phone, gender;
 	String userNameUpdate, phoneUpdate, genderUpdate;
 
@@ -38,6 +40,10 @@ public class User extends BaseTest {
 		userName = "User 00001";
 		phone = "0000000001";
 		gender = "Nam";
+		
+		userNameUpdate = "User 00001 Update";
+		phoneUpdate = "1000000000";
+		genderUpdate = "Nữ";
 	}
 
 	@Test
@@ -53,7 +59,7 @@ public class User extends BaseTest {
 		log.info("User_01 - Step 03: Enter valid data to required fields");
 		addUserPage.enterToTextboxByIDName(driver, "name-them-nguoi-dung-text-field", userName);
 		addUserPage.enterToTextboxByIDName(driver, "phone-them-nguoi-dung-text-field", phone);
-		addUserPage.selectItemInDropdownByID(driver, "gender", "Nam");
+		addUserPage.selectItemInDropdownByID(driver, "gender", gender);
 		
 		log.info("User_01 - Step 04: Click 'Thêm Người dùng'");
 		addUserPage.clickToButtonByIDName(driver, "Thêm Người dùng");
@@ -67,13 +73,20 @@ public class User extends BaseTest {
 
 	@Test
 	public void User_02_Edit_User() {
-		log.info("User_02 - Step 01: Open 'Sửa người dùng' screen");
+		log.info("User_02 - Step 01: Click 'Sửa người dùng' icon");
 		detailUserPage.clickToDetail();
+		editUserPage = PageGenerator.getEditUserPage(driver);
 		
 		log.info("User_02 - Step 02: Enter valid data to required fields");
-		detailUserPage.enterToTextboxByIDName(driver, "name-them-nguoi-dung-text-field", userName);
-		detailUserPage.enterToTextboxByIDName(driver, "phone-them-nguoi-dung-text-field", phone);
-		detailUserPage.selectItemInDropdownByID(driver, "gender", "Nữ");
+		detailUserPage.enterToTextboxByIDName(driver, "name-them-nguoi-dung-text-field", userNameUpdate);
+		detailUserPage.enterToTextboxByIDName(driver, "phone-them-nguoi-dung-text-field", phoneUpdate);
+		detailUserPage.selectItemInDropdownByID(driver, "gender", genderUpdate);
+		
+		log.info("User_02 - Step 03: Click 'Cập nhật Người dùng'");
+		detailUserPage.clickToButtonByIDName(driver, "Cập nhật Người dùng");
+		
+		log.info("User_02 - Step 04: Verify detail User");
+		verifyTrue(detailUserPage.isSuccessMessageDisplayed(driver));
 	}
 
 	@Test

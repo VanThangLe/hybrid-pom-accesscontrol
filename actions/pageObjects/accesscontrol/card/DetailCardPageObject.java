@@ -1,14 +1,14 @@
-package pageObjects.accesscontrol;
+package pageObjects.accesscontrol.card;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageUIs.accesscontrol.DetailUserPageUI;
 
-public class DetailUserPageObject extends BasePage {
+public class DetailCardPageObject extends BasePage {
 	private WebDriver driver;
 
-	public DetailUserPageObject(WebDriver driver) {
+	public DetailCardPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 

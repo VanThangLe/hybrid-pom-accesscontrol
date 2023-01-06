@@ -1,13 +1,13 @@
-package pageObjects.accesscontrol;
+package pageObjects.accesscontrol.user;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 
-public class AddUserPageObject extends BasePage {
+public class UserListPageObject extends BasePage {
 //	private WebDriver driver;
 
-	public AddUserPageObject(WebDriver driver) {
+	public UserListPageObject(WebDriver driver) {
 		super();
 //		this.driver = driver;
 	}
