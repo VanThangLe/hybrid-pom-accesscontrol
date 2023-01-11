@@ -6,16 +6,25 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.accesscontrol.common.Login;
+
 import commons.BaseTest;
-import commons.GlobalConstants;
 import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
+import pageObjects.accesscontrol.cardreader.AddCardReaderPageObject;
+import pageObjects.accesscontrol.cardreader.CardReaderListPageObject;
+import pageObjects.accesscontrol.cardreader.DetailCardReaderPageObject;
+import pageObjects.accesscontrol.cardreader.EditCardReaderPageObject;
 
 public class CardReader extends BaseTest {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	DashboardPageObject dashboardPage;
+	AddCardReaderPageObject addCardReaderPage;
+	DetailCardReaderPageObject detailCardReaderPage;
+	EditCardReaderPageObject editCardReaderPage;
+	CardReaderListPageObject cardReaderListPage;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -24,13 +33,35 @@ public class CardReader extends BaseTest {
 		driver = getBrowserDriver(browserName, appUrl);
 		loginPage = PageGenerator.getLoginPage(driver);
 
-		log.info("Pre-condition: Step 02 - Login with Admin role");
-		dashboardPage = loginPage.loginToSystem(GlobalConstants.PROJECT_ADMIN_EMAIL, GlobalConstants.PROJECT_ADMIN_PASSWORD);
+		log.info("Pre-condition: Step 02 - Set login page cookie");
+		loginPage.setAllCookies(driver, Login.loginPageCookie);
+		loginPage.sleepInSecond(2);
+		loginPage.refreshCurrentPage(driver);
+		
+		
 	}
 
 	@Test
 	public void CardReader_01_Add_New_CardReader() {
+		log.info("User_01 - Step 01: Open 'Danh sách người dùng' menu");
+		dashboardPage.openMenuPage(driver, "Danh sách người dùng");
+		cardReaderListPage = PageGenerator.getCardReaderListPage(driver);
 		
+		log.info("User_01 - Step 02: Click 'Thêm đầu đọc thẻ'");
+		cardReaderListPage.clickToButtonByIDName(driver, "Thêm Người dùng");
+		addCardReaderPage = PageGenerator.getAddCardReaderPage(driver);
+		
+		log.info("User_01 - Step 03: Enter valid data to required fields");
+		addCardReaderPage.enterToTextboxByIDName(driver, "name", "");
+		
+		log.info("User_01 - Step 04: Click 'Thêm Người dùng'");
+		addCardReaderPage.clickToButtonByIDName(driver, "Thêm Người dùng");
+		
+		log.info("User_01 - Step 05: Verify detail user");
+		detailCardReaderPage = PageGenerator.getDetailCardReaderPage(driver);
+		verifyTrue(detailCardReaderPage.isSuccessMessageDisplayed(driver));
+		verifyEquals(detailCardReaderPage.getValueFieldByAttribute(driver, "name"), "");
+		detailCardReaderPage.sleepInSecond(1);
 	}
 
 	@Test

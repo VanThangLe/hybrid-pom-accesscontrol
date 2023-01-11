@@ -26,6 +26,7 @@ public class User extends BaseTest {
 	DetailUserPageObject detailUserPage;
 	EditUserPageObject editUserPage;
 	String userName, userNameUpdate;
+	public static String userNameUpdateCookie;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -38,6 +39,7 @@ public class User extends BaseTest {
 		loginPage.setAllCookies(driver, Login.loginPageCookie);
 		loginPage.sleepInSecond(2);
 		loginPage.refreshCurrentPage(driver);
+		dashboardPage = PageGenerator.getDashboardPage(driver);
 		
 		userName = "User 1";
 		userNameUpdate = "User 1 Update";
@@ -49,14 +51,14 @@ public class User extends BaseTest {
 		dashboardPage.openMenuPage(driver, "Danh sách người dùng");
 		userListPage = PageGenerator.getUserListPage(driver);
 		
-		log.info("User_01 - Step 02: Click 'Thêm Người dùng'");
+		log.info("User_01 - Step 02: Click 'Thêm Người dùng' button");
 		userListPage.clickToButtonByIDName(driver, "Thêm Người dùng");
 		addUserPage = PageGenerator.getAddUserPage(driver);
 		
 		log.info("User_01 - Step 03: Enter valid data to required fields");
 		addUserPage.enterToTextboxByIDName(driver, "name", userName);
 		
-		log.info("User_01 - Step 04: Click 'Thêm Người dùng'");
+		log.info("User_01 - Step 04: Click 'Thêm Người dùng' button");
 		addUserPage.clickToButtonByIDName(driver, "Thêm Người dùng");
 		
 		log.info("User_01 - Step 05: Verify detail user");
@@ -75,13 +77,14 @@ public class User extends BaseTest {
 		log.info("User_02 - Step 02: Enter valid data to required fields");
 		editUserPage.enterToTextboxByIDName(driver, "name", userNameUpdate);
 		
-		log.info("User_02 - Step 03: Click 'Cập nhật Người dùng'");
+		log.info("User_02 - Step 03: Click 'Cập nhật Người dùng' button");
 		editUserPage.clickToButtonByIDName(driver, "Cập nhật Người dùng");
 		
 		log.info("User_02 - Step 04: Verify detail user");
 		detailUserPage = PageGenerator.getDetailUserPage(driver);
 		verifyTrue(detailUserPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "name"), userNameUpdate);
+		userNameUpdateCookie = detailUserPage.getValueFieldByAttribute(driver, "name");
 	}
 
 	@Parameters({ "browser" })

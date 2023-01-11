@@ -41,6 +41,7 @@ public class UserGroup extends BaseTest {
 		loginPage.setAllCookies(driver, Login.loginPageCookie);
 		loginPage.sleepInSecond(2);
 		loginPage.refreshCurrentPage(driver);
+		dashboardPage = PageGenerator.getDashboardPage(driver);
 		
 		userGroupName = "Group 1";
 		userGroupCode = "groupcode1";
@@ -54,7 +55,7 @@ public class UserGroup extends BaseTest {
 		dashboardPage.openMenuPage(driver, "Nhóm người dùng");
 		userGroupListPage = PageGenerator.getUserGroupListPage(driver);
 		
-		log.info("UserGroup_01 - Step 02: Click 'Thêm Nhóm người dùng'");
+		log.info("UserGroup_01 - Step 02: Click 'Thêm Nhóm người dùng' button");
 		userGroupListPage.clickToButtonByIDName(driver, "Thêm Nhóm người dùng");
 		addUserGroupPage = PageGenerator.getAddUserGroupPage(driver);
 		
@@ -62,7 +63,7 @@ public class UserGroup extends BaseTest {
 		addUserGroupPage.enterToTextboxByIDName(driver, "role_name", userGroupName);
 		addUserGroupPage.enterToTextboxByIDName(driver, "role_code", userGroupCode);
 		
-		log.info("UserGroup_01 - Step 04: Click 'Thêm Nhóm người dùng'");
+		log.info("UserGroup_01 - Step 04: Click 'Thêm Nhóm người dùng' button");
 		addUserGroupPage.clickToButtonByIDName(driver, "Thêm Nhóm người dùng");
 		
 		log.info("UserGroup_01 - Step 05: Verify detail user group");
@@ -83,7 +84,7 @@ public class UserGroup extends BaseTest {
 		editUserGroupPage.enterToTextboxByIDName(driver, "role_name", userGroupNameUpdate);
 		editUserGroupPage.enterToTextboxByIDName(driver, "role_code", userGroupCodeUpdate);
 		
-		log.info("UserGroup_02 - Step 03: Click 'Cập nhật Người dùng'");
+		log.info("UserGroup_02 - Step 03: Click 'Cập nhật Người dùng' button");
 		editUserGroupPage.clickToButtonByIDName(driver, "Cập nhật Người dùng");
 		
 		log.info("UserGroup_02 - Step 04: Verify detail user group");
@@ -95,19 +96,20 @@ public class UserGroup extends BaseTest {
 
 	@Test
 	public void UserGroup_03_Assign_User() {
-		log.info("UserGroup_03 - Step 01: Click 'Gắn Người dùng'");
+		log.info("UserGroup_03 - Step 01: Click 'Gắn Người dùng' button");
 		detailUserGroupPage.clickToButtonByIDName(driver, "Gắn Người dùng");
 		assignUserPage = PageGenerator.getAssignUserPage(driver);
 		
 		log.info("UserGroup_03 - Step 02: Select user");
-		assignUserPage.selectItemInAssignDropdown(driver, "User 1 update");
+		assignUserPage.selectItemInAssignDropdown(driver, User.userNameUpdateCookie);
 		
-		log.info("UserGroup_03 - Step 03: Click 'Gắn Người dùng'");
+		log.info("UserGroup_03 - Step 03: Click 'Gắn Người dùng' button");
 		assignUserPage.clickToButtonByIDName(driver, "Gắn Người dùng");
 		detailUserGroupPage = PageGenerator.getDetailUserGroupPage(driver);
 		
-		log.info("UserGroup_03 - Step 04: Verify");
-//		verifyEquals(assignUserPage, addUserGroupPage);
+		log.info("UserGroup_03 - Step 04: Verify select 'Người dùng' success");
+		verifyEquals(detailUserGroupPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "ac-users-index-component", "1", "2"), 
+				User.userNameUpdateCookie);
 	}
 
 	@Parameters({ "browser" })

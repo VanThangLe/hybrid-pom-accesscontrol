@@ -13,9 +13,10 @@
 		<classes>
 			<!-- <class name="com.accesscontrol.superadmin.Project" />
 			<class name="com.accesscontrol.superadmin.Account" /> -->
+			<class name="com.accesscontrol.common.Login" />
 			<class name="com.accesscontrol.projectadmin.User" />
-			<!-- <class name="com.accesscontrol.projectadmin.UserGroup" />
-			<class name="com.accesscontrol.projectadmin.UserType" />
+			<class name="com.accesscontrol.projectadmin.UserGroup" />
+			<!-- <class name="com.accesscontrol.projectadmin.UserType" />
 			<class name="com.accesscontrol.projectadmin.CardStandard" />
 			<class name="com.accesscontrol.projectadmin.Card" />
 			<class name="com.accesscontrol.projectadmin.CardReader" />

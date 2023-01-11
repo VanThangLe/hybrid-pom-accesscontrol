@@ -404,3 +404,55 @@
 [INFO ] [2023-01-06 16:27:20,957] Post-condition: Close browser 'chrome'
 [INFO ] [2023-01-06 16:27:20,957] OS name = windows 10
 [INFO ] [2023-01-06 16:27:21,696] OS name = windows 10
+[INFO ] [2023-01-06 22:49:25,538] ---------- START delete file in folder ----------
+[INFO ] [2023-01-06 22:49:25,539] ---------- END delete file in folder ----------
+[INFO ] [2023-01-06 22:49:25,548] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-06 22:49:54,023] Pre-condition: Step 02 - Set login page cookie
+[INFO ] [2023-01-06 22:49:54,037] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-06 22:49:54,037] OS name = windows 10
+[INFO ] [2023-01-06 22:49:54,774] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-06 22:50:10,543] Pre-condition: Step 02 - Set login page cookie
+[INFO ] [2023-01-06 22:50:10,553] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-06 22:50:10,553] OS name = windows 10
+[INFO ] [2023-01-06 22:50:11,316] OS name = windows 10
+[INFO ] [2023-01-06 22:51:08,694] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-06 22:51:08,694] OS name = windows 10
+[INFO ] [2023-01-06 22:51:08,703] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-06 22:51:08,703] OS name = windows 10
+[INFO ] [2023-01-06 22:52:47,358] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-06 22:53:06,494] Pre-condition: Step 02 - Set login page cookie
+[INFO ] [2023-01-06 22:53:09,149] User_01 - Step 01: Open 'Danh sách người dùng' menu
+[INFO ] [2023-01-06 22:53:09,154] User_02 - Step 01: Click 'Sửa' icon
+[INFO ] [2023-01-06 22:53:09,155] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-06 22:53:09,155] OS name = windows 10
+[INFO ] [2023-01-06 22:53:10,572] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-06 22:53:18,247] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-06 22:53:18,247] OS name = windows 10
+[INFO ] [2023-01-09 17:32:11,116] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-09 17:32:22,021] Pre-condition: Step 02 - Set login page cookie
+[INFO ] [2023-01-09 17:32:24,681] User_01 - Step 01: Open 'Danh sách người dùng' menu
+[INFO ] [2023-01-09 17:32:24,687] User_02 - Step 01: Click 'Sửa' icon
+[INFO ] [2023-01-09 17:32:24,690] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-09 17:32:24,690] OS name = windows 10
+[INFO ] [2023-01-09 17:32:25,435] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-09 17:32:36,025] Pre-condition: Step 02 - Set login page cookie
+[INFO ] [2023-01-09 17:32:38,628] UserGroup_01 - Step 01: Open 'Nhóm người dùng' menu
+[INFO ] [2023-01-09 17:32:38,631] UserGroup_02 - Step 01: Click 'Sửa' icon
+[INFO ] [2023-01-09 17:32:38,644] UserGroup_03 - Step 01: Click 'Gắn Người dùng'
+[INFO ] [2023-01-09 17:32:38,646] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-09 17:32:38,646] OS name = windows 10
+[INFO ] [2023-01-09 17:35:44,472] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-09 17:35:53,091] Pre-condition: Step 02 - Set login page cookie
+[INFO ] [2023-01-09 17:35:55,711] User_01 - Step 01: Open 'Danh sách người dùng' menu
+[INFO ] [2023-01-09 17:36:36,314] User_02 - Step 01: Click 'Sửa' icon
+[INFO ] [2023-01-09 17:36:36,315] Post-condition: Close browser 'chrome'
+[INFO ] [2023-01-09 17:36:36,315] OS name = windows 10
+[INFO ] [2023-01-09 17:36:37,041] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-09 17:36:44,871] Pre-condition: Step 02 - Set login page cookie
+[INFO ] [2023-01-09 17:36:47,485] UserGroup_01 - Step 01: Open 'Nhóm người dùng' menu
+[INFO ] [2023-01-09 18:02:39,458] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-09 18:02:47,018] Pre-condition: Step 02 - Set login page cookie
+[INFO ] [2023-01-09 18:05:29,255] User_01 - Step 01: Open 'Danh sách người dùng' menu
+[INFO ] [2023-01-09 18:06:00,720] Pre-condition: Step 01 - Open browser 'chrome'and navigate to 'https://dev.acs.elifetech.vn:4433/admin/login'
+[INFO ] [2023-01-09 18:06:09,655] Pre-condition: Step 02 - Set login page cookie
+[INFO ] [2023-01-09 18:06:12,298] User_01 - Step 01: Open 'Danh sách người dùng' menu

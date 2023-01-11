@@ -11,6 +11,7 @@ import commons.BaseTest;
 import commons.GlobalConstants;
 import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
+import pageObjects.accesscontrol.PageGenerator;
 
 public class Login extends BaseTest {
 	WebDriver driver;
@@ -23,6 +24,7 @@ public class Login extends BaseTest {
 	public void beforeTest(String browserName, String appUrl) {
 		log.info("Pre-condition - Open browser '" + browserName + "'and navigate to '" + appUrl + "'");
 		driver = getBrowserDriver(browserName, appUrl);
+		loginPage = PageGenerator.getLoginPage(driver);
 		
 		dashboardPage = loginPage.loginToSystem(GlobalConstants.PROJECT_ADMIN_EMAIL, GlobalConstants.PROJECT_ADMIN_PASSWORD);
 		

@@ -573,9 +573,14 @@ public class BasePage {
 		return isElementSelected(driver, BasePageUI.RADIO_BY_LABEL, radioLabelName);
 	}
 	
-	public String getValueAtColumnIndexAndRowIndex(WebDriver driver, String rowIndex, String columnIndex) {
-		waitForElementVisible(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, rowIndex, columnIndex);
-		return getElementText(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, rowIndex, columnIndex);
+	public String getValueAtColumnIndexAndRowIndexTableList(WebDriver driver, String rowIndex, String columnIndex) {
+		waitForElementVisible(driver, BasePageUI.TABLE_LIST_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, rowIndex, columnIndex);
+		return getElementText(driver, BasePageUI.TABLE_LIST_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, rowIndex, columnIndex);
+	}
+	
+	public String getValueAtColumnIndexAndRowIndexTableAssign(WebDriver driver, String tableValue, String rowIndex, String columnIndex) {
+		waitForElementVisible(driver, BasePageUI.TABLE_ASSIGN_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, tableValue, rowIndex, columnIndex);
+		return getElementText(driver, BasePageUI.TABLE_ASSIGN_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, tableValue, rowIndex, columnIndex);
 	}
 	
 	public void uploadImage(WebDriver driver, String filePath) {
@@ -588,8 +593,8 @@ public class BasePage {
 	}
 	
 	public boolean isFieldEnabledByID(WebDriver driver, String fieldID) {
-		waitForElementVisible(driver, BasePageUI.ANY_FIELD_BY_ID, fieldID);
-		return isElementEnabled(driver, BasePageUI.ANY_FIELD_BY_ID, fieldID);
+		waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_ID_NAME, fieldID);
+		return isElementEnabled(driver, BasePageUI.TEXTBOX_BY_ID_NAME, fieldID);
 	}
 	
 	public void clickToEditIcon(WebDriver driver) {
