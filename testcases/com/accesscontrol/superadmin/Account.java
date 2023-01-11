@@ -7,7 +7,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.accesscontrol.common.LoginSuperAdmin;
-import com.accesscontrol.projectadmin.User;
 
 import commons.BaseTest;
 import pageObjects.accesscontrol.DashboardPageObject;
@@ -104,14 +103,14 @@ public class Account extends BaseTest {
 		assignProjectPage = PageGenerator.getAssignProjectPage(driver);
 		
 		log.info("Account_03 - Step 02: Select user");
-		assignProjectPage.selectItemInAssignDropdown(driver, User.userNameUpdateCookie);
+		assignProjectPage.selectItemInCustomDropdownByAttribute(driver, "projects-search-input",  Project.projectNameUpdateCookie);
 		
 		log.info("Account_03 - Step 03: Click 'Gắn Dự án' button");
 		assignProjectPage.clickToButtonByIDName(driver, "Gắn Dự án");
 		detailAccountPage = PageGenerator.getDetailAccountPage(driver);
 		
 		log.info("Account_03 - Step 04: Verify select 'Dự án' success");
-		verifyEquals(detailAccountPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "projects-index-component", "1", "2"), 
+		verifyEquals(detailAccountPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "projects", "1", "2"), 
 				Project.projectNameUpdateCookie);
 	}
 

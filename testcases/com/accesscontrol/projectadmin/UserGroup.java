@@ -29,6 +29,7 @@ public class UserGroup extends BaseTest {
 	AssignUserPageObject assignUserPage;
 	String userGroupName, userGroupCode;
 	String userGroupNameUpdate, userGroupCodeUpdate;
+	public static String userGroupNameUpdateCookie;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -92,6 +93,7 @@ public class UserGroup extends BaseTest {
 		verifyTrue(detailUserGroupPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_name"), userGroupNameUpdate);
 		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_code"), userGroupCodeUpdate);
+		userGroupNameUpdateCookie = detailUserGroupPage.getValueFieldByAttribute(driver, "role_name");
 	}
 
 	@Test
@@ -101,14 +103,14 @@ public class UserGroup extends BaseTest {
 		assignUserPage = PageGenerator.getAssignUserPage(driver);
 		
 		log.info("UserGroup_03 - Step 02: Select user");
-		assignUserPage.selectItemInAssignDropdown(driver, User.userNameUpdateCookie);
+		assignUserPage.selectItemInCustomDropdownByAttribute(driver, "ac-users-search-input", User.userNameUpdateCookie);
 		
 		log.info("UserGroup_03 - Step 03: Click 'Gắn Người dùng' button");
 		assignUserPage.clickToButtonByIDName(driver, "Gắn Người dùng");
 		detailUserGroupPage = PageGenerator.getDetailUserGroupPage(driver);
 		
 		log.info("UserGroup_03 - Step 04: Verify select 'Người dùng' success");
-		verifyEquals(detailUserGroupPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "ac-users-index-component", "1", "2"), 
+		verifyEquals(detailUserGroupPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "users", "1", "2"), 
 				User.userNameUpdateCookie);
 	}
 

@@ -25,6 +25,9 @@ public class CardReader extends BaseTest {
 	DetailCardReaderPageObject detailCardReaderPage;
 	EditCardReaderPageObject editCardReaderPage;
 	CardReaderListPageObject cardReaderListPage;
+	String cardReaderName, position, sessionTimeoutSec, controllerName, orderNumber;
+	String cardReaderNameUpdate, positionUpdate, sessionTimeoutSecUpdate, controllerNameUpdate, orderNumberUpdate;
+	public static String cardReaderNameUpdateCookie;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -38,7 +41,15 @@ public class CardReader extends BaseTest {
 		loginPage.sleepInSecond(2);
 		loginPage.refreshCurrentPage(driver);
 		
-		
+		cardReaderName = "Card Reader 1";
+		position = "Trước lối vào";
+		sessionTimeoutSec = "10";
+		controllerName = Controller.controllerNameUpdateCookie;
+		orderNumber = "0";
+		cardReaderNameUpdate = "Card Reader 1 Update";
+		positionUpdate = "Sau lối vào";
+		sessionTimeoutSecUpdate = "5";
+		orderNumberUpdate = "1";
 	}
 
 	@Test
@@ -71,6 +82,11 @@ public class CardReader extends BaseTest {
 
 	@Test
 	public void CardReader_03_Add_New_DO_Event() {
+		
+	}
+	
+	@Test
+	public void CardReader_04_Edit_DO_Event() {
 		
 	}
 

@@ -27,6 +27,7 @@ public class CardStandard extends BaseTest {
 	DetailCardStandardPageObject detailCardStandardPage;
 	String cardStandardName, totalBits, bitMask;
 	String cardStandardNameUpdate, totalBitsUpdate, bitMaskUpdate;
+	public static String cardStandardNameUpdateCookie;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -96,6 +97,7 @@ public class CardStandard extends BaseTest {
 		verifyEquals(detailCardStandardPage.getValueFieldByAttribute(driver, "name"), cardStandardNameUpdate);
 		verifyEquals(detailCardStandardPage.getValueFieldByAttribute(driver, "total_bits"), totalBitsUpdate);
 		verifyEquals(detailCardStandardPage.getValueFieldByAttribute(driver, "bitmask"), bitMaskUpdate);
+		cardStandardNameUpdateCookie = detailCardStandardPage.getValueFieldByAttribute(driver, "name");
 	}
 
 	@Parameters({ "browser" })

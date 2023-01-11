@@ -543,9 +543,9 @@ public class BasePage {
 		selectItemInDefaultDropdown(driver, BasePageUI.DROPDOWN_BY_ID, valueItem, dropdownID);
 	}
 	
-	public void selectItemInAssignDropdown(WebDriver driver, String valueItem) {
-		waitForElementClickAble(driver, BasePageUI.ASSIGN_DROPDOWN);
-		selectItemInDefaultDropdown(driver, BasePageUI.ASSIGN_DROPDOWN, valueItem);
+	public void selectItemInCustomDropdownByAttribute(WebDriver driver, String attribute, String valueItem) {
+		waitForElementClickAble(driver, BasePageUI.ASSIGN_DROPDOWN, attribute);
+		selectItemInDefaultDropdown(driver, BasePageUI.ASSIGN_DROPDOWN, valueItem, attribute);
 	}
 	
 	public String getSelectedValueInDropdownByID(WebDriver driver, String dropdownID) {

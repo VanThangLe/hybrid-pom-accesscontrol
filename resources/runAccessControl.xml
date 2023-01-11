@@ -20,11 +20,11 @@
 			<class name="com.accesscontrol.projectadmin.UserType" />
 			<class name="com.accesscontrol.projectadmin.CardStandard" />
 			<class name="com.accesscontrol.projectadmin.Card" />
-			<!-- <class name="com.accesscontrol.projectadmin.CardReader" />
-			<class name="com.accesscontrol.projectadmin.FaceReader" />
 			<class name="com.accesscontrol.projectadmin.Controller" />
+			<class name="com.accesscontrol.projectadmin.CardReader" />
+			<class name="com.accesscontrol.projectadmin.FaceReader" />
 			<class name="com.accesscontrol.projectadmin.Entry" />
-			<class name="com.accesscontrol.projectadmin.Permission" /> -->
+			<class name="com.accesscontrol.projectadmin.Permission" />
 		</classes>
 	</test>
 </suite>

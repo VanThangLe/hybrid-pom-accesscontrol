@@ -12,18 +12,24 @@ import pageObjects.accesscontrol.card.CardListPageObject;
 import pageObjects.accesscontrol.card.DetailCardPageObject;
 import pageObjects.accesscontrol.card.EditCardPageObject;
 import pageObjects.accesscontrol.cardreader.AddCardReaderPageObject;
+import pageObjects.accesscontrol.cardreader.AddDOEventPageObject;
 import pageObjects.accesscontrol.cardreader.CardReaderListPageObject;
 import pageObjects.accesscontrol.cardreader.DetailCardReaderPageObject;
 import pageObjects.accesscontrol.cardreader.EditCardReaderPageObject;
+import pageObjects.accesscontrol.cardreader.EditDOEventPageObject;
 import pageObjects.accesscontrol.cardstandard.AddCardStandardPageObject;
 import pageObjects.accesscontrol.cardstandard.CardStandardListPageObject;
 import pageObjects.accesscontrol.cardstandard.DetailCardStandardPageObject;
 import pageObjects.accesscontrol.cardstandard.EditCardStandardPageObject;
 import pageObjects.accesscontrol.controller.AddControllerPageObject;
+import pageObjects.accesscontrol.controller.AddDIEventPageObject;
 import pageObjects.accesscontrol.controller.ControllerListPageObject;
 import pageObjects.accesscontrol.controller.DetailControllerPageObject;
 import pageObjects.accesscontrol.controller.EditControllerPageObject;
+import pageObjects.accesscontrol.controller.EditDIEventPageObject;
 import pageObjects.accesscontrol.entry.AddEntryPageObject;
+import pageObjects.accesscontrol.entry.AssignReaderPageObject;
+import pageObjects.accesscontrol.entry.AssignUserGroupPageObject;
 import pageObjects.accesscontrol.entry.DetailEntryPageObject;
 import pageObjects.accesscontrol.entry.EditEntryPageObject;
 import pageObjects.accesscontrol.entry.EntryListPageObject;
@@ -33,7 +39,6 @@ import pageObjects.accesscontrol.facereader.EditFaceReaderPageObject;
 import pageObjects.accesscontrol.facereader.FaceReaderListPageObject;
 import pageObjects.accesscontrol.permission.AddPermissionPageObject;
 import pageObjects.accesscontrol.permission.DetailPermissionPageObject;
-import pageObjects.accesscontrol.permission.EditPermissionPageObject;
 import pageObjects.accesscontrol.permission.PermissionListPageObject;
 import pageObjects.accesscontrol.project.AddProjectPageObject;
 import pageObjects.accesscontrol.project.DetailProjectPageObject;
@@ -185,10 +190,6 @@ public class PageGenerator {
 	public static DetailPermissionPageObject getDetailPermissionPage(WebDriver driver) {
 		return new DetailPermissionPageObject(driver);
 	}
-
-	public static EditPermissionPageObject getEditPermissionPage(WebDriver driver) {
-		return new EditPermissionPageObject(driver);
-	}
 	
 	public static AddProjectPageObject getAddProjectPage(WebDriver driver) {
 		return new AddProjectPageObject(driver);
@@ -260,5 +261,29 @@ public class PageGenerator {
 
 	public static AssignProjectPageObject getAssignProjectPage(WebDriver driver) {
 		return new AssignProjectPageObject(driver);
+	}
+	
+	public static AddDIEventPageObject getAddDIEventPage(WebDriver driver) {
+		return new AddDIEventPageObject(driver);
+	}
+	
+	public static EditDIEventPageObject getEditDIEventPage(WebDriver driver) {
+		return new EditDIEventPageObject(driver);
+	}
+	
+	public static AddDOEventPageObject getAddDOEventPage(WebDriver driver) {
+		return new AddDOEventPageObject(driver);
+	}
+	
+	public static EditDOEventPageObject getEditDOEventPage(WebDriver driver) {
+		return new EditDOEventPageObject(driver);
+	}
+
+	public static AssignReaderPageObject getAssignReaderPage(WebDriver driver) {
+		return new AssignReaderPageObject(driver);
+	}
+	
+	public static AssignUserGroupPageObject getAssignUserGroupPage(WebDriver driver) {
+		return new AssignUserGroupPageObject(driver);
 	}
 }
