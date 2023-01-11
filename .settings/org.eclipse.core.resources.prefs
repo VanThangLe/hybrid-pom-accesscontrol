@@ -6,4 +6,5 @@ encoding//actions/pageObjects/accesscontrol/PageGenerator.java=UTF-8
 encoding//interfaces/pageUIs/accesscontrol/BasePageUI.java=UTF-8
 encoding//interfaces/pageUIs/accesscontrol/LoginPageUI.java=UTF-8
 encoding//resources/runAccessControl.xml=UTF-8
-encoding//testcases/com/accesscontrol/common/Login.java=UTF-8
+encoding//testcases/com/accesscontrol/common/LoginProjectAdmin.java=UTF-8
+encoding//testcases/com/accesscontrol/common/LoginSuperAdmin.java=UTF-8

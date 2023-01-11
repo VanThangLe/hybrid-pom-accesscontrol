@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.accesscontrol.common.Login;
+import com.accesscontrol.common.LoginProjectAdmin;
 
 import commons.BaseTest;
 import pageObjects.accesscontrol.DashboardPageObject;
@@ -36,7 +36,7 @@ public class User extends BaseTest {
 		loginPage = PageGenerator.getLoginPage(driver);
 
 		log.info("Pre-condition: Step 02 - Set login page cookie");
-		loginPage.setAllCookies(driver, Login.loginPageCookie);
+		loginPage.setAllCookies(driver, LoginProjectAdmin.loginPageCookie);
 		loginPage.sleepInSecond(2);
 		loginPage.refreshCurrentPage(driver);
 		dashboardPage = PageGenerator.getDashboardPage(driver);

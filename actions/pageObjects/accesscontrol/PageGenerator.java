@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import pageObjects.accesscontrol.account.AccountListPageObject;
 import pageObjects.accesscontrol.account.AddAccountPageObject;
+import pageObjects.accesscontrol.account.AssignProjectPageObject;
 import pageObjects.accesscontrol.account.DetailAccountPageObject;
 import pageObjects.accesscontrol.account.EditAccountPageObject;
 import pageObjects.accesscontrol.card.AddCardPageObject;
@@ -255,5 +256,9 @@ public class PageGenerator {
 
 	public static AssignUserPageObject getAssignUserPage(WebDriver driver) {
 		return new AssignUserPageObject(driver);
+	}
+
+	public static AssignProjectPageObject getAssignProjectPage(WebDriver driver) {
+		return new AssignProjectPageObject(driver);
 	}
 }
