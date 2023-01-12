@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="libExtentV2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libExtentV2/mongodb-driver-3.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV2/extentreports-2.41.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV2/testng-6.9.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV2/sqlite-jdbc-3.8.11.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV2/bson-3.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV2/jsoup-1.8.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV2/mongodb-driver-core-3.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV2/freemarker-2.3.23.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

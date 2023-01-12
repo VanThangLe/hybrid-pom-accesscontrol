@@ -3,7 +3,7 @@
 
   <test name="Run on Chrome">
     <classes>
-      <class name="com.alada.alada.User_03_Register_Login_Page_Object_Pattern"/>
+      <class name="com.alada.login.User_03_Register_Login_Page_Object_Pattern"/>
     </classes>
   </test>
   

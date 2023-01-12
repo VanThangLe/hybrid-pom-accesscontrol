@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="libExtentV3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libExtentV3/bson-3.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV3/httpmime-4.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV3/mongodb-driver-core-3.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV3/extentreports-3.1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV3/freemarker-2.3.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV3/mongodb-driver-3.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV3/jcommander-1.48.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libExtentV3/bsh-2.0b4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -57,7 +57,7 @@ public class Common_01_Login extends BaseTest {
 		registerPage.clickToRegisterButton();
 		
 		log.info("Common_01 - Step 10: Verify success message is displayed");
-		verifyFalse(registerPage.isRegisterSuccessMessageDisplayed());
+		verifyTrue(registerPage.isRegisterSuccessMessageDisplayed());
 		
 		log.info("Common_01 - Step 11: Click to Logout button");
 		homePage = registerPage.clickToLogoutLink();
