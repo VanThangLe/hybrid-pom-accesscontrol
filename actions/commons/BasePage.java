@@ -548,6 +548,11 @@ public class BasePage {
 		selectItemInDefaultDropdown(driver, BasePageUI.ASSIGN_DROPDOWN, valueItem, attribute);
 	}
 	
+	public void selectItemInMultiDropdown(WebDriver driver, String valueItem) {
+		waitForElementClickAble(driver, BasePageUI.MULTI_DROPDOWN);
+		selectItemInDefaultDropdown(driver, BasePageUI.MULTI_DROPDOWN, valueItem);
+	}
+	
 	public String getSelectedValueInDropdownByID(WebDriver driver, String dropdownID) {
 		waitForElementVisible(driver, BasePageUI.DROPDOWN_BY_ID, dropdownID);
 		return getFirstSelectedItemInDefaultDropdown(driver, BasePageUI.DROPDOWN_BY_ID, dropdownID);

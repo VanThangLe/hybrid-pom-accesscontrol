@@ -25,7 +25,7 @@ public class Card extends BaseTest {
 	EditCardPageObject editCardPage;
 	DetailCardPageObject detailCardPage;
 	AddCardPageObject addCardPage;
-	String cardStandard, cardCode, activateDate, expireDate;
+	String cardCode, activateDate, expireDate;
 	String activateDateUpdate, expireDateUpdate;
 
 	@Parameters({ "browserName", "appUrl" })
@@ -41,7 +41,7 @@ public class Card extends BaseTest {
 		loginPage.refreshCurrentPage(driver);
 		dashboardPage = PageGenerator.getDashboardPage(driver);
 		
-		cardStandard = CardStandard.cardStandardNameUpdateCookie;
+		cardCode = "12345678";
 		activateDate = "01/01/2023 00:00:00";
 		expireDate = "12/31/2023 00:00:00";
 		activateDateUpdate = "02/01/2023 00:00:00";
@@ -59,7 +59,7 @@ public class Card extends BaseTest {
 		addCardPage = PageGenerator.getAddCardPage(driver);
 		
 		log.info("Card_01 - Step 03: Enter valid data to required fields");
-		addCardPage.selectItemInCustomDropdownByAttribute(driver, "ac-card-standards-search-input", cardStandard);
+		addCardPage.selectItemInCustomDropdownByAttribute(driver, "ac-card-standards-search-input", CardStandard.cardStandardNameUpdateCookie);
 		addCardPage.enterToTextboxByIDName(driver, "code", cardCode);
 		addCardPage.enterToTextboxByIDName(driver, "valid_from", activateDate);
 		addCardPage.enterToTextboxByIDName(driver, "valid_to", expireDate);
@@ -70,7 +70,7 @@ public class Card extends BaseTest {
 		log.info("Card_01 - Step 05: Verify detail user group");
 		detailCardPage = PageGenerator.getDetailCardPage(driver);
 		verifyTrue(detailCardPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "cardStandard"), cardStandard);
+		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "cardStandard"), CardStandard.cardStandardNameUpdateCookie);
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "code"), cardCode);
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "valid_from"), activateDate);
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "valid_to"), expireDate);
@@ -93,7 +93,7 @@ public class Card extends BaseTest {
 		log.info("Card_02 - Step 04: Verify detail user group");
 		detailCardPage = PageGenerator.getDetailCardPage(driver);
 		verifyTrue(detailCardPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "cardStandard"), cardStandard);
+		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "cardStandard"), CardStandard.cardStandardNameUpdateCookie);
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "code"), cardCode);
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "valid_from"), activateDateUpdate);
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "valid_to"), expireDateUpdate);
