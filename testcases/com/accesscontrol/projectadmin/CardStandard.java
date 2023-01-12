@@ -65,8 +65,8 @@ public class CardStandard extends BaseTest {
 		addCardStandardPage.enterToTextboxByIDName(driver, "total_bits", totalBits);
 		addCardStandardPage.enterToTextboxByIDName(driver, "bitmask", bitMask);
 		
-		log.info("CardStandard_01 - Step 04: Click 'Thêm Người dùng' button");
-		addCardStandardPage.clickToButtonByIDName(driver, "Thêm Người dùng");
+		log.info("CardStandard_01 - Step 04: Click 'Thêm Chuẩn thẻ' button");
+		addCardStandardPage.clickToButtonByIDName(driver, "Thêm Chuẩn thẻ");
 		
 		log.info("CardStandard_01 - Step 05: Verify detail card standard");
 		detailCardStandardPage = PageGenerator.getDetailCardStandardPage(driver);

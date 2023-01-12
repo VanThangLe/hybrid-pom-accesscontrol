@@ -68,7 +68,7 @@ public class Account extends BaseTest {
 		log.info("Account_01 - Step 04: Click 'Thêm Tài khoản' button");
 		addAccountPage.clickToButtonByIDName(driver, "Thêm Tài khoản");
 		
-		log.info("Account_01 - Step 05: Verify detail user");
+		log.info("Account_01 - Step 05: Verify detail account");
 		detailAccountPage = PageGenerator.getDetailAccountPage(driver);
 		verifyTrue(detailAccountPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailAccountPage.getValueFieldByAttribute(driver, "name"), accountName);
@@ -89,7 +89,7 @@ public class Account extends BaseTest {
 		log.info("Account_02 - Step 03: Click 'Cập nhật Tài khoản' button");
 		editAccountPage.clickToButtonByIDName(driver, "Cập nhật Tài khoản");
 		
-		log.info("Account_02 - Step 04: Verify detail user group");
+		log.info("Account_02 - Step 04: Verify detail account");
 		detailAccountPage = PageGenerator.getDetailAccountPage(driver);
 		verifyTrue(detailAccountPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailAccountPage.getValueFieldByAttribute(driver, "name"), accountNameUpdate);
@@ -102,7 +102,7 @@ public class Account extends BaseTest {
 		detailAccountPage.clickToButtonByIDName(driver, "Gắn Dự án");
 		assignProjectPage = PageGenerator.getAssignProjectPage(driver);
 		
-		log.info("Account_03 - Step 02: Select user");
+		log.info("Account_03 - Step 02: Select project");
 		assignProjectPage.selectItemInCustomDropdownByAttribute(driver, "projects-search-input",  Project.projectNameUpdateCookie);
 		
 		log.info("Account_03 - Step 03: Click 'Gắn Dự án' button");

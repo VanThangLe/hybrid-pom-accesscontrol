@@ -81,7 +81,7 @@ public class UserType extends BaseTest {
 		log.info("UserType_02 - Step 03: Click 'Cập nhật Loại người dùng' button");
 		editUserTypePage.clickToButtonByIDName(driver, "Cập nhật Loại người dùng");
 		
-		log.info("UserType_02 - Step 04: Verify detail user group");
+		log.info("UserType_02 - Step 04: Verify detail user type");
 		detailUserTypePage = PageGenerator.getDetailUserTypePage(driver);
 		verifyTrue(detailUserTypePage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserTypePage.getValueFieldByAttribute(driver, "name"), userTypeNameUpdate);

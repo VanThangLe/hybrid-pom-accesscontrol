@@ -65,7 +65,7 @@ public class Project extends BaseTest {
 		log.info("Project_01 - Step 04: Click 'Thêm Dự án' button");
 		addProjectPage.clickToButtonByIDName(driver, "Thêm Dự án");
 		
-		log.info("Project_01 - Step 05: Verify detail user");
+		log.info("Project_01 - Step 05: Verify detail project");
 		detailProjectPage = PageGenerator.getDetailProjectPage(driver);
 		verifyTrue(detailProjectPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailProjectPage.getValueFieldByAttribute(driver, "name"), projectName);
@@ -86,7 +86,7 @@ public class Project extends BaseTest {
 		log.info("Project_02 - Step 03: Click 'Cập nhật Dự án' button");
 		editProjectPage.clickToButtonByIDName(driver, "Cập nhật Dự án");
 		
-		log.info("Project_02 - Step 04: Verify detail user");
+		log.info("Project_02 - Step 04: Verify detail project");
 		detailProjectPage = PageGenerator.getDetailProjectPage(driver);
 		verifyTrue(detailProjectPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailProjectPage.getValueFieldByAttribute(driver, "name"), projectNameUpdate);

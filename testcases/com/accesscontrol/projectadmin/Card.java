@@ -67,7 +67,7 @@ public class Card extends BaseTest {
 		log.info("Card_01 - Step 04: Click 'Thêm Thẻ' button");
 		addCardPage.clickToButtonByIDName(driver, "Thêm Thẻ");
 		
-		log.info("Card_01 - Step 05: Verify detail user group");
+		log.info("Card_01 - Step 05: Verify detail card");
 		detailCardPage = PageGenerator.getDetailCardPage(driver);
 		verifyTrue(detailCardPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "cardStandard"), CardStandard.cardStandardNameUpdateCookie);
@@ -90,7 +90,7 @@ public class Card extends BaseTest {
 		log.info("Card_02 - Step 03: Click 'Cập nhật Thẻ' button");
 		editCardPage.clickToButtonByIDName(driver, "Cập nhật Thẻ");
 		
-		log.info("Card_02 - Step 04: Verify detail user group");
+		log.info("Card_02 - Step 04: Verify detail card");
 		detailCardPage = PageGenerator.getDetailCardPage(driver);
 		verifyTrue(detailCardPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "cardStandard"), CardStandard.cardStandardNameUpdateCookie);

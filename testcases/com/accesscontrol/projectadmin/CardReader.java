@@ -54,19 +54,19 @@ public class CardReader extends BaseTest {
 
 	@Test
 	public void CardReader_01_Add_New_CardReader() {
-		log.info("User_01 - Step 01: Open 'Danh sách người dùng' menu");
-		dashboardPage.openMenuPage(driver, "Danh sách người dùng");
+		log.info("User_01 - Step 01: Open 'Thiết bị đọc thẻ' menu");
+		dashboardPage.openMenuPage(driver, "Thiết bị đọc thẻ");
 		cardReaderListPage = PageGenerator.getCardReaderListPage(driver);
 		
-		log.info("User_01 - Step 02: Click 'Thêm đầu đọc thẻ'");
-		cardReaderListPage.clickToButtonByIDName(driver, "Thêm Người dùng");
+		log.info("User_01 - Step 02: Click 'Thêm Thiết bị đọc thẻ'");
+		cardReaderListPage.clickToButtonByIDName(driver, "Thêm Thiết bị đọc thẻ");
 		addCardReaderPage = PageGenerator.getAddCardReaderPage(driver);
 		
 		log.info("User_01 - Step 03: Enter valid data to required fields");
 		addCardReaderPage.enterToTextboxByIDName(driver, "name", "");
 		
-		log.info("User_01 - Step 04: Click 'Thêm Người dùng'");
-		addCardReaderPage.clickToButtonByIDName(driver, "Thêm Người dùng");
+		log.info("User_01 - Step 04: Click 'Thêm Thiết bị đọc thẻ'");
+		addCardReaderPage.clickToButtonByIDName(driver, "Thêm Thiết bị đọc thẻ");
 		
 		log.info("User_01 - Step 05: Verify detail user");
 		detailCardReaderPage = PageGenerator.getDetailCardReaderPage(driver);

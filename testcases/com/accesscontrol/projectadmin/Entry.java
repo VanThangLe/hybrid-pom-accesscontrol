@@ -78,7 +78,7 @@ public class Entry extends BaseTest {
 		log.info("Entry_01 - Step 04: Click 'Thêm Cửa và ra' button");
 		addEntryPage.clickToButtonByIDName(driver, "Thêm Cửa và ra");
 		
-		log.info("Entry_01 - Step 05: Verify detail user group");
+		log.info("Entry_01 - Step 05: Verify detail entry");
 		detailEntryPage = PageGenerator.getDetailEntryPage(driver);
 		verifyTrue(detailEntryPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "name"), entryName);
@@ -105,7 +105,7 @@ public class Entry extends BaseTest {
 		log.info("Entry_02 - Step 03: Click 'Cập nhật Cửa và ra' button");
 		editEntryPage.clickToButtonByIDName(driver, "Cập nhật Cửa và ra");
 		
-		log.info("Entry_02 - Step 04: Verify detail user group");
+		log.info("Entry_02 - Step 04: Verify detail entry");
 		detailEntryPage = PageGenerator.getDetailEntryPage(driver);
 		verifyTrue(detailEntryPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "name"), entryNameUpdate);
@@ -122,7 +122,7 @@ public class Entry extends BaseTest {
 		detailEntryPage.clickToButtonByIDName(driver, "Gắn Thiết bị đọc thẻ");
 		assignReaderPage = PageGenerator.getAssignReaderPage(driver);
 		
-		log.info("Entry_03 - Step 02: Select user");
+		log.info("Entry_03 - Step 02: Select card reader");
 		assignReaderPage.selectItemInCustomDropdownByAttribute(driver, "ac-readers-search-input", CardReader.cardReaderNameUpdateCookie);
 		
 		log.info("Entry_03 - Step 03: Click 'Gắn Thiết bị đọc thẻ' button");
@@ -140,7 +140,7 @@ public class Entry extends BaseTest {
 		detailEntryPage.clickToButtonByIDName(driver, "Gắn Nhóm người dùng");
 		assignUserGroupPage = PageGenerator.getAssignUserGroupPage(driver);
 		
-		log.info("Entry_04 - Step 02: Select user");
+		log.info("Entry_04 - Step 02: Select user group");
 		assignUserGroupPage.selectItemInCustomDropdownByAttribute(driver, "ac-roles-search-input", UserGroup.userGroupNameUpdateCookie);
 		
 		log.info("Entry_04 - Step 03: Click 'Gắn Nhóm người dùng' button");
