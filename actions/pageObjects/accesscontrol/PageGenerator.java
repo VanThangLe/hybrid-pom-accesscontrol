@@ -39,6 +39,7 @@ import pageObjects.accesscontrol.facereader.EditFaceReaderPageObject;
 import pageObjects.accesscontrol.facereader.FaceReaderListPageObject;
 import pageObjects.accesscontrol.permission.AddPermissionPageObject;
 import pageObjects.accesscontrol.permission.DetailPermissionPageObject;
+import pageObjects.accesscontrol.permission.EditPermissionPageObject;
 import pageObjects.accesscontrol.permission.PermissionListPageObject;
 import pageObjects.accesscontrol.project.AddProjectPageObject;
 import pageObjects.accesscontrol.project.DetailProjectPageObject;
@@ -181,6 +182,10 @@ public class PageGenerator {
 	
 	public static AddPermissionPageObject getAddPermissionPage(WebDriver driver) {
 		return new AddPermissionPageObject(driver);
+	}
+	
+	public static EditPermissionPageObject getEditPermissionPage(WebDriver driver) {
+		return new EditPermissionPageObject(driver);
 	}
 	
 	public static PermissionListPageObject getPermissionListPage(WebDriver driver) {
