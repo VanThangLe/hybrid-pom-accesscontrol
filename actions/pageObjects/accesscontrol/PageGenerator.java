@@ -22,11 +22,11 @@ import pageObjects.accesscontrol.cardstandard.CardStandardListPageObject;
 import pageObjects.accesscontrol.cardstandard.DetailCardStandardPageObject;
 import pageObjects.accesscontrol.cardstandard.EditCardStandardPageObject;
 import pageObjects.accesscontrol.controller.AddControllerPageObject;
-import pageObjects.accesscontrol.controller.AddDIEventPageObject;
+import pageObjects.accesscontrol.controller.AddDIPageObject;
 import pageObjects.accesscontrol.controller.ControllerListPageObject;
 import pageObjects.accesscontrol.controller.DetailControllerPageObject;
 import pageObjects.accesscontrol.controller.EditControllerPageObject;
-import pageObjects.accesscontrol.controller.EditDIEventPageObject;
+import pageObjects.accesscontrol.controller.EditDIPageObject;
 import pageObjects.accesscontrol.entry.AddEntryPageObject;
 import pageObjects.accesscontrol.entry.AssignReaderPageObject;
 import pageObjects.accesscontrol.entry.AssignUserGroupPageObject;
@@ -263,12 +263,12 @@ public class PageGenerator {
 		return new AssignProjectPageObject(driver);
 	}
 	
-	public static AddDIEventPageObject getAddDIEventPage(WebDriver driver) {
-		return new AddDIEventPageObject(driver);
+	public static AddDIPageObject getAddDIPage(WebDriver driver) {
+		return new AddDIPageObject(driver);
 	}
 	
-	public static EditDIEventPageObject getEditDIEventPage(WebDriver driver) {
-		return new EditDIEventPageObject(driver);
+	public static EditDIPageObject getEditDIPage(WebDriver driver) {
+		return new EditDIPageObject(driver);
 	}
 	
 	public static AddDOEventPageObject getAddDOEventPage(WebDriver driver) {

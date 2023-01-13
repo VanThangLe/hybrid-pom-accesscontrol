@@ -51,6 +51,7 @@ public class Entry extends BaseTest {
 		relayType = "Cửa mở khi relay đóng";
 		orderNumber = "0";
 		sessionTimeoutSec = "5";
+		
 		entryNameUpdate = "Entry 1 Update";
 		entryTypeUpdate = "Cửa";
 		relayTypeUpdate = "Cửa mở khi relay mở";
@@ -82,8 +83,8 @@ public class Entry extends BaseTest {
 		detailEntryPage = PageGenerator.getDetailEntryPage(driver);
 		verifyTrue(detailEntryPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "name"), entryName);
-		verifyEquals(detailEntryPage.getSelectedValueInDropdownByID(driver, "type"), entryType);
-		verifyEquals(detailEntryPage.getSelectedValueInDropdownByID(driver, "relay_type"), relayType);
+		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "type"), entryType);
+		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "relay_type"), relayType);
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "order_num"), orderNumber);
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "session_timeout_sec"), sessionTimeoutSec);
 		detailEntryPage.sleepInSecond(1);
@@ -109,8 +110,8 @@ public class Entry extends BaseTest {
 		detailEntryPage = PageGenerator.getDetailEntryPage(driver);
 		verifyTrue(detailEntryPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "name"), entryNameUpdate);
-		verifyEquals(detailEntryPage.getSelectedValueInDropdownByID(driver, "type"), entryTypeUpdate);
-		verifyEquals(detailEntryPage.getSelectedValueInDropdownByID(driver, "relay_type"), relayTypeUpdate);
+		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "type"), entryTypeUpdate);
+		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "relay_type"), relayTypeUpdate);
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "order_num"), orderNumberUpdate);
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "session_timeout_sec"), sessionTimeoutSecUpdate);
 		entryNameUpdateCookie = detailEntryPage.getValueFieldByAttribute(driver, "name");

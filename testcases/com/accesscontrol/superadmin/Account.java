@@ -46,6 +46,7 @@ public class Account extends BaseTest {
 		accountName = "Account 1";
 		email = "account1@elifetech.vn";
 		password = "123456789";
+		
 		accountNameUpdate = "Account 1 Update";
 		emailUpdate = "account1update@elifetech.vn";
 	}

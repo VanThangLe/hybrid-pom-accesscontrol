@@ -44,6 +44,7 @@ public class Card extends BaseTest {
 		cardCode = "12345678";
 		activateDate = "01/01/2023 00:00:00";
 		expireDate = "12/31/2023 00:00:00";
+		
 		activateDateUpdate = "02/01/2023 00:00:00";
 		expireDateUpdate = "12/31/2024 00:00:00";
 	}

@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 
-public class AddDIEventPageObject extends BasePage {
+public class EditDIPageObject extends BasePage {
 
-	public AddDIEventPageObject(WebDriver driver) {
+	public EditDIPageObject(WebDriver driver) {
 
 	}
 }

@@ -58,8 +58,8 @@ public class Permission extends BaseTest {
 		log.info("Permission_01 - Step 05: Verify detail user group");
 		detailPermissionPage = PageGenerator.getDetailPermissionPage(driver);
 		verifyTrue(detailPermissionPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailPermissionPage.getSelectedValueInDropdownByID(driver, "ac-roles-search-input"), UserGroup.userGroupNameUpdateCookie);
-		//verifyEquals(detailPermissionPage.getSelectedValueInDropdownByID(driver, "role_code"), Entry.entryNameUpdateCookie);
+		verifyEquals(detailPermissionPage.getValueFieldByAttribute(driver, "role"), UserGroup.userGroupNameUpdateCookie);
+		verifyEquals(detailPermissionPage.getValueFieldByAttribute(driver, "entry"), Entry.entryNameUpdateCookie);
 	}
 
 	@Parameters({ "browser" })

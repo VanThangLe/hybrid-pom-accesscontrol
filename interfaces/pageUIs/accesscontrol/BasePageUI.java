@@ -13,7 +13,7 @@ public class BasePageUI {
 	public static final String MENU_BY_PAGE_NAME = "//div[@class='sidebar-menu pb-24 space-y-6']//span[contains(text(),'%s')]";
 	public static final String ASSIGN_DROPDOWN = "//div[@dusk='%s']";
 	
-	public static final String EDIT_ICON = "//a[starts-with(@class,'rounded')]";
+	public static final String EDIT_ICON = "//a[@dusk='edit-resource-button']";
 	public static final String UPLOAD_FILE = "//input[@type='file']"; 
 	public static final String SUCCESS_MESSAGE = "//div[@class='toasted nova success']";
 	public static final String MULTI_DROPDOWN = "//div[@class='multiselect']";

@@ -44,6 +44,7 @@ public class Project extends BaseTest {
 		
 		projectName = "Project 1";
 		projectCode = "P1";
+		
 		projectNameUpdate = "Project 1 Update";
 		projectCodeUpdate = "P1Update";
 	}

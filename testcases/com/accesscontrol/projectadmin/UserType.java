@@ -43,6 +43,7 @@ public class UserType extends BaseTest {
 		dashboardPage = PageGenerator.getDashboardPage(driver);
 		
 		userTypeName = "Type 1";
+		
 		userTypeNameUpdate = "Type 1 Update";
 	}
 

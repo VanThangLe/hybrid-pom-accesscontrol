@@ -42,6 +42,7 @@ public class User extends BaseTest {
 		dashboardPage = PageGenerator.getDashboardPage(driver);
 		
 		userName = "User 1";
+		
 		userNameUpdate = "User 1 Update";
 	}
 

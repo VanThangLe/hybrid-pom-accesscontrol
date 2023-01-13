@@ -46,6 +46,7 @@ public class UserGroup extends BaseTest {
 		
 		userGroupName = "Group 1";
 		userGroupCode = "groupcode1";
+		
 		userGroupNameUpdate = "Group 1 Update";
 		userGroupCodeUpdate = "groupcode1update";
 	}

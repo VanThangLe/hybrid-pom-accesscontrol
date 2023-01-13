@@ -45,6 +45,7 @@ public class CardStandard extends BaseTest {
 		cardStandardName = "Card Standard 1";
 		totalBits = "32";
 		bitMask = "11111111111111111111111111111111";
+		
 		cardStandardNameUpdate = "Card Standard 1 Update";
 		totalBits = "34";
 		bitMask = "0111111111111111111111111111111110";
