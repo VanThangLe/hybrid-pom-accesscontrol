@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 
-public class AddACUserPageObject extends BasePage {
+public class DetailUserPageObject extends BasePage {
 
-	public AddACUserPageObject(WebDriver driver) {
+	public DetailUserPageObject(WebDriver driver) {
 
 	}
 }

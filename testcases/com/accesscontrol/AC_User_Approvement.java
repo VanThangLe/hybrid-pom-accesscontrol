@@ -10,19 +10,19 @@ import commons.BaseTest;
 import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
-import pageObjects.accesscontrol.ac_user.AddACUserPageObject;
-import pageObjects.accesscontrol.ac_user.DetailACUserPageObject;
-import pageObjects.accesscontrol.ac_user.EditACUserPageObject;
-import pageObjects.accesscontrol.ac_user.ACUserListPageObject;
+import pageObjects.accesscontrol.ac_user.AddUserPageObject;
+import pageObjects.accesscontrol.ac_user.DetailUserPageObject;
+import pageObjects.accesscontrol.ac_user.EditUserPageObject;
+import pageObjects.accesscontrol.ac_user.UserListPageObject;
 
 public class AC_User_Approvement extends BaseTest {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	DashboardPageObject dashboardPage;
-	ACUserListPageObject userListPage;
-	AddACUserPageObject addUserPage;
-	DetailACUserPageObject detailUserPage;
-	EditACUserPageObject editUserPage;
+	UserListPageObject userListPage;
+	AddUserPageObject addUserPage;
+	DetailUserPageObject detailUserPage;
+	EditUserPageObject editUserPage;
 	String userName, userNameUpdate;
 	public static String userNameUpdateCookie;
 
@@ -48,11 +48,11 @@ public class AC_User_Approvement extends BaseTest {
 	public void User_01_Add_New_User() {
 		log.info("User_01 - Step 01: Open 'Danh sách người dùng' menu");
 		dashboardPage.openMenuPage(driver, "Danh sách người dùng");
-		userListPage = PageGenerator.getUserListPage(driver);
+		userListPage = PageGenerator.getACUserListPage(driver);
 		
 		log.info("User_01 - Step 02: Click 'Thêm Người dùng' button");
 		userListPage.clickToButtonByIDName(driver, "Thêm Người dùng");
-		addUserPage = PageGenerator.getAddUserPage(driver);
+		addUserPage = PageGenerator.getAddACUserPage(driver);
 		
 		log.info("User_01 - Step 03: Enter valid data to required fields");
 		addUserPage.enterToTextboxByIDName(driver, "name", userName);
@@ -61,7 +61,7 @@ public class AC_User_Approvement extends BaseTest {
 		addUserPage.clickToButtonByIDName(driver, "Thêm Người dùng");
 		
 		log.info("User_01 - Step 05: Verify detail user");
-		detailUserPage = PageGenerator.getDetailUserPage(driver);
+		detailUserPage = PageGenerator.getDetailACUserPage(driver);
 		verifyTrue(detailUserPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "name"), userName);
 		detailUserPage.sleepInSecond(1);
@@ -71,7 +71,7 @@ public class AC_User_Approvement extends BaseTest {
 	public void User_02_Edit_User() {
 		log.info("User_02 - Step 01: Click 'Sửa' icon");
 		detailUserPage.clickToEditIcon(driver);
-		editUserPage = PageGenerator.getEditUserPage(driver);
+		editUserPage = PageGenerator.getEditACUserPage(driver);
 		
 		log.info("User_02 - Step 02: Enter valid data to required fields");
 		editUserPage.enterToTextboxByIDName(driver, "name", userNameUpdate);
@@ -80,7 +80,7 @@ public class AC_User_Approvement extends BaseTest {
 		editUserPage.clickToButtonByIDName(driver, "Cập nhật Người dùng");
 		
 		log.info("User_02 - Step 04: Verify detail user");
-		detailUserPage = PageGenerator.getDetailUserPage(driver);
+		detailUserPage = PageGenerator.getDetailACUserPage(driver);
 		verifyTrue(detailUserPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "name"), userNameUpdate);
 		userNameUpdateCookie = detailUserPage.getValueFieldByAttribute(driver, "name");

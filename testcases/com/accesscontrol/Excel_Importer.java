@@ -11,7 +11,7 @@ import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
 import pageObjects.accesscontrol.user.AddUserPageObject;
-import pageObjects.accesscontrol.user.AssignProjectPageObject;
+import pageObjects.accesscontrol.user.AssignACProjectPageObject;
 import pageObjects.accesscontrol.user.DetailUserPageObject;
 import pageObjects.accesscontrol.user.EditUserPageObject;
 import pageObjects.accesscontrol.user.UserListPageObject;
@@ -24,7 +24,7 @@ public class Excel_Importer extends BaseTest {
 	AddUserPageObject addAccountPage;
 	EditUserPageObject editAccountPage;
 	DetailUserPageObject detailAccountPage;
-	AssignProjectPageObject assignProjectPage;
+	AssignACProjectPageObject assignProjectPage;
 	String accountName, email, password;
 	String accountNameUpdate, emailUpdate;
 

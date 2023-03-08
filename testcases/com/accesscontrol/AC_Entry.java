@@ -61,11 +61,11 @@ public class AC_Entry extends BaseTest {
 	public void Entry_01_Add_New_Entry() {
 		log.info("Entry_01 - Step 01: Open 'Cửa và ra' menu");
 		dashboardPage.openMenuPage(driver, "Cửa và ra");
-		entryListPage = PageGenerator.getEntryListPage(driver);
+		entryListPage = PageGenerator.getACEntryListPage(driver);
 		
 		log.info("Entry_01 - Step 02: Click 'Thêm Cửa và ra' button");
 		entryListPage.clickToButtonByIDName(driver, "Thêm Cửa và ra");
-		addEntryPage = PageGenerator.getAddEntryPage(driver);
+		addEntryPage = PageGenerator.getAddACEntryPage(driver);
 		
 		log.info("Entry_01 - Step 03: Enter valid data to required fields");
 		addEntryPage.enterToTextboxByIDName(driver, "name", entryName);
@@ -78,7 +78,7 @@ public class AC_Entry extends BaseTest {
 		addEntryPage.clickToButtonByIDName(driver, "Thêm Cửa và ra");
 		
 		log.info("Entry_01 - Step 05: Verify detail entry");
-		detailEntryPage = PageGenerator.getDetailEntryPage(driver);
+		detailEntryPage = PageGenerator.getDetailACEntryPage(driver);
 		verifyTrue(detailEntryPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "name"), entryName);
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "type"), entryType);
@@ -92,7 +92,7 @@ public class AC_Entry extends BaseTest {
 	public void Entry_02_Edit_Entry() {
 		log.info("Entry_02 - Step 01: Click 'Sửa' icon");
 		detailEntryPage.clickToEditIcon(driver);
-		editEntryPage = PageGenerator.getEditEntryPage(driver);
+		editEntryPage = PageGenerator.getEditACEntryPage(driver);
 		
 		log.info("Entry_02 - Step 02: Enter valid data to required fields");
 		editEntryPage.enterToTextboxByIDName(driver, "name", entryNameUpdate);
@@ -105,7 +105,7 @@ public class AC_Entry extends BaseTest {
 		editEntryPage.clickToButtonByIDName(driver, "Cập nhật Cửa và ra");
 		
 		log.info("Entry_02 - Step 04: Verify detail entry");
-		detailEntryPage = PageGenerator.getDetailEntryPage(driver);
+		detailEntryPage = PageGenerator.getDetailACEntryPage(driver);
 		verifyTrue(detailEntryPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "name"), entryNameUpdate);
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "type"), entryTypeUpdate);
@@ -119,14 +119,14 @@ public class AC_Entry extends BaseTest {
 	public void Entry_03_Assign_Reader() {
 		log.info("Entry_03 - Step 01: Click 'Gắn Thiết bị đọc thẻ' button");
 		detailEntryPage.clickToButtonByIDName(driver, "Gắn Thiết bị đọc thẻ");
-		assignReaderPage = PageGenerator.getAssignReaderPage(driver);
+		assignReaderPage = PageGenerator.getAssignACReaderPage(driver);
 		
 		log.info("Entry_03 - Step 02: Select card reader");
 		assignReaderPage.selectItemInCustomDropdownByAttribute(driver, "ac-readers-search-input", AC_Reader.cardReaderNameUpdateCookie);
 		
 		log.info("Entry_03 - Step 03: Click 'Gắn Thiết bị đọc thẻ' button");
 		assignReaderPage.clickToButtonByIDName(driver, "Gắn Thiết bị đọc thẻ");
-		detailEntryPage = PageGenerator.getDetailEntryPage(driver);
+		detailEntryPage = PageGenerator.getDetailACEntryPage(driver);
 		
 		log.info("Entry_03 - Step 04: Verify select 'Thiết bị đọc thẻ' success");
 		verifyEquals(detailEntryPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "readers", "1", "2"), 
@@ -137,14 +137,14 @@ public class AC_Entry extends BaseTest {
 	public void Entry_04_Assign_UserGroup() {
 		log.info("Entry_04 - Step 01: Click 'Gắn Nhóm người dùng' button");
 		detailEntryPage.clickToButtonByIDName(driver, "Gắn Nhóm người dùng");
-		assignUserGroupPage = PageGenerator.getAssignUserGroupPage(driver);
+		assignUserGroupPage = PageGenerator.getAssignACRolePage(driver);
 		
 		log.info("Entry_04 - Step 02: Select user group");
 		assignUserGroupPage.selectItemInCustomDropdownByAttribute(driver, "ac-roles-search-input", AC_Role.userGroupNameUpdateCookie);
 		
 		log.info("Entry_04 - Step 03: Click 'Gắn Nhóm người dùng' button");
 		assignUserGroupPage.clickToButtonByIDName(driver, "Gắn Nhóm người dùng");
-		detailEntryPage = PageGenerator.getDetailEntryPage(driver);
+		detailEntryPage = PageGenerator.getDetailACEntryPage(driver);
 		
 		log.info("Entry_04 - Step 04: Verify select 'Nhóm người dùng' success");
 		verifyEquals(detailEntryPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "roles", "1", "2"), 

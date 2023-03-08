@@ -11,7 +11,7 @@ import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
 import pageObjects.accesscontrol.user.AddUserPageObject;
-import pageObjects.accesscontrol.user.AssignProjectPageObject;
+import pageObjects.accesscontrol.user.AssignACProjectPageObject;
 import pageObjects.accesscontrol.user.DetailUserPageObject;
 import pageObjects.accesscontrol.user.EditUserPageObject;
 import pageObjects.accesscontrol.user.UserListPageObject;
@@ -24,7 +24,7 @@ public class User extends BaseTest {
 	AddUserPageObject addAccountPage;
 	EditUserPageObject editAccountPage;
 	DetailUserPageObject detailAccountPage;
-	AssignProjectPageObject assignProjectPage;
+	AssignACProjectPageObject assignProjectPage;
 	String accountName, email, password;
 	String accountNameUpdate, emailUpdate;
 
@@ -53,11 +53,11 @@ public class User extends BaseTest {
 	public void Account_01_Add_New_Account() {
 		log.info("Account_01 - Step 01: Open 'Tài khoản' menu");
 		dashboardPage.openMenuPage(driver, "Tài khoản");
-		accountListPage = PageGenerator.getAccountListPage(driver);
+		accountListPage = PageGenerator.getACUserListPage(driver);
 		
 		log.info("Account_01 - Step 02: Click 'Thêm Tài khoản' button");
 		accountListPage.clickToButtonByIDName(driver, "Thêm Tài khoản");
-		addAccountPage = PageGenerator.getAddUserPage(driver);
+		addAccountPage = PageGenerator.getAddACUserPage(driver);
 		
 		log.info("Account_01 - Step 03: Enter valid data to required fields");
 		addAccountPage.enterToTextboxByIDName(driver, "name", accountName);
@@ -68,7 +68,7 @@ public class User extends BaseTest {
 		addAccountPage.clickToButtonByIDName(driver, "Thêm Tài khoản");
 		
 		log.info("Account_01 - Step 05: Verify detail account");
-		detailAccountPage = PageGenerator.getDetailAccountPage(driver);
+		detailAccountPage = PageGenerator.getDetailACUserPage(driver);
 		verifyTrue(detailAccountPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailAccountPage.getValueFieldByAttribute(driver, "name"), accountName);
 		verifyEquals(detailAccountPage.getValueFieldByAttribute(driver, "email"), email);
@@ -79,7 +79,7 @@ public class User extends BaseTest {
 	public void Account_02_Edit_Account() {
 		log.info("Account_02 - Step 01: Click 'Sửa' icon");
 		detailAccountPage.clickToEditIcon(driver);
-		editAccountPage = PageGenerator.getEditAccountPage(driver);
+		editAccountPage = PageGenerator.getEditACUserPage(driver);
 		
 		log.info("Account_02 - Step 02: Enter valid data to required fields");
 		editAccountPage.enterToTextboxByIDName(driver, "name", accountNameUpdate);
@@ -89,7 +89,7 @@ public class User extends BaseTest {
 		editAccountPage.clickToButtonByIDName(driver, "Cập nhật Tài khoản");
 		
 		log.info("Account_02 - Step 04: Verify detail account");
-		detailAccountPage = PageGenerator.getDetailAccountPage(driver);
+		detailAccountPage = PageGenerator.getDetailACUserPage(driver);
 		verifyTrue(detailAccountPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailAccountPage.getValueFieldByAttribute(driver, "name"), accountNameUpdate);
 		verifyEquals(detailAccountPage.getValueFieldByAttribute(driver, "email"), emailUpdate);
@@ -99,14 +99,14 @@ public class User extends BaseTest {
 	public void Account_03_Assign_Project() {
 		log.info("Account_03 - Step 01: Click 'Gắn Dự án' button");
 		detailAccountPage.clickToButtonByIDName(driver, "Gắn Dự án");
-		assignProjectPage = PageGenerator.getAssignProjectPage(driver);
+		assignProjectPage = PageGenerator.getAssignACProjectPage(driver);
 		
 		log.info("Account_03 - Step 02: Select project");
 		assignProjectPage.selectItemInCustomDropdownByAttribute(driver, "projects-search-input",  AC_Project.projectNameUpdateCookie);
 		
 		log.info("Account_03 - Step 03: Click 'Gắn Dự án' button");
 		assignProjectPage.clickToButtonByIDName(driver, "Gắn Dự án");
-		detailAccountPage = PageGenerator.getDetailAccountPage(driver);
+		detailAccountPage = PageGenerator.getDetailACUserPage(driver);
 		
 		log.info("Account_03 - Step 04: Verify select 'Dự án' success");
 		verifyEquals(detailAccountPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "projects", "1", "2"), 

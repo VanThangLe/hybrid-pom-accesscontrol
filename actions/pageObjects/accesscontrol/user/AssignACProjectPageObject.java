@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 
-public class AssignProjectPageObject extends BasePage {
+public class AssignACProjectPageObject extends BasePage {
 
-	public AssignProjectPageObject(WebDriver driver) {
+	public AssignACProjectPageObject(WebDriver driver) {
 
 	}
 }

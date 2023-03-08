@@ -10,7 +10,7 @@ import commons.BaseTest;
 import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
-import pageObjects.accesscontrol.ac_user.AddACUserPageObject;
+import pageObjects.accesscontrol.ac_user.AddUserPageObject;
 import pageObjects.accesscontrol.ac_user_type.AddACUserTypePageObject;
 import pageObjects.accesscontrol.ac_user_type.DetailACUserTypePageObject;
 import pageObjects.accesscontrol.ac_user_type.EditACUserTypePageObject;
@@ -24,7 +24,7 @@ public class AC_User_Type extends BaseTest {
 	AddACUserTypePageObject addUserTypePage;
 	EditACUserTypePageObject editUserTypePage;
 	DetailACUserTypePageObject detailUserTypePage;
-	AddACUserPageObject addUserPage;
+	AddUserPageObject addUserPage;
 	String userTypeName, userTypeNameUpdate;
 
 	@Parameters({ "browser", "url" })
@@ -49,11 +49,11 @@ public class AC_User_Type extends BaseTest {
 	public void UserType_01_Add_New_UserType() {
 		log.info("UserType_01 - Step 01: Open 'Loại người dùng' menu");
 		dashboardPage.openMenuPage(driver, "Loại người dùng");
-		userTypeListPage = PageGenerator.getUserTypeListPage(driver);
+		userTypeListPage = PageGenerator.getACUserTypeListPage(driver);
 		
 		log.info("UserType_01 - Step 02: Click 'Thêm Loại người dùng' button");
 		userTypeListPage.clickToButtonByIDName(driver, "Thêm Loại người dùng");
-		addUserTypePage = PageGenerator.getAddUserTypePage(driver);
+		addUserTypePage = PageGenerator.getAddACUserTypePage(driver);
 		
 		log.info("UserType_01 - Step 03: Enter valid data to required fields");
 		addUserTypePage.enterToTextboxByIDName(driver, "name", userTypeName);
@@ -62,7 +62,7 @@ public class AC_User_Type extends BaseTest {
 		addUserTypePage.clickToButtonByIDName(driver, "Thêm Loại người dùng");
 		
 		log.info("UserType_01 - Step 05: Verify detail user type");
-		detailUserTypePage = PageGenerator.getDetailUserTypePage(driver);
+		detailUserTypePage = PageGenerator.getDetailACUserTypePage(driver);
 		verifyTrue(detailUserTypePage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserTypePage.getValueFieldByAttribute(driver, "name"), userTypeNameUpdate);
 		detailUserTypePage.sleepInSecond(1);
@@ -72,7 +72,7 @@ public class AC_User_Type extends BaseTest {
 	public void UserType_02_Edit_UserType() {
 		log.info("UserType_02 - Step 01: Click 'Sửa' icon");
 		detailUserTypePage.clickToEditIcon(driver);
-		editUserTypePage = PageGenerator.getEditUserTypePage(driver);
+		editUserTypePage = PageGenerator.getEditACUserTypePage(driver);
 		
 		log.info("UserType_02 - Step 02: Enter valid data to required fields");
 		editUserTypePage.enterToTextboxByIDName(driver, "name", userTypeNameUpdate);
@@ -81,7 +81,7 @@ public class AC_User_Type extends BaseTest {
 		editUserTypePage.clickToButtonByIDName(driver, "Cập nhật Loại người dùng");
 		
 		log.info("UserType_02 - Step 04: Verify detail user type");
-		detailUserTypePage = PageGenerator.getDetailUserTypePage(driver);
+		detailUserTypePage = PageGenerator.getDetailACUserTypePage(driver);
 		verifyTrue(detailUserTypePage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserTypePage.getValueFieldByAttribute(driver, "name"), userTypeNameUpdate);
 	}
@@ -90,7 +90,7 @@ public class AC_User_Type extends BaseTest {
 	public void UserType_03_Open_Add_User_Screen() {
 		log.info("UserType_03 - Step 01: Click 'Thêm Người dùng' button");
 		detailUserTypePage.clickToButtonByIDName(driver, "Thêm Người dùng");
-		addUserPage = PageGenerator.getAddUserPage(driver);
+		addUserPage = PageGenerator.getAddACUserPage(driver);
 		
 		log.info("UserType_03 - Step 02: Verify enabled fields");
 		verifyTrue(addUserPage.isFieldEnabledByID(driver, "name"));

@@ -51,11 +51,11 @@ public class AC_User_Work_Schedule extends BaseTest {
 	public void Card_01_Add_New_Card() {
 		log.info("Card_01 - Step 01: Open 'Thẻ' menu");
 		dashboardPage.openMenuPage(driver, "Thẻ");
-		cardListPage = PageGenerator.getCardListPage(driver);
+		cardListPage = PageGenerator.getACCardListPage(driver);
 		
 		log.info("Card_01 - Step 02: Click 'Thêm Thẻ' button");
 		cardListPage.clickToButtonByIDName(driver, "Thêm Thẻ");
-		addCardPage = PageGenerator.getAddCardPage(driver);
+		addCardPage = PageGenerator.getAddACCardPage(driver);
 		
 		log.info("Card_01 - Step 03: Enter valid data to required fields");
 		addCardPage.selectItemInCustomDropdownByAttribute(driver, "ac-card-standards-search-input", AC_Card_Standard.cardStandardNameUpdateCookie);
@@ -67,7 +67,7 @@ public class AC_User_Work_Schedule extends BaseTest {
 		addCardPage.clickToButtonByIDName(driver, "Thêm Thẻ");
 		
 		log.info("Card_01 - Step 05: Verify detail card");
-		detailCardPage = PageGenerator.getDetailCardPage(driver);
+		detailCardPage = PageGenerator.getDetailACCardPage(driver);
 		verifyTrue(detailCardPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "cardStandard"), AC_Card_Standard.cardStandardNameUpdateCookie);
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "code"), cardCode);
@@ -80,7 +80,7 @@ public class AC_User_Work_Schedule extends BaseTest {
 	public void Card_02_Edit_Card() {
 		log.info("Card_02 - Step 01: Click 'Sửa' icon");
 		detailCardPage.clickToEditIcon(driver);
-		editCardPage = PageGenerator.getEditCardPage(driver);
+		editCardPage = PageGenerator.getEditACCardPage(driver);
 		
 		log.info("Card_02 - Step 02: Enter valid data to required fields");
 		editCardPage.enterToTextboxByIDName(driver, "valid_from", activateDateUpdate);
@@ -90,7 +90,7 @@ public class AC_User_Work_Schedule extends BaseTest {
 		editCardPage.clickToButtonByIDName(driver, "Cập nhật Thẻ");
 		
 		log.info("Card_02 - Step 04: Verify detail card");
-		detailCardPage = PageGenerator.getDetailCardPage(driver);
+		detailCardPage = PageGenerator.getDetailACCardPage(driver);
 		verifyTrue(detailCardPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "cardStandard"), AC_Card_Standard.cardStandardNameUpdateCookie);
 		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "code"), cardCode);

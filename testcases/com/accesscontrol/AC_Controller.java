@@ -79,11 +79,11 @@ public class AC_Controller extends BaseTest {
 	public void Controller_01_Add_New_Controller() {
 		log.info("Controller_01 - Step 01: Open 'Bộ điều khiển' menu");
 		dashboardPage.openMenuPage(driver, "Bộ điều khiển");
-		controllerListPage = PageGenerator.getControllerListPage(driver);
+		controllerListPage = PageGenerator.getACControllerListPage(driver);
 		
 		log.info("Controller_01 - Step 02: Click 'Thêm Bộ điều khiển' button");
 		controllerListPage.clickToButtonByIDName(driver, "Thêm Bộ điều khiển");
-		addControllerPage = PageGenerator.getAddControllerPage(driver);
+		addControllerPage = PageGenerator.getAddACControllerPage(driver);
 		
 		log.info("Controller_01 - Step 03: Enter valid data to required fields");
 		addControllerPage.enterToTextboxByIDName(driver, "name", controllerName);
@@ -103,7 +103,7 @@ public class AC_Controller extends BaseTest {
 		addControllerPage.clickToButtonByIDName(driver, "Thêm Bộ điều khiển");
 		
 		log.info("Controller_01 - Step 05: Verify detail controller");
-		detailControllerPage = PageGenerator.getDetailControllerPage(driver);
+		detailControllerPage = PageGenerator.getDetailACControllerPage(driver);
 		verifyTrue(detailControllerPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailControllerPage.getValueFieldByAttribute(driver, "name"), controllerName);
 		verifyEquals(detailControllerPage.getValueFieldByAttribute(driver, "code"), controllerCode);
@@ -123,7 +123,7 @@ public class AC_Controller extends BaseTest {
 	public void Controller_02_Edit_Controller() {
 		log.info("Controller_02 - Step 01: Click 'Sửa' icon");
 		detailControllerPage.clickToEditIcon(driver);
-		editControllerPage = PageGenerator.getEditControllerPage(driver);
+		editControllerPage = PageGenerator.getEditACControllerPage(driver);
 		
 		log.info("Controller_02 - Step 02: Enter valid data to required fields");
 		editControllerPage.enterToTextboxByIDName(driver, "name", controllerNameUpdate);
@@ -139,7 +139,7 @@ public class AC_Controller extends BaseTest {
 		editControllerPage.clickToButtonByIDName(driver, "Cập nhật Bộ điều khiển");
 		
 		log.info("Controller_02 - Step 04: Verify detail card reader");
-		detailControllerPage = PageGenerator.getDetailControllerPage(driver);
+		detailControllerPage = PageGenerator.getDetailACControllerPage(driver);
 		verifyTrue(detailControllerPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailControllerPage.getValueFieldByAttribute(driver, "name"), controllerNameUpdate);
 		verifyEquals(detailControllerPage.getValueFieldByAttribute(driver, "code"), controllerCodeUpdate);
@@ -156,7 +156,7 @@ public class AC_Controller extends BaseTest {
 	public void Controller_03_Add_New_DI() {
 		log.info("Controller_03 - Step 01: Click 'Thêm Chân DI' button");
 		detailControllerPage.clickToButtonByIDName(driver, "Thêm Chân DI");
-		addDIPage = PageGenerator.getAddDIPage(driver);
+		addDIPage = PageGenerator.getAddACDisPage(driver);
 		
 		log.info("Controller_03 - Step 02: Enter valid data to required fields");
 		addDIPage.enterToTextboxByIDName(driver, "name", diName);
@@ -166,7 +166,7 @@ public class AC_Controller extends BaseTest {
 		addDIPage.clickToButtonByIDName(driver, "Thêm Chân DI");
 		
 		log.info("Controller_03 - Step 05: Verify detail DI");
-		detailControllerPage = PageGenerator.getDetailControllerPage(driver);
+		detailControllerPage = PageGenerator.getDetailACControllerPage(driver);
 		verifyTrue(detailControllerPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailControllerPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "digitalInputs", "1", "2"), diName);
 		verifyEquals(detailControllerPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "digitalInputs", "1", "3"), diNumber);
@@ -177,7 +177,7 @@ public class AC_Controller extends BaseTest {
 	public void Controller_04_Edit_DI() {
 		log.info("Controller_04 - Step 01: Click 'Sửa' icon");
 		detailControllerPage.clickToEditIcon(driver);
-		editDIPage = PageGenerator.getEditDIPage(driver);
+		editDIPage = PageGenerator.getEditACDisPage(driver);
 		
 		log.info("Controller_04 - Step 02: Enter valid data to required fields");
 		editDIPage.enterToTextboxByIDName(driver, "name", diNameUpdate);
@@ -187,7 +187,7 @@ public class AC_Controller extends BaseTest {
 		editDIPage.clickToButtonByIDName(driver, "Cập nhật Chân DI");
 		
 		log.info("Controller_04 - Step 04: Verify detail DI");
-		detailControllerPage = PageGenerator.getDetailControllerPage(driver);
+		detailControllerPage = PageGenerator.getDetailACControllerPage(driver);
 		verifyTrue(detailControllerPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailControllerPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "digitalInputs", "1", "2"), diNameUpdate);
 		verifyEquals(detailControllerPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "digitalInputs", "1", "3"), diNumberUpdate);

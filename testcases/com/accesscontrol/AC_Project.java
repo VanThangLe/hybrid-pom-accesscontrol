@@ -51,11 +51,11 @@ public class AC_Project extends BaseTest {
 	public void Project_01_Add_New_Project() {
 		log.info("Project_01 - Step 01: Open 'Dự án' menu");
 		dashboardPage.openMenuPage(driver, "Dự án");
-		projectListPage = PageGenerator.getProjectListPage(driver);
+		projectListPage = PageGenerator.getACProjectListPage(driver);
 		
 		log.info("Project_01 - Step 02: Click 'Thêm Dự án' button");
 		projectListPage.clickToButtonByIDName(driver, "Thêm Dự án");
-		addProjectPage = PageGenerator.getAddProjectPage(driver);
+		addProjectPage = PageGenerator.getAddACProjectPage(driver);
 		
 		log.info("Project_01 - Step 03: Enter valid data to required fields");
 		addProjectPage.enterToTextboxByIDName(driver, "name", projectName);
@@ -65,7 +65,7 @@ public class AC_Project extends BaseTest {
 		addProjectPage.clickToButtonByIDName(driver, "Thêm Dự án");
 		
 		log.info("Project_01 - Step 05: Verify detail project");
-		detailProjectPage = PageGenerator.getDetailProjectPage(driver);
+		detailProjectPage = PageGenerator.getDetailACProjectPage(driver);
 		verifyTrue(detailProjectPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailProjectPage.getValueFieldByAttribute(driver, "name"), projectName);
 		verifyEquals(detailProjectPage.getValueFieldByAttribute(driver, "code"), projectCode);
@@ -76,7 +76,7 @@ public class AC_Project extends BaseTest {
 	public void Project_02_Edit_Project() {
 		log.info("Project_02 - Step 01: Click 'Sửa' icon");
 		detailProjectPage.clickToEditIcon(driver);
-		editProjectPage = PageGenerator.getEditProjectPage(driver);
+		editProjectPage = PageGenerator.getEditACProjectPage(driver);
 		
 		log.info("Project_02 - Step 02: Enter valid data to required fields");
 		editProjectPage.enterToTextboxByIDName(driver, "name", projectNameUpdate);
@@ -86,7 +86,7 @@ public class AC_Project extends BaseTest {
 		editProjectPage.clickToButtonByIDName(driver, "Cập nhật Dự án");
 		
 		log.info("Project_02 - Step 04: Verify detail project");
-		detailProjectPage = PageGenerator.getDetailProjectPage(driver);
+		detailProjectPage = PageGenerator.getDetailACProjectPage(driver);
 		verifyTrue(detailProjectPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailProjectPage.getValueFieldByAttribute(driver, "name"), projectNameUpdate);
 		verifyEquals(detailProjectPage.getValueFieldByAttribute(driver, "code"), projectCodeUpdate);

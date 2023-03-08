@@ -72,11 +72,11 @@ public class AC_Reader extends BaseTest {
 	public void CardReader_01_Add_New_CardReader() {
 		log.info("CardReader_01 - Step 01: Open 'Thiết bị đọc thẻ' menu");
 		dashboardPage.openMenuPage(driver, "Thiết bị đọc thẻ");
-		cardReaderListPage = PageGenerator.getCardReaderListPage(driver);
+		cardReaderListPage = PageGenerator.getACReaderListPage(driver);
 		
 		log.info("CardReader_01 - Step 02: Click 'Thêm Thiết bị đọc thẻ' button");
 		cardReaderListPage.clickToButtonByIDName(driver, "Thêm Thiết bị đọc thẻ");
-		addCardReaderPage = PageGenerator.getAddCardReaderPage(driver);
+		addCardReaderPage = PageGenerator.getAddACReaderPage(driver);
 		
 		log.info("CardReader_01 - Step 03: Enter valid data to required fields");
 		addCardReaderPage.enterToTextboxByIDName(driver, "name", cardReaderName);
@@ -89,7 +89,7 @@ public class AC_Reader extends BaseTest {
 		addCardReaderPage.clickToButtonByIDName(driver, "Thêm Thiết bị đọc thẻ");
 		
 		log.info("CardReader_01 - Step 05: Verify detail card reader");
-		detailCardReaderPage = PageGenerator.getDetailCardReaderPage(driver);
+		detailCardReaderPage = PageGenerator.getDetailACReaderPage(driver);
 		verifyTrue(detailCardReaderPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailCardReaderPage.getValueFieldByAttribute(driver, "name"), cardReaderName);
 		verifyEquals(detailCardReaderPage.getValueFieldByAttribute(driver, "type"), position);
@@ -103,7 +103,7 @@ public class AC_Reader extends BaseTest {
 	public void CardReader_02_Edit_CardReader() {
 		log.info("CardReader_02 - Step 01: Click 'Sửa' icon");
 		detailCardReaderPage.clickToEditIcon(driver);
-		editCardReaderPage = PageGenerator.getEditCardReaderPage(driver);
+		editCardReaderPage = PageGenerator.getEditACReaderPage(driver);
 		
 		log.info("CardReader_02 - Step 02: Enter valid data to required fields");
 		editCardReaderPage.enterToTextboxByIDName(driver, "name", cardReaderNameUpdate);
@@ -115,7 +115,7 @@ public class AC_Reader extends BaseTest {
 		editCardReaderPage.clickToButtonByIDName(driver, "Cập nhật Thiết bị đọc thẻ");
 		
 		log.info("CardReader_02 - Step 04: Verify detail card reader");
-		detailCardReaderPage = PageGenerator.getDetailCardReaderPage(driver);
+		detailCardReaderPage = PageGenerator.getDetailACReaderPage(driver);
 		verifyTrue(detailCardReaderPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailCardReaderPage.getValueFieldByAttribute(driver, "name"), cardReaderNameUpdate);
 		verifyEquals(detailCardReaderPage.getValueFieldByAttribute(driver, "type"), positionUpdate);
@@ -128,7 +128,7 @@ public class AC_Reader extends BaseTest {
 	public void CardReader_03_Add_New_DO_Event() {
 		log.info("CardReader_03 - Step 01: Click 'Thêm Sự kiện chân DO' button");
 		detailCardReaderPage.clickToButtonByIDName(driver, "Thêm Sự kiện chân DO");
-		addDOEventPage = PageGenerator.getAddDOEventPage(driver);
+		addDOEventPage = PageGenerator.getACReaderDoEventPage(driver);
 		
 		log.info("CardReader_03 - Step 02: Enter valid data to required fields");
 		addDOEventPage.enterToTextboxByIDName(driver, "name", eventName);
@@ -141,7 +141,7 @@ public class AC_Reader extends BaseTest {
 		addDOEventPage.clickToButtonByIDName(driver, "Thêm Sự kiện chân DO");
 		
 		log.info("CardReader_03 - Step 05: Verify detail DO event");
-		detailCardReaderPage = PageGenerator.getDetailCardReaderPage(driver);
+		detailCardReaderPage = PageGenerator.getDetailACReaderPage(driver);
 		verifyTrue(detailCardReaderPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailCardReaderPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "outputEvents", "1", "2"), eventName);
 		verifyEquals(detailCardReaderPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "outputEvents", "1", "3"), activeDIValue);
@@ -155,7 +155,7 @@ public class AC_Reader extends BaseTest {
 	public void CardReader_04_Edit_DO_Event() {
 		log.info("CardReader_04 - Step 01: Click 'Sửa' icon");
 		detailCardReaderPage.clickToEditIcon(driver);
-		editCardReaderPage = PageGenerator.getEditCardReaderPage(driver);
+		editCardReaderPage = PageGenerator.getEditACReaderPage(driver);
 		
 		log.info("CardReader_04 - Step 02: Enter valid data to required fields");
 		editDOEventPage.enterToTextboxByIDName(driver, "name", eventNameUpdate);
@@ -168,7 +168,7 @@ public class AC_Reader extends BaseTest {
 		editDOEventPage.clickToButtonByIDName(driver, "Cập nhật Sự kiện chân DO");
 		
 		log.info("CardReader_04 - Step 04: Verify detail DO event");
-		detailCardReaderPage = PageGenerator.getDetailCardReaderPage(driver);
+		detailCardReaderPage = PageGenerator.getDetailACReaderPage(driver);
 		verifyTrue(detailCardReaderPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailCardReaderPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "outputEvents", "1", "2"), eventNameUpdate);
 		verifyEquals(detailCardReaderPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "outputEvents", "1", "3"), activeDIValueUpdate);

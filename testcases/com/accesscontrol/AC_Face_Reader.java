@@ -58,11 +58,11 @@ public class AC_Face_Reader extends BaseTest {
 	public void FaceReader_01_Add_New_FaceReader() {
 		log.info("FaceReader_01 - Step 01: Open 'Thiết bị đọc FaceID' menu");
 		dashboardPage.openMenuPage(driver, "Thiết bị đọc FaceID");
-		faceReaderListPage = PageGenerator.getFaceReaderListPage(driver);
+		faceReaderListPage = PageGenerator.getACFaceReaderListPage(driver);
 		
 		log.info("FaceReader_01 - Step 02: Click 'Thêm Thiết bị đọc FaceID'");
 		faceReaderListPage.clickToButtonByIDName(driver, "Thêm Thiết bị đọc FaceID");
-		addFaceReaderPage = PageGenerator.getAddFaceReaderPage(driver);
+		addFaceReaderPage = PageGenerator.getAddACFaceReaderPage(driver);
 		
 		log.info("FaceReader_01 - Step 03: Enter valid data to required fields");
 		addFaceReaderPage.enterToTextboxByIDName(driver, "name", faceReaderName);
@@ -76,7 +76,7 @@ public class AC_Face_Reader extends BaseTest {
 		addFaceReaderPage.clickToButtonByIDName(driver, "Thêm Thiết bị đọc FaceID");
 		
 		log.info("FaceReader_01 - Step 05: Verify detail face reader");
-		detailFaceReaderPage = PageGenerator.getDetailFaceReaderPage(driver);
+		detailFaceReaderPage = PageGenerator.getDetailACFaceReaderPage(driver);
 		verifyTrue(detailFaceReaderPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "name"), faceReaderName);
 		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "model_name"), deviceModel);
@@ -91,7 +91,7 @@ public class AC_Face_Reader extends BaseTest {
 	public void FaceReader_02_Edit_FaceReader() {
 		log.info("FaceReader_02 - Step 01: Click 'Sửa' icon");
 		detailFaceReaderPage.clickToEditIcon(driver);
-		editFaceReaderPage = PageGenerator.getEditFaceReaderPage(driver);
+		editFaceReaderPage = PageGenerator.getEditACFaceReaderPage(driver);
 		
 		log.info("FaceReader_02 - Step 02: Enter valid data to required fields");
 		editFaceReaderPage.enterToTextboxByIDName(driver, "name", faceReaderNameUpdate);
@@ -105,7 +105,7 @@ public class AC_Face_Reader extends BaseTest {
 		editFaceReaderPage.clickToButtonByIDName(driver, "Cập nhật Thiết bị đọc FaceID");
 		
 		log.info("FaceReader_02 - Step 04: Verify detail face reader");
-		detailFaceReaderPage = PageGenerator.getDetailFaceReaderPage(driver);
+		detailFaceReaderPage = PageGenerator.getDetailACFaceReaderPage(driver);
 		verifyTrue(detailFaceReaderPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "name"), faceReaderNameUpdate);
 		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "model_name"), deviceModelUpdate);

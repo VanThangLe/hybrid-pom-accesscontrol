@@ -53,11 +53,11 @@ public class AC_Role extends BaseTest {
 	public void UserGroup_01_Add_New_UserGroup() {
 		log.info("UserGroup_01 - Step 01: Open 'Nhóm người dùng' menu");
 		dashboardPage.openMenuPage(driver, "Nhóm người dùng");
-		userGroupListPage = PageGenerator.getUserGroupListPage(driver);
+		userGroupListPage = PageGenerator.getACRoleListPage(driver);
 		
 		log.info("UserGroup_01 - Step 02: Click 'Thêm Nhóm người dùng' button");
 		userGroupListPage.clickToButtonByIDName(driver, "Thêm Nhóm người dùng");
-		addUserGroupPage = PageGenerator.getAddUserGroupPage(driver);
+		addUserGroupPage = PageGenerator.getAddACRolePage(driver);
 		
 		log.info("UserGroup_01 - Step 03: Enter valid data to required fields");
 		addUserGroupPage.enterToTextboxByIDName(driver, "role_name", userGroupName);
@@ -67,7 +67,7 @@ public class AC_Role extends BaseTest {
 		addUserGroupPage.clickToButtonByIDName(driver, "Thêm Nhóm người dùng");
 		
 		log.info("UserGroup_01 - Step 05: Verify detail user group");
-		detailUserGroupPage = PageGenerator.getDetailUserGroupPage(driver);
+		detailUserGroupPage = PageGenerator.getDetailACRolePage(driver);
 		verifyTrue(detailUserGroupPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_name"), userGroupName);
 		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_code"), userGroupCode);
@@ -78,7 +78,7 @@ public class AC_Role extends BaseTest {
 	public void UserGroup_02_Edit_UserGroup() {
 		log.info("UserGroup_02 - Step 01: Click 'Sửa' icon");
 		detailUserGroupPage.clickToEditIcon(driver);
-		editUserGroupPage = PageGenerator.getEditUserGroupPage(driver);
+		editUserGroupPage = PageGenerator.getEditACRolePage(driver);
 		
 		log.info("UserGroup_02 - Step 02: Enter valid data to required fields");
 		editUserGroupPage.enterToTextboxByIDName(driver, "role_name", userGroupNameUpdate);
@@ -88,7 +88,7 @@ public class AC_Role extends BaseTest {
 		editUserGroupPage.clickToButtonByIDName(driver, "Cập nhật Người dùng");
 		
 		log.info("UserGroup_02 - Step 04: Verify detail user group");
-		detailUserGroupPage = PageGenerator.getDetailUserGroupPage(driver);
+		detailUserGroupPage = PageGenerator.getDetailACRolePage(driver);
 		verifyTrue(detailUserGroupPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_name"), userGroupNameUpdate);
 		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_code"), userGroupCodeUpdate);
@@ -99,14 +99,14 @@ public class AC_Role extends BaseTest {
 	public void UserGroup_03_Assign_User() {
 		log.info("UserGroup_03 - Step 01: Click 'Gắn Người dùng' button");
 		detailUserGroupPage.clickToButtonByIDName(driver, "Gắn Người dùng");
-		assignUserPage = PageGenerator.getAssignUserPage(driver);
+		assignUserPage = PageGenerator.getAssignACUserPage(driver);
 		
 		log.info("UserGroup_03 - Step 02: Select user");
 		assignUserPage.selectItemInCustomDropdownByAttribute(driver, "ac-users-search-input", AC_User.userNameUpdateCookie);
 		
 		log.info("UserGroup_03 - Step 03: Click 'Gắn Người dùng' button");
 		assignUserPage.clickToButtonByIDName(driver, "Gắn Người dùng");
-		detailUserGroupPage = PageGenerator.getDetailUserGroupPage(driver);
+		detailUserGroupPage = PageGenerator.getDetailACRolePage(driver);
 		
 		log.info("UserGroup_03 - Step 04: Verify select 'Người dùng' success");
 		verifyEquals(detailUserGroupPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "users", "1", "2"), 

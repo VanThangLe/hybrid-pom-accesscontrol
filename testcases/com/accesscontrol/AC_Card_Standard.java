@@ -53,11 +53,11 @@ public class AC_Card_Standard extends BaseTest {
 	public void CardStandard_01_Add_New_CardStandard() {
 		log.info("CardStandard_01 - Step 01: Open 'Chuẩn thẻ' menu");
 		dashboardPage.openMenuPage(driver, "Chuẩn thẻ");
-		cardStandardListPage = PageGenerator.getCardStandardListPage(driver);
+		cardStandardListPage = PageGenerator.getACCardStandardListPage(driver);
 		
 		log.info("CardStandard_01 - Step 02: Click 'Thêm Chuẩn thẻ' button");
 		cardStandardListPage.clickToButtonByIDName(driver, "Thêm Chuẩn thẻ");
-		addCardStandardPage = PageGenerator.getAddCardStandardPage(driver);
+		addCardStandardPage = PageGenerator.getAddACCardStandardPage(driver);
 		
 		log.info("CardStandard_01 - Step 03: Enter valid data to required fields");
 		addCardStandardPage.enterToTextboxByIDName(driver, "name", cardStandardName);
@@ -68,7 +68,7 @@ public class AC_Card_Standard extends BaseTest {
 		addCardStandardPage.clickToButtonByIDName(driver, "Thêm Chuẩn thẻ");
 		
 		log.info("CardStandard_01 - Step 05: Verify detail card standard");
-		detailCardStandardPage = PageGenerator.getDetailCardStandardPage(driver);
+		detailCardStandardPage = PageGenerator.getDetailACCardStandardPage(driver);
 		verifyTrue(detailCardStandardPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailCardStandardPage.getValueFieldByAttribute(driver, "name"), cardStandardName);
 		verifyEquals(detailCardStandardPage.getValueFieldByAttribute(driver, "total_bits"), totalBits);
@@ -80,7 +80,7 @@ public class AC_Card_Standard extends BaseTest {
 	public void CardStandard_02_Edit_CardStandard() {
 		log.info("CardStandard_02 - Step 01: Click 'Sửa' icon");
 		detailCardStandardPage.clickToEditIcon(driver);
-		editCardStandardPage = PageGenerator.getEditCardStandardPage(driver);
+		editCardStandardPage = PageGenerator.getEditACCardStandardPage(driver);
 		
 		log.info("CardStandard_02 - Step 02: Enter valid data to required fields");
 		editCardStandardPage.enterToTextboxByIDName(driver, "name", cardStandardNameUpdate);
@@ -91,7 +91,7 @@ public class AC_Card_Standard extends BaseTest {
 		editCardStandardPage.clickToButtonByIDName(driver, "Cập nhật Chuẩn thẻ");
 		
 		log.info("CardStandard_02 - Step 04: Verify detail card standard");
-		detailCardStandardPage = PageGenerator.getDetailCardStandardPage(driver);
+		detailCardStandardPage = PageGenerator.getDetailACCardStandardPage(driver);
 		verifyTrue(detailCardStandardPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailCardStandardPage.getValueFieldByAttribute(driver, "name"), cardStandardNameUpdate);
 		verifyEquals(detailCardStandardPage.getValueFieldByAttribute(driver, "total_bits"), totalBitsUpdate);
