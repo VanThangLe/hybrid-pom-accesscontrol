@@ -57,7 +57,7 @@ public class User extends BaseTest {
 		
 		log.info("Account_01 - Step 02: Click 'Thêm Tài khoản' button");
 		accountListPage.clickToButtonByIDName(driver, "Thêm Tài khoản");
-		addAccountPage = PageGenerator.getAddAccountPage(driver);
+		addAccountPage = PageGenerator.getAddUserPage(driver);
 		
 		log.info("Account_01 - Step 03: Enter valid data to required fields");
 		addAccountPage.enterToTextboxByIDName(driver, "name", accountName);

@@ -2,57 +2,74 @@ package pageObjects.accesscontrol;
 
 import org.openqa.selenium.WebDriver;
 
-import pageObjects.accesscontrol.ac_card.AddACCardPageObject;
 import pageObjects.accesscontrol.ac_card.ACCardListPageObject;
+import pageObjects.accesscontrol.ac_card.AddACCardPageObject;
 import pageObjects.accesscontrol.ac_card.DetailACCardPageObject;
 import pageObjects.accesscontrol.ac_card.EditACCardPageObject;
-import pageObjects.accesscontrol.ac_cardstandard.AddACCardStandardPageObject;
 import pageObjects.accesscontrol.ac_cardstandard.ACCardStandardListPageObject;
+import pageObjects.accesscontrol.ac_cardstandard.AddACCardStandardPageObject;
 import pageObjects.accesscontrol.ac_cardstandard.DetailACCardStandardPageObject;
 import pageObjects.accesscontrol.ac_cardstandard.EditACCardStandardPageObject;
+import pageObjects.accesscontrol.ac_controller.ACControllerListPageObject;
 import pageObjects.accesscontrol.ac_controller.AddACControllerPageObject;
 import pageObjects.accesscontrol.ac_controller.AddACDisPageObject;
-import pageObjects.accesscontrol.ac_controller.ACControllerListPageObject;
 import pageObjects.accesscontrol.ac_controller.DetailACControllerPageObject;
 import pageObjects.accesscontrol.ac_controller.EditACControllerPageObject;
 import pageObjects.accesscontrol.ac_controller.EditACDisPageObject;
+import pageObjects.accesscontrol.ac_entry.ACEntryListPageObject;
 import pageObjects.accesscontrol.ac_entry.AddACEntryPageObject;
 import pageObjects.accesscontrol.ac_entry.AssignACReaderPageObject;
 import pageObjects.accesscontrol.ac_entry.AssignACRolePageObject;
 import pageObjects.accesscontrol.ac_entry.DetailACEntryPageObject;
 import pageObjects.accesscontrol.ac_entry.EditACEntryPageObject;
-import pageObjects.accesscontrol.ac_entry.ACEntryListPageObject;
+import pageObjects.accesscontrol.ac_face_reader.ACFaceReaderListPageObject;
 import pageObjects.accesscontrol.ac_face_reader.AddACFaceReaderPageObject;
 import pageObjects.accesscontrol.ac_face_reader.DetailACFaceReaderPageObject;
 import pageObjects.accesscontrol.ac_face_reader.EditACFaceReaderPageObject;
-import pageObjects.accesscontrol.ac_face_reader.ACFaceReaderListPageObject;
+import pageObjects.accesscontrol.ac_gateway.ACGatewayListPageObject;
+import pageObjects.accesscontrol.ac_gateway.AddACGatewayPageObject;
+import pageObjects.accesscontrol.ac_gateway.DetailACGatewayPageObject;
+import pageObjects.accesscontrol.ac_gateway.EditACGatewayPageObject;
+import pageObjects.accesscontrol.ac_project.ACProjectListPageObject;
 import pageObjects.accesscontrol.ac_project.AddACProjectPageObject;
 import pageObjects.accesscontrol.ac_project.DetailACProjectPageObject;
 import pageObjects.accesscontrol.ac_project.EditACProjectPageObject;
-import pageObjects.accesscontrol.ac_project.ACProjectListPageObject;
-import pageObjects.accesscontrol.ac_reader.AddACReaderPageObject;
-import pageObjects.accesscontrol.ac_reader.AddACReaderDoEventPageObject;
 import pageObjects.accesscontrol.ac_reader.ACReaderListPageObject;
+import pageObjects.accesscontrol.ac_reader.AddACReaderDoEventPageObject;
+import pageObjects.accesscontrol.ac_reader.AddACReaderPageObject;
 import pageObjects.accesscontrol.ac_reader.DetailACReaderPageObject;
-import pageObjects.accesscontrol.ac_reader.EditACReaderPageObject;
 import pageObjects.accesscontrol.ac_reader.EditACReaderDoEventPageObject;
+import pageObjects.accesscontrol.ac_reader.EditACReaderPageObject;
+import pageObjects.accesscontrol.ac_role.ACRoleListPageObject;
 import pageObjects.accesscontrol.ac_role.AddACRolePageObject;
 import pageObjects.accesscontrol.ac_role.AssignACUserPageObject;
 import pageObjects.accesscontrol.ac_role.DetailACRolePageObject;
 import pageObjects.accesscontrol.ac_role.EditACRolePageObject;
-import pageObjects.accesscontrol.ac_role.ACRoleListPageObject;
+import pageObjects.accesscontrol.ac_role_entry_permission.ACRoleEntryPermissionListPageObject;
 import pageObjects.accesscontrol.ac_role_entry_permission.AddACRoleEntryPermissionPageObject;
 import pageObjects.accesscontrol.ac_role_entry_permission.DetailACRoleEntryPermissionPageObject;
 import pageObjects.accesscontrol.ac_role_entry_permission.EditACRoleEntryPermissionPageObject;
-import pageObjects.accesscontrol.ac_role_entry_permission.ACRoleEntryPermissionListPageObject;
+import pageObjects.accesscontrol.ac_user.ACUserListPageObject;
 import pageObjects.accesscontrol.ac_user.AddACUserPageObject;
 import pageObjects.accesscontrol.ac_user.DetailACUserPageObject;
 import pageObjects.accesscontrol.ac_user.EditACUserPageObject;
-import pageObjects.accesscontrol.ac_user.ACUserListPageObject;
+import pageObjects.accesscontrol.ac_user_approvement.ACUserApprovementListPageObject;
+import pageObjects.accesscontrol.ac_user_approvement.AddACUserApprovementPageObject;
+import pageObjects.accesscontrol.ac_user_approvement.DetailACUserApprovementPageObject;
+import pageObjects.accesscontrol.ac_user_approvement.EditACUserApprovementPageObject;
+import pageObjects.accesscontrol.ac_user_shift.ACUserShiftListPageObject;
+import pageObjects.accesscontrol.ac_user_shift.AddACUserShiftPageObject;
+import pageObjects.accesscontrol.ac_user_shift.DetailACUserShiftPageObject;
+import pageObjects.accesscontrol.ac_user_shift.EditACUserShiftPageObject;
+import pageObjects.accesscontrol.ac_user_type.ACUserTypeListPageObject;
 import pageObjects.accesscontrol.ac_user_type.AddACUserTypePageObject;
 import pageObjects.accesscontrol.ac_user_type.DetailACUserTypePageObject;
 import pageObjects.accesscontrol.ac_user_type.EditACUserTypePageObject;
-import pageObjects.accesscontrol.ac_user_type.ACUserTypeListPageObject;
+import pageObjects.accesscontrol.ac_user_work_schedule.ACUserWorkScheduleListPageObject;
+import pageObjects.accesscontrol.ac_user_work_schedule.AddACUserWorkSchedulePageObject;
+import pageObjects.accesscontrol.ac_user_work_schedule.DetailACUserWorkSchedulePageObject;
+import pageObjects.accesscontrol.ac_user_work_schedule.EditACUserWorkSchedulePageObject;
+import pageObjects.accesscontrol.excel_importer.ExcelImporterPageObject;
 import pageObjects.accesscontrol.user.AssignProjectPageObject;
 
 public class PageGenerator {
@@ -64,7 +81,7 @@ public class PageGenerator {
 		return new DashboardPageObject(driver);
 	}
 	
-	public static AddACUserPageObject getAddAccountPage(WebDriver driver) {
+	public static AddACUserPageObject getAddUserPage(WebDriver driver) {
 		return new AddACUserPageObject(driver);
 	}
 	
@@ -286,5 +303,73 @@ public class PageGenerator {
 	
 	public static AssignACRolePageObject getAssignUserGroupPage(WebDriver driver) {
 		return new AssignACRolePageObject(driver);
+	}
+	
+	public static AddACUserApprovementPageObject getAddACUserApprovementPage(WebDriver driver) {
+		return new AddACUserApprovementPageObject(driver);
+	}
+	
+	public static ACUserApprovementListPageObject getACUserApprovementListPage(WebDriver driver) {
+		return new ACUserApprovementListPageObject(driver);
+	}
+
+	public static DetailACUserApprovementPageObject getDetailACUserApprovementPage(WebDriver driver) {
+		return new DetailACUserApprovementPageObject(driver);
+	}
+
+	public static EditACUserApprovementPageObject getEditACUserApprovementPage(WebDriver driver) {
+		return new EditACUserApprovementPageObject(driver);
+	}
+	
+	public static AddACUserShiftPageObject getAddUserShiftPage(WebDriver driver) {
+		return new AddACUserShiftPageObject(driver);
+	}
+	
+	public static ACUserShiftListPageObject getUserShiftListPage(WebDriver driver) {
+		return new ACUserShiftListPageObject(driver);
+	}
+
+	public static DetailACUserShiftPageObject getDetailUserShiftPage(WebDriver driver) {
+		return new DetailACUserShiftPageObject(driver);
+	}
+
+	public static EditACUserShiftPageObject getEditUserShiftPage(WebDriver driver) {
+		return new EditACUserShiftPageObject(driver);
+	}
+	
+	public static AddACUserWorkSchedulePageObject getAddUserWorkSchedulePage(WebDriver driver) {
+		return new AddACUserWorkSchedulePageObject(driver);
+	}
+	
+	public static ACUserWorkScheduleListPageObject getUserWorkScheduleListPage(WebDriver driver) {
+		return new ACUserWorkScheduleListPageObject(driver);
+	}
+
+	public static DetailACUserWorkSchedulePageObject getDetailUserWorkSchedulePage(WebDriver driver) {
+		return new DetailACUserWorkSchedulePageObject(driver);
+	}
+
+	public static EditACUserWorkSchedulePageObject getEditUserWorkSchedulePage(WebDriver driver) {
+		return new EditACUserWorkSchedulePageObject(driver);
+	}
+	
+	public static ExcelImporterPageObject getExcelImporterPage(WebDriver driver) {
+		return new ExcelImporterPageObject(driver);
+	}
+	
+	public static AddACGatewayPageObject getAddACGatewayPage(WebDriver driver) {
+		return new AddACGatewayPageObject(driver);
+	}
+	
+	public static ACGatewayListPageObject getACGatewayListPage(WebDriver driver) {
+		return new ACGatewayListPageObject(driver);
+	}
+
+	public static DetailACGatewayPageObject getDetailACGatewayPage(WebDriver driver) {
+		return new DetailACGatewayPageObject(driver);
+	}
+
+	public static EditACGatewayPageObject getEditACGatewayPage(WebDriver driver) {
+		return new EditACGatewayPageObject(driver);
 	}
 }

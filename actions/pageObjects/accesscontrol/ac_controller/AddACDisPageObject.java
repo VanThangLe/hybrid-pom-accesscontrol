@@ -3,7 +3,7 @@ package pageObjects.accesscontrol.ac_controller;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.accesscontrol.controller.AddDIPageUI;
+import pageUIs.accesscontrol.ac_controller.AddACDisPageUI;
 
 public class AddACDisPageObject extends BasePage {
 	private WebDriver driver;
@@ -13,7 +13,7 @@ public class AddACDisPageObject extends BasePage {
 	}
 	
 	public void clickToEditIcon() {
-		waitForElementClickAble(driver, AddDIPageUI.EDIT_ICON);
-		clickToElement(driver, AddDIPageUI.EDIT_ICON);
+		waitForElementClickAble(driver, AddACDisPageUI.EDIT_ICON);
+		clickToElement(driver, AddACDisPageUI.EDIT_ICON);
 	}
 }
