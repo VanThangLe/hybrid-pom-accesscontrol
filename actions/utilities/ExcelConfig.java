@@ -19,13 +19,11 @@ public class ExcelConfig {
 
     public void setExcelFile(String ExcelPath, String SheetName) throws Exception {
         try {
-            File f = new File(ExcelPath);
-
-            if (!f.exists()) {
-                f.createNewFile();
+            File file = new File(ExcelPath);
+            if (!file.exists()) {
+                file.createNewFile();
                 System.out.println("File doesn't exist, so created!");
             }
-
             fileInput = new FileInputStream(ExcelPath);
             workbook = WorkbookFactory.create(fileInput);
             sheet = workbook.getSheet(SheetName);
@@ -33,83 +31,73 @@ public class ExcelConfig {
             if (sheet == null) {
                 sheet = workbook.createSheet(SheetName);
             }
-
             this.excelFilePath = ExcelPath;
-
             //adding all the column header names to the map 'columns'
-            sheet.getRow(0).forEach(cell ->{
-                columns.put(cell.getStringCellValue(), cell.getColumnIndex());
+            sheet.getRow(0).forEach(cell -> {columns.put(cell.getStringCellValue(), cell.getColumnIndex());
             });
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public String getCellData(int rownum, int colnum) throws Exception{
-        try{
-            cell = sheet.getRow(rownum).getCell(colnum);
-            String CellData = null;
-            switch (cell.getCellType()){
+    public String getCellData(int rowNum, int column) throws Exception {
+        try {
+            cell = sheet.getRow(rowNum).getCell(column);
+            String cellData = null;
+            switch(cell.getCellType()) {
                 case STRING:
-                    CellData = cell.getStringCellValue();
+                    cellData = cell.getStringCellValue();
                     break;
                 case NUMERIC:
-                    if (DateUtil.isCellDateFormatted(cell))
-                    {
-                        CellData = String.valueOf(cell.getDateCellValue());
+                    if (DateUtil.isCellDateFormatted(cell)) {
+                        cellData = String.valueOf(cell.getDateCellValue());
                     }
-                    else
-                    {
-                        CellData = String.valueOf((long)cell.getNumericCellValue());
+                    else {
+                        cellData = String.valueOf((long)cell.getNumericCellValue());
                     }
                     break;
                 case BOOLEAN:
-                    CellData = Boolean.toString(cell.getBooleanCellValue());
+                    cellData = Boolean.toString(cell.getBooleanCellValue());
                     break;
                 case BLANK:
-                    CellData = "";
+                    cellData = "";
                     break;
-			case ERROR:
-				break;
-			case FORMULA:
-				break;
-			case _NONE:
-				break;
-			default:
-				break;
+                case ERROR:
+                	break;
+                case FORMULA:
+                	break;
+                case _NONE:
+                	break;
+                default:
+                	break;
             }
-            return CellData;
-        }catch (Exception e){
-            return"";
+            return cellData;
+        } catch(Exception e) {
+            return "";
         }
     }
 
-    //Gọi ra hàm này nè
-    public String getCellData(String columnName, int rownum) throws Exception {
-        return getCellData(rownum, columns.get(columnName));
+    public String getCellData(String columnName, int rowNum) throws Exception {
+        return getCellData(rowNum, columns.get(columnName));
     }
 
-    public void setCellData(String text, int rownum, int colnum) throws Exception {
-        try{
-            row  = sheet.getRow(rownum);
-            if(row ==null)
-            {
-                row = sheet.createRow(rownum);
+    public void setCellData(String text, int rowNum, int column) throws Exception {
+        try {
+            row = sheet.getRow(rowNum);
+            if(row == null) {
+                row = sheet.createRow(rowNum);
             }
-            cell = row.getCell(colnum);
-
-            if (cell == null) {
-                cell = row.createCell(colnum);
+            cell = row.getCell(column);
+            if(cell == null) {
+                cell = row.createCell(column);
             }
             cell.setCellValue(text);
-
             fileOutput = new FileOutputStream(excelFilePath);
             workbook.write(fileOutput);
             fileOutput.flush();
             fileOutput.close();
         } catch(Exception e) {
-            throw (e);
+            throw(e);
         }
     }
 }

@@ -2,62 +2,58 @@ package pageObjects.accesscontrol;
 
 import org.openqa.selenium.WebDriver;
 
-import pageObjects.accesscontrol.account.AccountListPageObject;
-import pageObjects.accesscontrol.account.AddAccountPageObject;
-import pageObjects.accesscontrol.account.AssignProjectPageObject;
-import pageObjects.accesscontrol.account.DetailAccountPageObject;
-import pageObjects.accesscontrol.account.EditAccountPageObject;
-import pageObjects.accesscontrol.card.AddCardPageObject;
-import pageObjects.accesscontrol.card.CardListPageObject;
-import pageObjects.accesscontrol.card.DetailCardPageObject;
-import pageObjects.accesscontrol.card.EditCardPageObject;
-import pageObjects.accesscontrol.cardreader.AddCardReaderPageObject;
-import pageObjects.accesscontrol.cardreader.AddDOEventPageObject;
-import pageObjects.accesscontrol.cardreader.CardReaderListPageObject;
-import pageObjects.accesscontrol.cardreader.DetailCardReaderPageObject;
-import pageObjects.accesscontrol.cardreader.EditCardReaderPageObject;
-import pageObjects.accesscontrol.cardreader.EditDOEventPageObject;
-import pageObjects.accesscontrol.cardstandard.AddCardStandardPageObject;
-import pageObjects.accesscontrol.cardstandard.CardStandardListPageObject;
-import pageObjects.accesscontrol.cardstandard.DetailCardStandardPageObject;
-import pageObjects.accesscontrol.cardstandard.EditCardStandardPageObject;
-import pageObjects.accesscontrol.controller.AddControllerPageObject;
-import pageObjects.accesscontrol.controller.AddDIPageObject;
-import pageObjects.accesscontrol.controller.ControllerListPageObject;
-import pageObjects.accesscontrol.controller.DetailControllerPageObject;
-import pageObjects.accesscontrol.controller.EditControllerPageObject;
-import pageObjects.accesscontrol.controller.EditDIPageObject;
-import pageObjects.accesscontrol.entry.AddEntryPageObject;
-import pageObjects.accesscontrol.entry.AssignReaderPageObject;
-import pageObjects.accesscontrol.entry.AssignUserGroupPageObject;
-import pageObjects.accesscontrol.entry.DetailEntryPageObject;
-import pageObjects.accesscontrol.entry.EditEntryPageObject;
-import pageObjects.accesscontrol.entry.EntryListPageObject;
-import pageObjects.accesscontrol.facereader.AddFaceReaderPageObject;
-import pageObjects.accesscontrol.facereader.DetailFaceReaderPageObject;
-import pageObjects.accesscontrol.facereader.EditFaceReaderPageObject;
-import pageObjects.accesscontrol.facereader.FaceReaderListPageObject;
-import pageObjects.accesscontrol.permission.AddPermissionPageObject;
-import pageObjects.accesscontrol.permission.DetailPermissionPageObject;
-import pageObjects.accesscontrol.permission.EditPermissionPageObject;
-import pageObjects.accesscontrol.permission.PermissionListPageObject;
-import pageObjects.accesscontrol.project.AddProjectPageObject;
-import pageObjects.accesscontrol.project.DetailProjectPageObject;
-import pageObjects.accesscontrol.project.EditProjectPageObject;
-import pageObjects.accesscontrol.project.ProjectListPageObject;
-import pageObjects.accesscontrol.user.AddUserPageObject;
-import pageObjects.accesscontrol.user.DetailUserPageObject;
-import pageObjects.accesscontrol.user.EditUserPageObject;
-import pageObjects.accesscontrol.user.UserListPageObject;
-import pageObjects.accesscontrol.usergroup.AddUserGroupPageObject;
-import pageObjects.accesscontrol.usergroup.AssignUserPageObject;
-import pageObjects.accesscontrol.usergroup.DetailUserGroupPageObject;
-import pageObjects.accesscontrol.usergroup.EditUserGroupPageObject;
-import pageObjects.accesscontrol.usergroup.UserGroupListPageObject;
-import pageObjects.accesscontrol.usertype.AddUserTypePageObject;
-import pageObjects.accesscontrol.usertype.DetailUserTypePageObject;
-import pageObjects.accesscontrol.usertype.EditUserTypePageObject;
-import pageObjects.accesscontrol.usertype.UserTypeListPageObject;
+import pageObjects.accesscontrol.ac_card.AddACCardPageObject;
+import pageObjects.accesscontrol.ac_card.ACCardListPageObject;
+import pageObjects.accesscontrol.ac_card.DetailACCardPageObject;
+import pageObjects.accesscontrol.ac_card.EditACCardPageObject;
+import pageObjects.accesscontrol.ac_cardstandard.AddACCardStandardPageObject;
+import pageObjects.accesscontrol.ac_cardstandard.ACCardStandardListPageObject;
+import pageObjects.accesscontrol.ac_cardstandard.DetailACCardStandardPageObject;
+import pageObjects.accesscontrol.ac_cardstandard.EditACCardStandardPageObject;
+import pageObjects.accesscontrol.ac_controller.AddACControllerPageObject;
+import pageObjects.accesscontrol.ac_controller.AddACDisPageObject;
+import pageObjects.accesscontrol.ac_controller.ACControllerListPageObject;
+import pageObjects.accesscontrol.ac_controller.DetailACControllerPageObject;
+import pageObjects.accesscontrol.ac_controller.EditACControllerPageObject;
+import pageObjects.accesscontrol.ac_controller.EditACDisPageObject;
+import pageObjects.accesscontrol.ac_entry.AddACEntryPageObject;
+import pageObjects.accesscontrol.ac_entry.AssignACReaderPageObject;
+import pageObjects.accesscontrol.ac_entry.AssignACRolePageObject;
+import pageObjects.accesscontrol.ac_entry.DetailACEntryPageObject;
+import pageObjects.accesscontrol.ac_entry.EditACEntryPageObject;
+import pageObjects.accesscontrol.ac_entry.ACEntryListPageObject;
+import pageObjects.accesscontrol.ac_face_reader.AddACFaceReaderPageObject;
+import pageObjects.accesscontrol.ac_face_reader.DetailACFaceReaderPageObject;
+import pageObjects.accesscontrol.ac_face_reader.EditACFaceReaderPageObject;
+import pageObjects.accesscontrol.ac_face_reader.ACFaceReaderListPageObject;
+import pageObjects.accesscontrol.ac_project.AddACProjectPageObject;
+import pageObjects.accesscontrol.ac_project.DetailACProjectPageObject;
+import pageObjects.accesscontrol.ac_project.EditACProjectPageObject;
+import pageObjects.accesscontrol.ac_project.ACProjectListPageObject;
+import pageObjects.accesscontrol.ac_reader.AddACReaderPageObject;
+import pageObjects.accesscontrol.ac_reader.AddACReaderDoEventPageObject;
+import pageObjects.accesscontrol.ac_reader.ACReaderListPageObject;
+import pageObjects.accesscontrol.ac_reader.DetailACReaderPageObject;
+import pageObjects.accesscontrol.ac_reader.EditACReaderPageObject;
+import pageObjects.accesscontrol.ac_reader.EditACReaderDoEventPageObject;
+import pageObjects.accesscontrol.ac_role.AddACRolePageObject;
+import pageObjects.accesscontrol.ac_role.AssignACUserPageObject;
+import pageObjects.accesscontrol.ac_role.DetailACRolePageObject;
+import pageObjects.accesscontrol.ac_role.EditACRolePageObject;
+import pageObjects.accesscontrol.ac_role.ACRoleListPageObject;
+import pageObjects.accesscontrol.ac_role_entry_permission.AddACRoleEntryPermissionPageObject;
+import pageObjects.accesscontrol.ac_role_entry_permission.DetailACRoleEntryPermissionPageObject;
+import pageObjects.accesscontrol.ac_role_entry_permission.EditACRoleEntryPermissionPageObject;
+import pageObjects.accesscontrol.ac_role_entry_permission.ACRoleEntryPermissionListPageObject;
+import pageObjects.accesscontrol.ac_user.AddACUserPageObject;
+import pageObjects.accesscontrol.ac_user.DetailACUserPageObject;
+import pageObjects.accesscontrol.ac_user.EditACUserPageObject;
+import pageObjects.accesscontrol.ac_user.ACUserListPageObject;
+import pageObjects.accesscontrol.ac_user_type.AddACUserTypePageObject;
+import pageObjects.accesscontrol.ac_user_type.DetailACUserTypePageObject;
+import pageObjects.accesscontrol.ac_user_type.EditACUserTypePageObject;
+import pageObjects.accesscontrol.ac_user_type.ACUserTypeListPageObject;
+import pageObjects.accesscontrol.user.AssignProjectPageObject;
 
 public class PageGenerator {
 	public static LoginPageObject getLoginPage(WebDriver driver) {
@@ -68,227 +64,227 @@ public class PageGenerator {
 		return new DashboardPageObject(driver);
 	}
 	
-	public static AddAccountPageObject getAddAccountPage(WebDriver driver) {
-		return new AddAccountPageObject(driver);
+	public static AddACUserPageObject getAddAccountPage(WebDriver driver) {
+		return new AddACUserPageObject(driver);
 	}
 	
-	public static AccountListPageObject getAccountListPage(WebDriver driver) {
-		return new AccountListPageObject(driver);
+	public static ACUserListPageObject getAccountListPage(WebDriver driver) {
+		return new ACUserListPageObject(driver);
 	}
 
-	public static DetailAccountPageObject getDetailAccountPage(WebDriver driver) {
-		return new DetailAccountPageObject(driver);
+	public static DetailACUserPageObject getDetailAccountPage(WebDriver driver) {
+		return new DetailACUserPageObject(driver);
 	}
 
-	public static EditAccountPageObject getEditAccountPage(WebDriver driver) {
-		return new EditAccountPageObject(driver);
+	public static EditACUserPageObject getEditAccountPage(WebDriver driver) {
+		return new EditACUserPageObject(driver);
 	}
 	
-	public static AddCardPageObject getAddCardPage(WebDriver driver) {
-		return new AddCardPageObject(driver);
+	public static AddACCardPageObject getAddCardPage(WebDriver driver) {
+		return new AddACCardPageObject(driver);
 	}
 	
-	public static CardListPageObject getCardListPage(WebDriver driver) {
-		return new CardListPageObject(driver);
+	public static ACCardListPageObject getCardListPage(WebDriver driver) {
+		return new ACCardListPageObject(driver);
 	}
 
-	public static DetailCardPageObject getDetailCardPage(WebDriver driver) {
-		return new DetailCardPageObject(driver);
+	public static DetailACCardPageObject getDetailCardPage(WebDriver driver) {
+		return new DetailACCardPageObject(driver);
 	}
 
-	public static EditCardPageObject getEditCardPage(WebDriver driver) {
-		return new EditCardPageObject(driver);
+	public static EditACCardPageObject getEditCardPage(WebDriver driver) {
+		return new EditACCardPageObject(driver);
 	}
 	
-	public static AddCardReaderPageObject getAddCardReaderPage(WebDriver driver) {
-		return new AddCardReaderPageObject(driver);
+	public static AddACReaderPageObject getAddCardReaderPage(WebDriver driver) {
+		return new AddACReaderPageObject(driver);
 	}
 	
-	public static CardReaderListPageObject getCardReaderListPage(WebDriver driver) {
-		return new CardReaderListPageObject(driver);
+	public static ACReaderListPageObject getCardReaderListPage(WebDriver driver) {
+		return new ACReaderListPageObject(driver);
 	}
 
-	public static DetailCardReaderPageObject getDetailCardReaderPage(WebDriver driver) {
-		return new DetailCardReaderPageObject(driver);
+	public static DetailACReaderPageObject getDetailCardReaderPage(WebDriver driver) {
+		return new DetailACReaderPageObject(driver);
 	}
 
-	public static EditCardReaderPageObject getEditCardReaderPage(WebDriver driver) {
-		return new EditCardReaderPageObject(driver);
+	public static EditACReaderPageObject getEditCardReaderPage(WebDriver driver) {
+		return new EditACReaderPageObject(driver);
 	}
 	
-	public static AddCardStandardPageObject getAddCardStandardPage(WebDriver driver) {
-		return new AddCardStandardPageObject(driver);
+	public static AddACCardStandardPageObject getAddCardStandardPage(WebDriver driver) {
+		return new AddACCardStandardPageObject(driver);
 	}
 	
-	public static CardStandardListPageObject getCardStandardListPage(WebDriver driver) {
-		return new CardStandardListPageObject(driver);
+	public static ACCardStandardListPageObject getCardStandardListPage(WebDriver driver) {
+		return new ACCardStandardListPageObject(driver);
 	}
 
-	public static DetailCardStandardPageObject getDetailCardStandardPage(WebDriver driver) {
-		return new DetailCardStandardPageObject(driver);
+	public static DetailACCardStandardPageObject getDetailCardStandardPage(WebDriver driver) {
+		return new DetailACCardStandardPageObject(driver);
 	}
 
-	public static EditCardStandardPageObject getEditCardStandardPage(WebDriver driver) {
-		return new EditCardStandardPageObject(driver);
+	public static EditACCardStandardPageObject getEditCardStandardPage(WebDriver driver) {
+		return new EditACCardStandardPageObject(driver);
 	}
 	
-	public static AddControllerPageObject getAddControllerPage(WebDriver driver) {
-		return new AddControllerPageObject(driver);
+	public static AddACControllerPageObject getAddControllerPage(WebDriver driver) {
+		return new AddACControllerPageObject(driver);
 	}
 	
-	public static ControllerListPageObject getControllerListPage(WebDriver driver) {
-		return new ControllerListPageObject(driver);
+	public static ACControllerListPageObject getControllerListPage(WebDriver driver) {
+		return new ACControllerListPageObject(driver);
 	}
 
-	public static DetailControllerPageObject getDetailControllerPage(WebDriver driver) {
-		return new DetailControllerPageObject(driver);
+	public static DetailACControllerPageObject getDetailControllerPage(WebDriver driver) {
+		return new DetailACControllerPageObject(driver);
 	}
 
-	public static EditControllerPageObject getEditControllerPage(WebDriver driver) {
-		return new EditControllerPageObject(driver);
+	public static EditACControllerPageObject getEditControllerPage(WebDriver driver) {
+		return new EditACControllerPageObject(driver);
 	}
 	
-	public static AddEntryPageObject getAddEntryPage(WebDriver driver) {
-		return new AddEntryPageObject(driver);
+	public static AddACEntryPageObject getAddEntryPage(WebDriver driver) {
+		return new AddACEntryPageObject(driver);
 	}
 	
-	public static EntryListPageObject getEntryListPage(WebDriver driver) {
-		return new EntryListPageObject(driver);
+	public static ACEntryListPageObject getEntryListPage(WebDriver driver) {
+		return new ACEntryListPageObject(driver);
 	}
 
-	public static DetailEntryPageObject getDetailEntryPage(WebDriver driver) {
-		return new DetailEntryPageObject(driver);
+	public static DetailACEntryPageObject getDetailEntryPage(WebDriver driver) {
+		return new DetailACEntryPageObject(driver);
 	}
 
-	public static EditEntryPageObject getEditEntryPage(WebDriver driver) {
-		return new EditEntryPageObject(driver);
+	public static EditACEntryPageObject getEditEntryPage(WebDriver driver) {
+		return new EditACEntryPageObject(driver);
 	}
 	
-	public static AddFaceReaderPageObject getAddFaceReaderPage(WebDriver driver) {
-		return new AddFaceReaderPageObject(driver);
+	public static AddACFaceReaderPageObject getAddFaceReaderPage(WebDriver driver) {
+		return new AddACFaceReaderPageObject(driver);
 	}
 	
-	public static FaceReaderListPageObject getFaceReaderListPage(WebDriver driver) {
-		return new FaceReaderListPageObject(driver);
+	public static ACFaceReaderListPageObject getFaceReaderListPage(WebDriver driver) {
+		return new ACFaceReaderListPageObject(driver);
 	}
 
-	public static DetailFaceReaderPageObject getDetailFaceReaderPage(WebDriver driver) {
-		return new DetailFaceReaderPageObject(driver);
+	public static DetailACFaceReaderPageObject getDetailFaceReaderPage(WebDriver driver) {
+		return new DetailACFaceReaderPageObject(driver);
 	}
 
-	public static EditFaceReaderPageObject getEditFaceReaderPage(WebDriver driver) {
-		return new EditFaceReaderPageObject(driver);
+	public static EditACFaceReaderPageObject getEditFaceReaderPage(WebDriver driver) {
+		return new EditACFaceReaderPageObject(driver);
 	}
 	
-	public static AddPermissionPageObject getAddPermissionPage(WebDriver driver) {
-		return new AddPermissionPageObject(driver);
+	public static AddACRoleEntryPermissionPageObject getAddPermissionPage(WebDriver driver) {
+		return new AddACRoleEntryPermissionPageObject(driver);
 	}
 	
-	public static EditPermissionPageObject getEditPermissionPage(WebDriver driver) {
-		return new EditPermissionPageObject(driver);
+	public static EditACRoleEntryPermissionPageObject getEditPermissionPage(WebDriver driver) {
+		return new EditACRoleEntryPermissionPageObject(driver);
 	}
 	
-	public static PermissionListPageObject getPermissionListPage(WebDriver driver) {
-		return new PermissionListPageObject(driver);
+	public static ACRoleEntryPermissionListPageObject getPermissionListPage(WebDriver driver) {
+		return new ACRoleEntryPermissionListPageObject(driver);
 	}
 
-	public static DetailPermissionPageObject getDetailPermissionPage(WebDriver driver) {
-		return new DetailPermissionPageObject(driver);
+	public static DetailACRoleEntryPermissionPageObject getDetailPermissionPage(WebDriver driver) {
+		return new DetailACRoleEntryPermissionPageObject(driver);
 	}
 	
-	public static AddProjectPageObject getAddProjectPage(WebDriver driver) {
-		return new AddProjectPageObject(driver);
+	public static AddACProjectPageObject getAddProjectPage(WebDriver driver) {
+		return new AddACProjectPageObject(driver);
 	}
 	
-	public static ProjectListPageObject getProjectListPage(WebDriver driver) {
-		return new ProjectListPageObject(driver);
+	public static ACProjectListPageObject getProjectListPage(WebDriver driver) {
+		return new ACProjectListPageObject(driver);
 	}
 
-	public static DetailProjectPageObject getDetailProjectPage(WebDriver driver) {
-		return new DetailProjectPageObject(driver);
+	public static DetailACProjectPageObject getDetailProjectPage(WebDriver driver) {
+		return new DetailACProjectPageObject(driver);
 	}
 
-	public static EditProjectPageObject getEditProjectPage(WebDriver driver) {
-		return new EditProjectPageObject(driver);
+	public static EditACProjectPageObject getEditProjectPage(WebDriver driver) {
+		return new EditACProjectPageObject(driver);
 	}
 	
-	public static AddUserPageObject getAddUserPage(WebDriver driver) {
-		return new AddUserPageObject(driver);
+	public static AddACUserPageObject getAddUserPage(WebDriver driver) {
+		return new AddACUserPageObject(driver);
 	}
 	
-	public static UserListPageObject getUserListPage(WebDriver driver) {
-		return new UserListPageObject(driver);
+	public static ACUserListPageObject getUserListPage(WebDriver driver) {
+		return new ACUserListPageObject(driver);
 	}
 
-	public static DetailUserPageObject getDetailUserPage(WebDriver driver) {
-		return new DetailUserPageObject(driver);
+	public static DetailACUserPageObject getDetailUserPage(WebDriver driver) {
+		return new DetailACUserPageObject(driver);
 	}
 
-	public static EditUserPageObject getEditUserPage(WebDriver driver) {
-		return new EditUserPageObject(driver);
+	public static EditACUserPageObject getEditUserPage(WebDriver driver) {
+		return new EditACUserPageObject(driver);
 	}
 	
-	public static AddUserGroupPageObject getAddUserGroupPage(WebDriver driver) {
-		return new AddUserGroupPageObject(driver);
+	public static AddACRolePageObject getAddUserGroupPage(WebDriver driver) {
+		return new AddACRolePageObject(driver);
 	}
 	
-	public static UserGroupListPageObject getUserGroupListPage(WebDriver driver) {
-		return new UserGroupListPageObject(driver);
+	public static ACRoleListPageObject getUserGroupListPage(WebDriver driver) {
+		return new ACRoleListPageObject(driver);
 	}
 
-	public static DetailUserGroupPageObject getDetailUserGroupPage(WebDriver driver) {
-		return new DetailUserGroupPageObject(driver);
+	public static DetailACRolePageObject getDetailUserGroupPage(WebDriver driver) {
+		return new DetailACRolePageObject(driver);
 	}
 
-	public static EditUserGroupPageObject getEditUserGroupPage(WebDriver driver) {
-		return new EditUserGroupPageObject(driver);
+	public static EditACRolePageObject getEditUserGroupPage(WebDriver driver) {
+		return new EditACRolePageObject(driver);
 	}
 	
-	public static AddUserTypePageObject getAddUserTypePage(WebDriver driver) {
-		return new AddUserTypePageObject(driver);
+	public static AddACUserTypePageObject getAddUserTypePage(WebDriver driver) {
+		return new AddACUserTypePageObject(driver);
 	}
 	
-	public static UserTypeListPageObject getUserTypeListPage(WebDriver driver) {
-		return new UserTypeListPageObject(driver);
+	public static ACUserTypeListPageObject getUserTypeListPage(WebDriver driver) {
+		return new ACUserTypeListPageObject(driver);
 	}
 
-	public static DetailUserTypePageObject getDetailUserTypePage(WebDriver driver) {
-		return new DetailUserTypePageObject(driver);
+	public static DetailACUserTypePageObject getDetailUserTypePage(WebDriver driver) {
+		return new DetailACUserTypePageObject(driver);
 	}
 
-	public static EditUserTypePageObject getEditUserTypePage(WebDriver driver) {
-		return new EditUserTypePageObject(driver);
+	public static EditACUserTypePageObject getEditUserTypePage(WebDriver driver) {
+		return new EditACUserTypePageObject(driver);
 	}
 
-	public static AssignUserPageObject getAssignUserPage(WebDriver driver) {
-		return new AssignUserPageObject(driver);
+	public static AssignACUserPageObject getAssignUserPage(WebDriver driver) {
+		return new AssignACUserPageObject(driver);
 	}
 
 	public static AssignProjectPageObject getAssignProjectPage(WebDriver driver) {
 		return new AssignProjectPageObject(driver);
 	}
 	
-	public static AddDIPageObject getAddDIPage(WebDriver driver) {
-		return new AddDIPageObject(driver);
+	public static AddACDisPageObject getAddDIPage(WebDriver driver) {
+		return new AddACDisPageObject(driver);
 	}
 	
-	public static EditDIPageObject getEditDIPage(WebDriver driver) {
-		return new EditDIPageObject(driver);
+	public static EditACDisPageObject getEditDIPage(WebDriver driver) {
+		return new EditACDisPageObject(driver);
 	}
 	
-	public static AddDOEventPageObject getAddDOEventPage(WebDriver driver) {
-		return new AddDOEventPageObject(driver);
+	public static AddACReaderDoEventPageObject getAddDOEventPage(WebDriver driver) {
+		return new AddACReaderDoEventPageObject(driver);
 	}
 	
-	public static EditDOEventPageObject getEditDOEventPage(WebDriver driver) {
-		return new EditDOEventPageObject(driver);
+	public static EditACReaderDoEventPageObject getEditDOEventPage(WebDriver driver) {
+		return new EditACReaderDoEventPageObject(driver);
 	}
 
-	public static AssignReaderPageObject getAssignReaderPage(WebDriver driver) {
-		return new AssignReaderPageObject(driver);
+	public static AssignACReaderPageObject getAssignReaderPage(WebDriver driver) {
+		return new AssignACReaderPageObject(driver);
 	}
 	
-	public static AssignUserGroupPageObject getAssignUserGroupPage(WebDriver driver) {
-		return new AssignUserGroupPageObject(driver);
+	public static AssignACRolePageObject getAssignUserGroupPage(WebDriver driver) {
+		return new AssignACRolePageObject(driver);
 	}
 }
