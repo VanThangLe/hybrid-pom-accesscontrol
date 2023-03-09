@@ -49,10 +49,10 @@ import pageObjects.accesscontrol.ac_role_entry_permission.ACRoleEntryPermissionL
 import pageObjects.accesscontrol.ac_role_entry_permission.AddACRoleEntryPermissionPageObject;
 import pageObjects.accesscontrol.ac_role_entry_permission.DetailACRoleEntryPermissionPageObject;
 import pageObjects.accesscontrol.ac_role_entry_permission.EditACRoleEntryPermissionPageObject;
-import pageObjects.accesscontrol.ac_user.UserListPageObject;
-import pageObjects.accesscontrol.ac_user.AddUserPageObject;
-import pageObjects.accesscontrol.ac_user.DetailUserPageObject;
-import pageObjects.accesscontrol.ac_user.EditUserPageObject;
+import pageObjects.accesscontrol.ac_user.ACUserListPageObject;
+import pageObjects.accesscontrol.ac_user.AddACUserPageObject;
+import pageObjects.accesscontrol.ac_user.DetailACUserPageObject;
+import pageObjects.accesscontrol.ac_user.EditACUserPageObject;
 import pageObjects.accesscontrol.ac_user_approvement.ACUserApprovementListPageObject;
 import pageObjects.accesscontrol.ac_user_approvement.AddACUserApprovementPageObject;
 import pageObjects.accesscontrol.ac_user_approvement.DetailACUserApprovementPageObject;
@@ -70,7 +70,15 @@ import pageObjects.accesscontrol.ac_user_work_schedule.AddACUserWorkSchedulePage
 import pageObjects.accesscontrol.ac_user_work_schedule.DetailACUserWorkSchedulePageObject;
 import pageObjects.accesscontrol.ac_user_work_schedule.EditACUserWorkSchedulePageObject;
 import pageObjects.accesscontrol.excel_importer.ExcelImporterPageObject;
+import pageObjects.accesscontrol.role.AddRolePageObject;
+import pageObjects.accesscontrol.role.DetailRolePageObject;
+import pageObjects.accesscontrol.role.EditRolePageObject;
+import pageObjects.accesscontrol.role.RoleListPageObject;
+import pageObjects.accesscontrol.user.AddUserPageObject;
 import pageObjects.accesscontrol.user.AssignACProjectPageObject;
+import pageObjects.accesscontrol.user.DetailUserPageObject;
+import pageObjects.accesscontrol.user.EditUserPageObject;
+import pageObjects.accesscontrol.user.UserListPageObject;
 
 public class PageGenerator {
 	public static LoginPageObject getLoginPage(WebDriver driver) {
@@ -81,20 +89,20 @@ public class PageGenerator {
 		return new DashboardPageObject(driver);
 	}
 	
-	public static AddUserPageObject getAddACUserPage(WebDriver driver) {
-		return new AddUserPageObject(driver);
+	public static AddACUserPageObject getAddACUserPage(WebDriver driver) {
+		return new AddACUserPageObject(driver);
 	}
 	
-	public static UserListPageObject getACUserListPage(WebDriver driver) {
-		return new UserListPageObject(driver);
+	public static ACUserListPageObject getACUserListPage(WebDriver driver) {
+		return new ACUserListPageObject(driver);
 	}
 
-	public static DetailUserPageObject getDetailACUserPage(WebDriver driver) {
-		return new DetailUserPageObject(driver);
+	public static DetailACUserPageObject getDetailACUserPage(WebDriver driver) {
+		return new DetailACUserPageObject(driver);
 	}
 
-	public static EditUserPageObject getEditACUserPage(WebDriver driver) {
-		return new EditUserPageObject(driver);
+	public static EditACUserPageObject getEditACUserPage(WebDriver driver) {
+		return new EditACUserPageObject(driver);
 	}
 	
 	public static AddACCardPageObject getAddACCardPage(WebDriver driver) {
@@ -371,5 +379,21 @@ public class PageGenerator {
 
 	public static EditACGatewayPageObject getEditACGatewayPage(WebDriver driver) {
 		return new EditACGatewayPageObject(driver);
+	}
+	
+	public static AddRolePageObject getAddRolePage(WebDriver driver) {
+		return new AddRolePageObject(driver);
+	}
+	
+	public static RoleListPageObject getRoleListPage(WebDriver driver) {
+		return new RoleListPageObject(driver);
+	}
+
+	public static DetailRolePageObject getDetailRolePage(WebDriver driver) {
+		return new DetailRolePageObject(driver);
+	}
+
+	public static EditRolePageObject getEditRolePage(WebDriver driver) {
+		return new EditRolePageObject(driver);
 	}
 }

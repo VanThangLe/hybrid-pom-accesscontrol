@@ -10,7 +10,7 @@ import commons.BaseTest;
 import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
-import pageObjects.accesscontrol.ac_user.AddUserPageObject;
+import pageObjects.accesscontrol.ac_user.AddACUserPageObject;
 import pageObjects.accesscontrol.ac_user_type.AddACUserTypePageObject;
 import pageObjects.accesscontrol.ac_user_type.DetailACUserTypePageObject;
 import pageObjects.accesscontrol.ac_user_type.EditACUserTypePageObject;
@@ -24,7 +24,7 @@ public class AC_User_Type extends BaseTest {
 	AddACUserTypePageObject addUserTypePage;
 	EditACUserTypePageObject editUserTypePage;
 	DetailACUserTypePageObject detailUserTypePage;
-	AddUserPageObject addUserPage;
+	AddACUserPageObject addUserPage;
 	String userTypeName, userTypeNameUpdate;
 
 	@Parameters({ "browser", "url" })

@@ -10,19 +10,19 @@ import commons.BaseTest;
 import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
-import pageObjects.accesscontrol.ac_user.AddUserPageObject;
-import pageObjects.accesscontrol.ac_user.DetailUserPageObject;
-import pageObjects.accesscontrol.ac_user.EditUserPageObject;
-import pageObjects.accesscontrol.ac_user.UserListPageObject;
+import pageObjects.accesscontrol.ac_user.AddACUserPageObject;
+import pageObjects.accesscontrol.ac_user.DetailACUserPageObject;
+import pageObjects.accesscontrol.ac_user.EditACUserPageObject;
+import pageObjects.accesscontrol.ac_user.ACUserListPageObject;
 
 public class AC_User extends BaseTest {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	DashboardPageObject dashboardPage;
-	UserListPageObject userListPage;
-	AddUserPageObject addUserPage;
-	DetailUserPageObject detailUserPage;
-	EditUserPageObject editUserPage;
+	ACUserListPageObject userListPage;
+	AddACUserPageObject addUserPage;
+	DetailACUserPageObject detailUserPage;
+	EditACUserPageObject editUserPage;
 	String userName, userNameUpdate;
 	public static String userNameUpdateCookie;
 
