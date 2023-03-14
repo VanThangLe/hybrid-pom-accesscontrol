@@ -13,14 +13,12 @@ import pageObjects.accesscontrol.PageGenerator;
 import pageObjects.accesscontrol.ac_card.AddACCardPageObject;
 import pageObjects.accesscontrol.ac_card.ACCardListPageObject;
 import pageObjects.accesscontrol.ac_card.DetailACCardPageObject;
-import pageObjects.accesscontrol.ac_card.EditACCardPageObject;
 
 public class AC_Card extends BaseTest {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	DashboardPageObject dashboardPage;
 	ACCardListPageObject acCardListPage;
-	EditACCardPageObject editACCardPage;
 	DetailACCardPageObject detailACCardPage;
 	AddACCardPageObject addACCardPage;
 	String cardCode, activateDate, expireDate;

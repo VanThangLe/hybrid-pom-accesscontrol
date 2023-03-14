@@ -13,7 +13,6 @@ import pageObjects.accesscontrol.PageGenerator;
 import pageObjects.accesscontrol.ac_cardstandard.AddACCardStandardPageObject;
 import pageObjects.accesscontrol.ac_cardstandard.ACCardStandardListPageObject;
 import pageObjects.accesscontrol.ac_cardstandard.DetailACCardStandardPageObject;
-import pageObjects.accesscontrol.ac_cardstandard.EditACCardStandardPageObject;
 
 public class AC_Card_Standard extends BaseTest {
 	WebDriver driver;
@@ -21,7 +20,6 @@ public class AC_Card_Standard extends BaseTest {
 	DashboardPageObject dashboardPage;
 	ACCardStandardListPageObject acCardStandardListPage;
 	AddACCardStandardPageObject addACCardStandardPage;
-	EditACCardStandardPageObject editACCardStandardPage;
 	DetailACCardStandardPageObject detailACCardStandardPage;
 	String acCardStandardName, totalBits, bitMask;
 	public static String acCardStandardNameCookie;
@@ -62,7 +60,7 @@ public class AC_Card_Standard extends BaseTest {
 		log.info("AC_CardStandard_01 - Step 04: Click 'Thêm Chuẩn thẻ' button");
 		addACCardStandardPage.clickToButtonByIDName(driver, "Thêm Chuẩn thẻ");
 		
-		log.info("AC_CardStandard_01 - Step 05: Verify detail card standard");
+		log.info("AC_CardStandard_01 - Step 05: Verify detail ac card standard");
 		detailACCardStandardPage = PageGenerator.getDetailACCardStandardPage(driver);
 		verifyTrue(detailACCardStandardPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailACCardStandardPage.getValueFieldByAttribute(driver, "name"), acCardStandardName);
