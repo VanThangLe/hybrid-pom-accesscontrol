@@ -13,7 +13,6 @@ import pageObjects.accesscontrol.PageGenerator;
 import pageObjects.accesscontrol.user.AddUserPageObject;
 import pageObjects.accesscontrol.user.AssignACProjectPageObject;
 import pageObjects.accesscontrol.user.DetailUserPageObject;
-import pageObjects.accesscontrol.user.EditUserPageObject;
 import pageObjects.accesscontrol.user.UserListPageObject;
 
 public class User extends BaseTest {
@@ -22,7 +21,6 @@ public class User extends BaseTest {
 	DashboardPageObject dashboardPage;
 	UserListPageObject userListPage;
 	AddUserPageObject addUserPage;
-	EditUserPageObject editUserPage;
 	DetailUserPageObject detailUserPage;
 	AssignACProjectPageObject assignACProjectPage;
 	String userName, email, password;
@@ -70,7 +68,6 @@ public class User extends BaseTest {
 		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "name"), userName);
 		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "email"), email);
 		userNameCookie = detailUserPage.getValueFieldByAttribute(driver, "name");
-		detailUserPage.sleepInSecond(1);
 	}
 
 	@Test

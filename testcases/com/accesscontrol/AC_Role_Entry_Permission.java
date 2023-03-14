@@ -18,9 +18,9 @@ public class AC_Role_Entry_Permission extends BaseTest {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	DashboardPageObject dashboardPage;
-	ACRoleEntryPermissionListPageObject permissionListPage;
-	AddACRoleEntryPermissionPageObject addPermissionPage;
-	DetailACRoleEntryPermissionPageObject detailPermissionPage;
+	ACRoleEntryPermissionListPageObject acRoleEntryPermissionListPage;
+	AddACRoleEntryPermissionPageObject addACRoleEntryPermissionPage;
+	DetailACRoleEntryPermissionPageObject detailACRoleEntryPermissionPage;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -37,27 +37,27 @@ public class AC_Role_Entry_Permission extends BaseTest {
 	}
 
 	@Test
-	public void Permission_01_Add_New_Permission() {
-		log.info("Permission_01 - Step 01: Open 'Phân quyền' menu");
+	public void AC_Role_Entry_Permission_01_Add_New_AC_Role_Entry_Permission() {
+		log.info("AC_Role_Entry_Permission_01 - Step 01: Open 'Phân quyền' menu");
 		dashboardPage.openMenuPage(driver, "Phân quyền");
-		permissionListPage = PageGenerator.getACRoleEntryPermissionListPage(driver);
+		acRoleEntryPermissionListPage = PageGenerator.getACRoleEntryPermissionListPage(driver);
 		
-		log.info("Permission_01 - Step 02: Click 'Thêm Phân quyền' button");
-		permissionListPage.clickToButtonByIDName(driver, "Thêm Phân quyền");
-		addPermissionPage = PageGenerator.getAddACRoleEntryPermissionPage(driver);
+		log.info("AC_Role_Entry_Permission_01 - Step 02: Click 'Thêm Phân quyền' button");
+		acRoleEntryPermissionListPage.clickToButtonByIDName(driver, "Thêm Phân quyền");
+		addACRoleEntryPermissionPage = PageGenerator.getAddACRoleEntryPermissionPage(driver);
 		
-		log.info("Permission_01 - Step 03: Enter valid data to required fields");
-		addPermissionPage.selectItemInCustomDropdownByAttribute(driver, "ac-roles-search-input", AC_Role.acRoleNameCookie);
-		addPermissionPage.selectItemInMultiDropdown(driver, AC_Entry.entryNameUpdateCookie);
+		log.info("AC_Role_Entry_Permission_01 - Step 03: Enter valid data to required fields");
+		addACRoleEntryPermissionPage.selectItemInCustomDropdownByAttribute(driver, "ac-roles-search-input", AC_Role.acRoleNameCookie);
+		addACRoleEntryPermissionPage.selectItemInMultiDropdown(driver, AC_Entry.acEntryNameCookie);
 		
-		log.info("Permission_01 - Step 04: Click 'Thêm Phân quyền' button");
-		addPermissionPage.clickToButtonByIDName(driver, "Thêm Phân quyền");
+		log.info("AC_Role_Entry_Permission_01 - Step 04: Click 'Thêm Phân quyền' button");
+		addACRoleEntryPermissionPage.clickToButtonByIDName(driver, "Thêm Phân quyền");
 		
-		log.info("Permission_01 - Step 05: Verify detail user group");
-		detailPermissionPage = PageGenerator.getDetailACRoleEntryPermissionPage(driver);
-		verifyTrue(detailPermissionPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailPermissionPage.getValueFieldByAttribute(driver, "role"), AC_Role.acRoleNameCookie);
-		verifyEquals(detailPermissionPage.getValueFieldByAttribute(driver, "entry"), AC_Entry.entryNameUpdateCookie);
+		log.info("AC_Role_Entry_Permission_01 - Step 05: Verify detail role entry permission");
+		detailACRoleEntryPermissionPage = PageGenerator.getDetailACRoleEntryPermissionPage(driver);
+		verifyTrue(detailACRoleEntryPermissionPage.isSuccessMessageDisplayed(driver));
+		verifyEquals(detailACRoleEntryPermissionPage.getValueFieldByAttribute(driver, "role"), AC_Role.acRoleNameCookie);
+		verifyEquals(detailACRoleEntryPermissionPage.getValueFieldByAttribute(driver, "entry"), AC_Entry.acEntryNameCookie);
 	}
 
 	@Parameters({ "browser" })

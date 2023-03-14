@@ -54,6 +54,7 @@ import pageObjects.accesscontrol.ac_user_work_schedule.AddACUserWorkSchedulePage
 import pageObjects.accesscontrol.ac_user_work_schedule.DetailACUserWorkSchedulePageObject;
 import pageObjects.accesscontrol.excel_importer.ExcelImporterPageObject;
 import pageObjects.accesscontrol.role.AddRolePageObject;
+import pageObjects.accesscontrol.role.AssignUserPageObject;
 import pageObjects.accesscontrol.role.DetailRolePageObject;
 import pageObjects.accesscontrol.role.RoleListPageObject;
 import pageObjects.accesscontrol.user.AddUserPageObject;
@@ -236,6 +237,10 @@ public class PageGenerator {
 	
 	public static AssignACRolePageObject getAssignACRolePage(WebDriver driver) {
 		return new AssignACRolePageObject(driver);
+	}
+	
+	public static AssignUserPageObject getAssignUserPage(WebDriver driver) {
+		return new AssignUserPageObject(driver);
 	}
 	
 	public static AddACUserApprovementPageObject getAddACUserApprovementPage(WebDriver driver) {

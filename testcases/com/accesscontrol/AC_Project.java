@@ -12,7 +12,6 @@ import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
 import pageObjects.accesscontrol.ac_project.AddACProjectPageObject;
 import pageObjects.accesscontrol.ac_project.DetailACProjectPageObject;
-import pageObjects.accesscontrol.ac_project.EditACProjectPageObject;
 import pageObjects.accesscontrol.ac_project.ACProjectListPageObject;
 
 public class AC_Project extends BaseTest {
@@ -21,7 +20,6 @@ public class AC_Project extends BaseTest {
 	DashboardPageObject dashboardPage;
 	AddACProjectPageObject addACProjectPage;
 	ACProjectListPageObject acProjectListPage;
-	EditACProjectPageObject editACProjectPage;
 	DetailACProjectPageObject detailACProjectPage;
 	String acProjectName, acProjectCode;
 	public static String acProjectNameCookie;
@@ -44,7 +42,7 @@ public class AC_Project extends BaseTest {
 	}
 
 	@Test
-	public void AC_Project_01_Add_New_Project() {
+	public void AC_Project_01_Add_New_AC_Project() {
 		log.info("AC_Project_01 - Step 01: Open 'Dự án' menu");
 		dashboardPage.openMenuPage(driver, "Dự án");
 		acProjectListPage = PageGenerator.getACProjectListPage(driver);

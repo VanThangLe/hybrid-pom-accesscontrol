@@ -24,7 +24,7 @@ public class AC_User extends BaseTest {
 	DetailACUserPageObject detailUserPage;
 	EditACUserPageObject editUserPage;
 	String userName, userNameUpdate;
-	public static String userNameUpdateCookie;
+	public static String acUserNameCookie;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -83,7 +83,7 @@ public class AC_User extends BaseTest {
 		detailUserPage = PageGenerator.getDetailACUserPage(driver);
 		verifyTrue(detailUserPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserPage.getValueFieldByAttribute(driver, "name"), userNameUpdate);
-		userNameUpdateCookie = detailUserPage.getValueFieldByAttribute(driver, "name");
+		acUserNameCookie = detailUserPage.getValueFieldByAttribute(driver, "name");
 	}
 
 	@Parameters({ "browser" })

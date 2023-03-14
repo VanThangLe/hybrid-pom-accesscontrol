@@ -14,8 +14,6 @@ import pageObjects.accesscontrol.ac_reader.AddACReaderPageObject;
 import pageObjects.accesscontrol.ac_reader.AddACReaderDoEventPageObject;
 import pageObjects.accesscontrol.ac_reader.ACReaderListPageObject;
 import pageObjects.accesscontrol.ac_reader.DetailACReaderPageObject;
-import pageObjects.accesscontrol.ac_reader.EditACReaderPageObject;
-import pageObjects.accesscontrol.ac_reader.EditACReaderDoEventPageObject;
 
 public class AC_Reader extends BaseTest {
 	WebDriver driver;
@@ -108,7 +106,6 @@ public class AC_Reader extends BaseTest {
 		verifyEquals(detailACReaderPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "outputEvents", "1", "4"), doPosition);
 		verifyEquals(detailACReaderPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "outputEvents", "1", "5"), doValue);
 		verifyEquals(detailACReaderPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "outputEvents", "1", "6"), timeOut);
-		detailACReaderPage.sleepInSecond(1);
 	}
 
 	@Parameters({ "browser" })
