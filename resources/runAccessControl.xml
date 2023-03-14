@@ -11,20 +11,26 @@
 	<test name="Run on CHROME">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<!-- <class name="com.accesscontrol.common.LoginSuperAdmin" />
-			<class name="com.accesscontrol.superadmin.Project" />
-			<class name="com.accesscontrol.superadmin.Account" /> -->
-			<class name="com.accesscontrol.common.LoginProjectAdmin" />
-			<class name="com.accesscontrol.projectadmin.User" />
-			<class name="com.accesscontrol.projectadmin.UserGroup" />
-			<class name="com.accesscontrol.projectadmin.UserType" />
-			<class name="com.accesscontrol.projectadmin.CardStandard" />
-			<class name="com.accesscontrol.projectadmin.Card" />
-			<class name="com.accesscontrol.projectadmin.Controller" />
-			<class name="com.accesscontrol.projectadmin.CardReader" />
-			<class name="com.accesscontrol.projectadmin.FaceReader" />
-			<class name="com.accesscontrol.projectadmin.Entry" />
-			<class name="com.accesscontrol.projectadmin.Permission" />
+			<class name="com.accesscontrol.LoginSuperAdmin" />
+			<class name="com.accesscontrol.AC_Project" />
+			<!-- class name="com.accesscontrol.User" />
+			<class name="com.accesscontrol.Role" />
+			<class name="com.accesscontrol.AC_User_Profile_Attribute" />
+			<class name="com.accesscontrol.AC_User_Approvement" />
+			<class name="com.accesscontrol.AC_User" />
+			<class name="com.accesscontrol.AC_User_Type" />
+			<class name="com.accesscontrol.AC_User_Shift" />
+			<class name="com.accesscontrol.AC_User_Work_Schedule" />
+			<class name="com.accesscontrol.AC_Role" />
+			<class name="com.accesscontrol.AC_Card_Standard" />
+			<class name="com.accesscontrol.AC_Card" />
+			<class name="com.accesscontrol.AC_Entry" />
+			<class name="com.accesscontrol.AC_Role_Entry_Permission" />
+			<class name="com.accesscontrol.AC_Reader" />
+			<class name="com.accesscontrol.AC_Controller" />
+			<class name="com.accesscontrol.AC_Face_Reader" />
+			<class name="com.accesscontrol.AC_Gateway" />
+			<class name="com.accesscontrol.Excel_Importer" /> -->
 		</classes>
 	</test>
 </suite>

@@ -19,13 +19,12 @@ public class AC_Project extends BaseTest {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	DashboardPageObject dashboardPage;
-	AddACProjectPageObject addProjectPage;
-	ACProjectListPageObject projectListPage;
-	EditACProjectPageObject editProjectPage;
-	DetailACProjectPageObject detailProjectPage;
-	String projectName, projectCode;
-	String projectNameUpdate, projectCodeUpdate;
-	public static String projectNameUpdateCookie;
+	AddACProjectPageObject addACProjectPage;
+	ACProjectListPageObject acProjectListPage;
+	EditACProjectPageObject editACProjectPage;
+	DetailACProjectPageObject detailACProjectPage;
+	String acProjectName, acProjectCode;
+	public static String acProjectNameCookie;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -40,57 +39,43 @@ public class AC_Project extends BaseTest {
 		loginPage.refreshCurrentPage(driver);
 		dashboardPage = PageGenerator.getDashboardPage(driver);
 		
-		projectName = "Project 1";
-		projectCode = "P1";
-		
-		projectNameUpdate = "Project 1 Update";
-		projectCodeUpdate = "P1Update";
+		acProjectName = "Project 1";
+		acProjectCode = "P1";
 	}
 
 	@Test
-	public void Project_01_Add_New_Project() {
-		log.info("Project_01 - Step 01: Open 'Dự án' menu");
+	public void AC_Project_01_Add_New_Project() {
+		log.info("AC_Project_01 - Step 01: Open 'Dự án' menu");
 		dashboardPage.openMenuPage(driver, "Dự án");
-		projectListPage = PageGenerator.getACProjectListPage(driver);
+		acProjectListPage = PageGenerator.getACProjectListPage(driver);
 		
-		log.info("Project_01 - Step 02: Click 'Thêm Dự án' button");
-		projectListPage.clickToButtonByIDName(driver, "Thêm Dự án");
-		addProjectPage = PageGenerator.getAddACProjectPage(driver);
+		log.info("AC_Project_01 - Step 02: Click 'Thêm Dự án' button");
+		acProjectListPage.clickToButtonByIDName(driver, "Thêm Dự án");
+		addACProjectPage = PageGenerator.getAddACProjectPage(driver);
 		
-		log.info("Project_01 - Step 03: Enter valid data to required fields");
-		addProjectPage.enterToTextboxByIDName(driver, "name", projectName);
-		addProjectPage.enterToTextboxByIDName(driver, "code", projectCode);
+		log.info("AC_Project_01 - Step 03: Enter valid data to required fields");
+		addACProjectPage.enterToTextboxByIDName(driver, "name", acProjectName);
+		addACProjectPage.enterToTextboxByIDName(driver, "code", acProjectCode);
+		addACProjectPage.clickToCheckboxByID(driver, "has_approvement-tinh-nang-du-an-boolean-field");
+		addACProjectPage.clickToCheckboxByID(driver, "has_work_schedule-tinh-nang-du-an-boolean-field");
 		
-		log.info("Project_01 - Step 04: Click 'Thêm Dự án' button");
-		addProjectPage.clickToButtonByIDName(driver, "Thêm Dự án");
+		log.info("AC_Project_01 - Step 04: Click 'Thêm Dự án' button");
+		addACProjectPage.clickToButtonByIDName(driver, "Thêm Dự án");
 		
-		log.info("Project_01 - Step 05: Verify detail project");
-		detailProjectPage = PageGenerator.getDetailACProjectPage(driver);
-		verifyTrue(detailProjectPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailProjectPage.getValueFieldByAttribute(driver, "name"), projectName);
-		verifyEquals(detailProjectPage.getValueFieldByAttribute(driver, "code"), projectCode);
-		detailProjectPage.sleepInSecond(1);
-	}
-
-	@Test
-	public void Project_02_Edit_Project() {
-		log.info("Project_02 - Step 01: Click 'Sửa' icon");
-		detailProjectPage.clickToEditIcon(driver);
-		editProjectPage = PageGenerator.getEditACProjectPage(driver);
+		log.info("AC_Project_01 - Step 05: Verify detail project");
+		detailACProjectPage = PageGenerator.getDetailACProjectPage(driver);
+		verifyTrue(detailACProjectPage.isSuccessMessageDisplayed(driver));
+		verifyEquals(detailACProjectPage.getValueFieldByAttribute(driver, "name"), acProjectName);
+		verifyEquals(detailACProjectPage.getValueFieldByAttribute(driver, "code"), acProjectCode);
+		verifyTrue(detailACProjectPage.isCheckboxButtonSelectedByID(driver, "has_approvement-tinh-nang-du-an-boolean-field"));
+		verifyTrue(detailACProjectPage.isCheckboxButtonSelectedByID(driver, "has_work_schedule-tinh-nang-du-an-boolean-field"));
+		acProjectNameCookie = detailACProjectPage.getValueFieldByAttribute(driver, "name");
 		
-		log.info("Project_02 - Step 02: Enter valid data to required fields");
-		editProjectPage.enterToTextboxByIDName(driver, "name", projectNameUpdate);
-		editProjectPage.enterToTextboxByIDName(driver, "code", projectCodeUpdate);
+		log.info("AC_Project_01 - Step 06: Click 'Chọn dự án'");
+		detailACProjectPage.clickToActionButtonByDusk(driver, "6-control-selector");
 		
-		log.info("Project_02 - Step 03: Click 'Cập nhật Dự án' button");
-		editProjectPage.clickToButtonByIDName(driver, "Cập nhật Dự án");
-		
-		log.info("Project_02 - Step 04: Verify detail project");
-		detailProjectPage = PageGenerator.getDetailACProjectPage(driver);
-		verifyTrue(detailProjectPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailProjectPage.getValueFieldByAttribute(driver, "name"), projectNameUpdate);
-		verifyEquals(detailProjectPage.getValueFieldByAttribute(driver, "code"), projectCodeUpdate);
-		projectNameUpdateCookie = detailProjectPage.getValueFieldByAttribute(driver, "name");
+		log.info("AC_Project_01 - Step 07: Click confirm action");
+		detailACProjectPage.clickToActionButtonByDusk(driver, "confirm-action-button");
 	}
 
 	@Parameters({ "browser" })

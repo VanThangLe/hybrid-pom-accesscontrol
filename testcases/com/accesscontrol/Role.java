@@ -24,8 +24,7 @@ public class Role extends BaseTest {
 	AddRolePageObject addAccountPage;
 	EditRolePageObject editAccountPage;
 	DetailRolePageObject detailAccountPage;
-	String accountName, email, password;
-	String accountNameUpdate, emailUpdate;
+	String roleName;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -40,58 +39,47 @@ public class Role extends BaseTest {
 		loginPage.refreshCurrentPage(driver);
 		dashboardPage = PageGenerator.getDashboardPage(driver);
 		
-		accountName = "Account 1";
-		email = "account1@elifetech.vn";
-		password = "123456789";
-		
-		accountNameUpdate = "Account 1 Update";
-		emailUpdate = "account1update@elifetech.vn";
+		roleName = "Role 1";
 	}
 
 	@Test
-	public void Account_01_Add_New_Account() {
-		log.info("Account_01 - Step 01: Open 'Tài khoản' menu");
-		dashboardPage.openMenuPage(driver, "Tài khoản");
+	public void Role_01_Add_New_Role() {
+		log.info("Role_01 - Step 01: Open 'Nhóm quyền tài khoản' menu");
+		dashboardPage.openMenuPage(driver, "Nhóm quyền tài khoản");
 		accountListPage = PageGenerator.getRoleListPage(driver);
 		
-		log.info("Account_01 - Step 02: Click 'Thêm Tài khoản' button");
+		log.info("Role_01 - Step 02: Click 'Thêm Tài khoản' button");
 		accountListPage.clickToButtonByIDName(driver, "Thêm Tài khoản");
 		addAccountPage = PageGenerator.getAddRolePage(driver);
 		
-		log.info("Account_01 - Step 03: Enter valid data to required fields");
-		addAccountPage.enterToTextboxByIDName(driver, "name", accountName);
-		addAccountPage.enterToTextboxByIDName(driver, "email", email);
-		addAccountPage.enterToTextboxByIDName(driver, "password", password);
+		log.info("Role_01 - Step 03: Enter valid data to required fields");
+		addAccountPage.enterToTextboxByIDName(driver, "name", roleName);
 		
-		log.info("Account_01 - Step 04: Click 'Thêm Tài khoản' button");
+		log.info("Role_01 - Step 04: Click 'Thêm Tài khoản' button");
 		addAccountPage.clickToButtonByIDName(driver, "Thêm Tài khoản");
 		
-		log.info("Account_01 - Step 05: Verify detail account");
+		log.info("Role_01 - Step 05: Verify detail account");
 		detailAccountPage = PageGenerator.getDetailRolePage(driver);
 		verifyTrue(detailAccountPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailAccountPage.getValueFieldByAttribute(driver, "name"), accountName);
-		verifyEquals(detailAccountPage.getValueFieldByAttribute(driver, "email"), email);
+		verifyEquals(detailAccountPage.getValueFieldByAttribute(driver, "name"), roleName);
 		detailAccountPage.sleepInSecond(1);
 	}
 
 	@Test
-	public void Account_02_Edit_Account() {
-		log.info("Account_02 - Step 01: Click 'Sửa' icon");
+	public void Role_02_Assign_User() {
+		log.info("Role_02 - Step 01: Click 'Gắn Dự án' button");
 		detailAccountPage.clickToEditIcon(driver);
 		editAccountPage = PageGenerator.getEditRolePage(driver);
 		
-		log.info("Account_02 - Step 02: Enter valid data to required fields");
-		editAccountPage.enterToTextboxByIDName(driver, "name", accountNameUpdate);
-		editAccountPage.enterToTextboxByIDName(driver, "email", emailUpdate);
+		log.info("Role_02 - Step 02: Enter valid data to required fields");
 		
-		log.info("Account_02 - Step 03: Click 'Cập nhật Tài khoản' button");
+		
+		log.info("Role_02 - Step 03: Click 'Cập nhật Tài khoản' button");
 		editAccountPage.clickToButtonByIDName(driver, "Cập nhật Tài khoản");
 		
-		log.info("Account_02 - Step 04: Verify detail account");
+		log.info("Role_02 - Step 04: Verify detail account");
 		detailAccountPage = PageGenerator.getDetailRolePage(driver);
 		verifyTrue(detailAccountPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailAccountPage.getValueFieldByAttribute(driver, "name"), accountNameUpdate);
-		verifyEquals(detailAccountPage.getValueFieldByAttribute(driver, "email"), emailUpdate);
 	}
 
 	@Parameters({ "browser" })
