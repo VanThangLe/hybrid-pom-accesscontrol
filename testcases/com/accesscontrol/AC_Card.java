@@ -67,7 +67,6 @@ public class AC_Card extends BaseTest {
 		verifyEquals(detailACCardPage.getValueFieldByAttribute(driver, "code"), cardCode);
 		verifyEquals(detailACCardPage.getValueFieldByAttribute(driver, "valid_from"), activateDate);
 		verifyEquals(detailACCardPage.getValueFieldByAttribute(driver, "valid_to"), expireDate);
-		detailACCardPage.sleepInSecond(1);
 	}
 
 	@Parameters({ "browserName" })

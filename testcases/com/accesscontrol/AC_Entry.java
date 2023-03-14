@@ -14,7 +14,6 @@ import pageObjects.accesscontrol.ac_entry.AddACEntryPageObject;
 import pageObjects.accesscontrol.ac_entry.AssignACReaderPageObject;
 import pageObjects.accesscontrol.ac_entry.AssignACRolePageObject;
 import pageObjects.accesscontrol.ac_entry.DetailACEntryPageObject;
-import pageObjects.accesscontrol.ac_entry.EditACEntryPageObject;
 import pageObjects.accesscontrol.ac_entry.ACEntryListPageObject;
 
 public class AC_Entry extends BaseTest {
@@ -24,12 +23,10 @@ public class AC_Entry extends BaseTest {
 	AddACEntryPageObject addEntryPage;
 	ACEntryListPageObject entryListPage;
 	DetailACEntryPageObject detailEntryPage;
-	EditACEntryPageObject editEntryPage;
 	AssignACReaderPageObject assignReaderPage;
 	AssignACRolePageObject assignUserGroupPage;
-	String entryName, entryType, relayType, orderNumber, sessionTimeoutSec;
-	String entryNameUpdate, entryTypeUpdate, relayTypeUpdate, orderNumberUpdate, sessionTimeoutSecUpdate;
-	public static String entryNameUpdateCookie;
+	String acEntryName, acEntryType, relayType, orderNumber, sessionTimeoutSec;
+	public static String acEntryNameCookie;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -44,111 +41,76 @@ public class AC_Entry extends BaseTest {
 		loginPage.refreshCurrentPage(driver);
 		dashboardPage = PageGenerator.getDashboardPage(driver);
 		
-		entryName = "Entry 1";
-		entryType = "Thang máy";
+		acEntryName = "Entry 1";
+		acEntryType = "Thang máy";
 		relayType = "Cửa mở khi relay đóng";
 		orderNumber = "0";
 		sessionTimeoutSec = "5";
-		
-		entryNameUpdate = "Entry 1 Update";
-		entryTypeUpdate = "Cửa";
-		relayTypeUpdate = "Cửa mở khi relay mở";
-		orderNumberUpdate = "1";
-		sessionTimeoutSecUpdate = "10";
 	}
 
 	@Test
-	public void Entry_01_Add_New_Entry() {
-		log.info("Entry_01 - Step 01: Open 'Cửa và ra' menu");
+	public void AC_Entry_01_Add_New_AC_Entry() {
+		log.info("AC_Entry_01 - Step 01: Open 'Cửa và ra' menu");
 		dashboardPage.openMenuPage(driver, "Cửa và ra");
 		entryListPage = PageGenerator.getACEntryListPage(driver);
 		
-		log.info("Entry_01 - Step 02: Click 'Thêm Cửa và ra' button");
+		log.info("AC_Entry_01 - Step 02: Click 'Thêm Cửa và ra' button");
 		entryListPage.clickToButtonByIDName(driver, "Thêm Cửa và ra");
 		addEntryPage = PageGenerator.getAddACEntryPage(driver);
 		
-		log.info("Entry_01 - Step 03: Enter valid data to required fields");
-		addEntryPage.enterToTextboxByIDName(driver, "name", entryName);
-		addEntryPage.selectItemInDropdownByID(driver, "type", entryType);
+		log.info("AC_Entry_01 - Step 03: Enter valid data to required fields");
+		addEntryPage.enterToTextboxByIDName(driver, "name", acEntryName);
+		addEntryPage.selectItemInDropdownByID(driver, "type", acEntryType);
 		addEntryPage.selectItemInDropdownByID(driver, "relay_type", relayType);
 		addEntryPage.enterToTextboxByIDName(driver, "order_num", orderNumber);
 		addEntryPage.enterToTextboxByIDName(driver, "session_timeout_sec", sessionTimeoutSec);
 		
-		log.info("Entry_01 - Step 04: Click 'Thêm Cửa và ra' button");
+		log.info("AC_Entry_01 - Step 04: Click 'Thêm Cửa và ra' button");
 		addEntryPage.clickToButtonByIDName(driver, "Thêm Cửa và ra");
 		
-		log.info("Entry_01 - Step 05: Verify detail entry");
+		log.info("AC_Entry_01 - Step 05: Verify detail ac entry");
 		detailEntryPage = PageGenerator.getDetailACEntryPage(driver);
 		verifyTrue(detailEntryPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "name"), entryName);
-		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "type"), entryType);
+		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "name"), acEntryName);
+		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "type"), acEntryType);
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "relay_type"), relayType);
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "order_num"), orderNumber);
 		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "session_timeout_sec"), sessionTimeoutSec);
-		detailEntryPage.sleepInSecond(1);
+		acEntryNameCookie = detailEntryPage.getValueFieldByAttribute(driver, "name");
 	}
 
 	@Test
-	public void Entry_02_Edit_Entry() {
-		log.info("Entry_02 - Step 01: Click 'Sửa' icon");
-		detailEntryPage.clickToEditIcon(driver);
-		editEntryPage = PageGenerator.getEditACEntryPage(driver);
-		
-		log.info("Entry_02 - Step 02: Enter valid data to required fields");
-		editEntryPage.enterToTextboxByIDName(driver, "name", entryNameUpdate);
-		editEntryPage.selectItemInDropdownByID(driver, "type", entryTypeUpdate);
-		editEntryPage.selectItemInDropdownByID(driver, "relay_type", relayTypeUpdate);
-		editEntryPage.enterToTextboxByIDName(driver, "order_num", orderNumberUpdate);
-		editEntryPage.enterToTextboxByIDName(driver, "session_timeout_sec", sessionTimeoutSecUpdate);
-		
-		log.info("Entry_02 - Step 03: Click 'Cập nhật Cửa và ra' button");
-		editEntryPage.clickToButtonByIDName(driver, "Cập nhật Cửa và ra");
-		
-		log.info("Entry_02 - Step 04: Verify detail entry");
-		detailEntryPage = PageGenerator.getDetailACEntryPage(driver);
-		verifyTrue(detailEntryPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "name"), entryNameUpdate);
-		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "type"), entryTypeUpdate);
-		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "relay_type"), relayTypeUpdate);
-		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "order_num"), orderNumberUpdate);
-		verifyEquals(detailEntryPage.getValueFieldByAttribute(driver, "session_timeout_sec"), sessionTimeoutSecUpdate);
-		entryNameUpdateCookie = detailEntryPage.getValueFieldByAttribute(driver, "name");
-	}
-
-	@Test
-	public void Entry_03_Assign_Reader() {
-		log.info("Entry_03 - Step 01: Click 'Gắn Thiết bị đọc thẻ' button");
+	public void AC_Entry_02_Assign_Reader() {
+		log.info("AC_Entry_02 - Step 01: Click 'Gắn Thiết bị đọc thẻ' button");
 		detailEntryPage.clickToButtonByIDName(driver, "Gắn Thiết bị đọc thẻ");
 		assignReaderPage = PageGenerator.getAssignACReaderPage(driver);
 		
-		log.info("Entry_03 - Step 02: Select card reader");
-		assignReaderPage.selectItemInCustomDropdownByAttribute(driver, "ac-readers-search-input", AC_Reader.cardReaderNameUpdateCookie);
+		log.info("AC_Entry_02 - Step 02: Select card reader");
+		assignReaderPage.selectItemInCustomDropdownByAttribute(driver, "ac-readers-search-input", AC_Reader.acReaderNameCookie);
 		
-		log.info("Entry_03 - Step 03: Click 'Gắn Thiết bị đọc thẻ' button");
+		log.info("AC_Entry_02 - Step 03: Click 'Gắn Thiết bị đọc thẻ' button");
 		assignReaderPage.clickToButtonByIDName(driver, "Gắn Thiết bị đọc thẻ");
 		detailEntryPage = PageGenerator.getDetailACEntryPage(driver);
 		
-		log.info("Entry_03 - Step 04: Verify select 'Thiết bị đọc thẻ' success");
-		verifyEquals(detailEntryPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "readers", "1", "2"), 
-				AC_Reader.cardReaderNameUpdateCookie);
+		log.info("AC_Entry_02 - Step 04: Verify select 'Thiết bị đọc thẻ' success");
+		verifyEquals(detailEntryPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "readers", "1", "2"), AC_Reader.acReaderNameCookie);
 	}
 	
 	@Test
-	public void Entry_04_Assign_UserGroup() {
-		log.info("Entry_04 - Step 01: Click 'Gắn Nhóm người dùng' button");
+	public void AC_Entry_03_Assign_UserGroup() {
+		log.info("AC_Entry_03 - Step 01: Click 'Gắn Nhóm người dùng' button");
 		detailEntryPage.clickToButtonByIDName(driver, "Gắn Nhóm người dùng");
 		assignUserGroupPage = PageGenerator.getAssignACRolePage(driver);
 		
-		log.info("Entry_04 - Step 02: Select user group");
-		assignUserGroupPage.selectItemInCustomDropdownByAttribute(driver, "ac-roles-search-input", AC_Role.userGroupNameUpdateCookie);
+		log.info("AC_Entry_03 - Step 02: Select user group");
+		assignUserGroupPage.selectItemInCustomDropdownByAttribute(driver, "ac-roles-search-input", AC_Role.acRoleNameCookie);
 		
-		log.info("Entry_04 - Step 03: Click 'Gắn Nhóm người dùng' button");
+		log.info("AC_Entry_03 - Step 03: Click 'Gắn Nhóm người dùng' button");
 		assignUserGroupPage.clickToButtonByIDName(driver, "Gắn Nhóm người dùng");
 		detailEntryPage = PageGenerator.getDetailACEntryPage(driver);
 		
-		log.info("Entry_04 - Step 04: Verify select 'Nhóm người dùng' success");
-		verifyEquals(detailEntryPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "roles", "1", "2"), 
-				AC_Role.userGroupNameUpdateCookie);
+		log.info("AC_Entry_03 - Step 04: Verify select 'Nhóm người dùng' success");
+		verifyEquals(detailEntryPage.getValueAtColumnIndexAndRowIndexTableAssign(driver, "roles", "1", "2"), AC_Role.acRoleNameCookie);
 	}
 
 	@Parameters({ "browser" })

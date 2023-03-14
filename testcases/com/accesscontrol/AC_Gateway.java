@@ -10,21 +10,18 @@ import commons.BaseTest;
 import pageObjects.accesscontrol.DashboardPageObject;
 import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
-import pageObjects.accesscontrol.ac_card.AddACCardPageObject;
-import pageObjects.accesscontrol.ac_card.ACCardListPageObject;
-import pageObjects.accesscontrol.ac_card.DetailACCardPageObject;
-import pageObjects.accesscontrol.ac_card.EditACCardPageObject;
+import pageObjects.accesscontrol.ac_gateway.ACGatewayListPageObject;
+import pageObjects.accesscontrol.ac_gateway.AddACGatewayPageObject;
+import pageObjects.accesscontrol.ac_gateway.DetailACGatewayPageObject;
 
 public class AC_Gateway extends BaseTest {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	DashboardPageObject dashboardPage;
-	ACCardListPageObject cardListPage;
-	EditACCardPageObject editCardPage;
-	DetailACCardPageObject detailCardPage;
-	AddACCardPageObject addCardPage;
-	String cardCode, activateDate, expireDate;
-	String activateDateUpdate, expireDateUpdate;
+	ACGatewayListPageObject acGatewayListPage;
+	DetailACGatewayPageObject detailGatewayPage;
+	AddACGatewayPageObject addGatewayPage;
+	String acGatewayName, acGatewayCode, mqttACGatewayUserName, mqttACGatewayPassword;
 
 	@Parameters({ "browserName", "appUrl" })
 	@BeforeClass
@@ -39,63 +36,38 @@ public class AC_Gateway extends BaseTest {
 		loginPage.refreshCurrentPage(driver);
 		dashboardPage = PageGenerator.getDashboardPage(driver);
 		
-		cardCode = "12345678";
-		activateDate = "01/01/2023 00:00:00";
-		expireDate = "12/31/2023 00:00:00";
-		
-		activateDateUpdate = "02/01/2023 00:00:00";
-		expireDateUpdate = "12/31/2024 00:00:00";
+		acGatewayName = "Gateway 0001";
+		acGatewayCode = "GW0001";
+		mqttACGatewayUserName = "Gateway_0001";
+		mqttACGatewayPassword = "Gateway_0001";
 	}
 
 	@Test
-	public void Card_01_Add_New_Card() {
-		log.info("Card_01 - Step 01: Open 'Thẻ' menu");
-		dashboardPage.openMenuPage(driver, "Thẻ");
-		cardListPage = PageGenerator.getACCardListPage(driver);
+	public void AC_Gateway_01_Add_New_AC_Gateway() {
+		log.info("AC_Gateway_01 - Step 01: Open 'Gateway' menu");
+		dashboardPage.openMenuPage(driver, "Gateway");
+		acGatewayListPage = PageGenerator.getACGatewayListPage(driver);
 		
-		log.info("Card_01 - Step 02: Click 'Thêm Thẻ' button");
-		cardListPage.clickToButtonByIDName(driver, "Thêm Thẻ");
-		addCardPage = PageGenerator.getAddACCardPage(driver);
+		log.info("AC_Gateway_01 - Step 02: Click 'Thêm Gateway' button");
+		acGatewayListPage.clickToButtonByIDName(driver, "Thêm Gateway");
+		addGatewayPage = PageGenerator.getAddACGatewayPage(driver);
 		
-		log.info("Card_01 - Step 03: Enter valid data to required fields");
-		addCardPage.selectItemInCustomDropdownByAttribute(driver, "ac-card-standards-search-input", AC_Card_Standard.cardStandardNameUpdateCookie);
-		addCardPage.enterToTextboxByIDName(driver, "code", cardCode);
-		addCardPage.enterToTextboxByIDName(driver, "valid_from", activateDate);
-		addCardPage.enterToTextboxByIDName(driver, "valid_to", expireDate);
+		log.info("AC_Gateway_01 - Step 03: Enter valid data to required fields");
+		addGatewayPage.enterToTextboxByIDName(driver, "name", acGatewayName);
+		addGatewayPage.enterToTextboxByIDName(driver, "code", acGatewayCode);
+		addGatewayPage.enterToTextboxByIDName(driver, "mqtt_username", mqttACGatewayUserName);
+		addGatewayPage.enterToTextboxByIDName(driver, "mqtt_password", mqttACGatewayPassword);
 		
-		log.info("Card_01 - Step 04: Click 'Thêm Thẻ' button");
-		addCardPage.clickToButtonByIDName(driver, "Thêm Thẻ");
+		log.info("AC_Gateway_01 - Step 04: Click 'Thêm Gateway' button");
+		addGatewayPage.clickToButtonByIDName(driver, "Thêm Gateway");
 		
-		log.info("Card_01 - Step 05: Verify detail card");
-		detailCardPage = PageGenerator.getDetailACCardPage(driver);
-		verifyTrue(detailCardPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "cardStandard"), AC_Card_Standard.cardStandardNameUpdateCookie);
-		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "code"), cardCode);
-		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "valid_from"), activateDate);
-		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "valid_to"), expireDate);
-		detailCardPage.sleepInSecond(1);
-	}
-
-	@Test
-	public void Card_02_Edit_Card() {
-		log.info("Card_02 - Step 01: Click 'Sửa' icon");
-		detailCardPage.clickToEditIcon(driver);
-		editCardPage = PageGenerator.getEditACCardPage(driver);
-		
-		log.info("Card_02 - Step 02: Enter valid data to required fields");
-		editCardPage.enterToTextboxByIDName(driver, "valid_from", activateDateUpdate);
-		editCardPage.enterToTextboxByIDName(driver, "valid_to", expireDateUpdate);
-		
-		log.info("Card_02 - Step 03: Click 'Cập nhật Thẻ' button");
-		editCardPage.clickToButtonByIDName(driver, "Cập nhật Thẻ");
-		
-		log.info("Card_02 - Step 04: Verify detail card");
-		detailCardPage = PageGenerator.getDetailACCardPage(driver);
-		verifyTrue(detailCardPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "cardStandard"), AC_Card_Standard.cardStandardNameUpdateCookie);
-		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "code"), cardCode);
-		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "valid_from"), activateDateUpdate);
-		verifyEquals(detailCardPage.getValueFieldByAttribute(driver, "valid_to"), expireDateUpdate);
+		log.info("AC_Gateway_01 - Step 05: Verify detail ac gateway");
+		detailGatewayPage = PageGenerator.getDetailACGatewayPage(driver);
+		verifyTrue(detailGatewayPage.isSuccessMessageDisplayed(driver));
+		verifyEquals(detailGatewayPage.getValueFieldByAttribute(driver, "name"), acGatewayName);
+		verifyEquals(detailGatewayPage.getValueFieldByAttribute(driver, "code"), acGatewayCode);
+		verifyEquals(detailGatewayPage.getValueFieldByAttribute(driver, "mqtt_username"), mqttACGatewayUserName);
+		verifyEquals(detailGatewayPage.getValueFieldByAttribute(driver, "mqtt_password"), mqttACGatewayPassword);
 	}
 
 	@Parameters({ "browserName" })

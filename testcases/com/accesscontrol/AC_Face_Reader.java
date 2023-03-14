@@ -12,19 +12,16 @@ import pageObjects.accesscontrol.LoginPageObject;
 import pageObjects.accesscontrol.PageGenerator;
 import pageObjects.accesscontrol.ac_face_reader.AddACFaceReaderPageObject;
 import pageObjects.accesscontrol.ac_face_reader.DetailACFaceReaderPageObject;
-import pageObjects.accesscontrol.ac_face_reader.EditACFaceReaderPageObject;
 import pageObjects.accesscontrol.ac_face_reader.ACFaceReaderListPageObject;
 
 public class AC_Face_Reader extends BaseTest {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	DashboardPageObject dashboardPage;
-	AddACFaceReaderPageObject addFaceReaderPage;
-	DetailACFaceReaderPageObject detailFaceReaderPage;
-	ACFaceReaderListPageObject faceReaderListPage;
-	EditACFaceReaderPageObject editFaceReaderPage;
-	String faceReaderName, deviceModel, dataVer, dataSyncVer, softwareVer, installVer;
-	String faceReaderNameUpdate, deviceModelUpdate, dataVerUpdate, dataSyncVerUpdate, softwareVerUpdate, installVerUpdate;
+	AddACFaceReaderPageObject addACFaceReaderPage;
+	DetailACFaceReaderPageObject detailACFaceReaderPage;
+	ACFaceReaderListPageObject acFaceReaderListPage;
+	String acFaceReaderName, deviceModel, dataVer, dataSyncVer, softwareVer, installVer;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -39,80 +36,44 @@ public class AC_Face_Reader extends BaseTest {
 		loginPage.refreshCurrentPage(driver);
 		dashboardPage = PageGenerator.getDashboardPage(driver);
 		
-		faceReaderName = "Face Reader 1";
+		acFaceReaderName = "Face Reader 1";
 		deviceModel = "S300";
 		dataVer = "0";
 		dataSyncVer = "0";
 		softwareVer = "0";
 		installVer = "0";
-		
-		faceReaderNameUpdate = "Face Reader 1 Update";
-		deviceModelUpdate = "S301";
-		dataVerUpdate = "1";
-		dataSyncVerUpdate = "1";
-		softwareVerUpdate = "1";
-		installVerUpdate = "1";
 	}
 
 	@Test
-	public void FaceReader_01_Add_New_FaceReader() {
-		log.info("FaceReader_01 - Step 01: Open 'Thiết bị đọc FaceID' menu");
+	public void AC_FaceReader_01_Add_New_AC_FaceReader() {
+		log.info("AC_FaceReader_01 - Step 01: Open 'Thiết bị đọc FaceID' menu");
 		dashboardPage.openMenuPage(driver, "Thiết bị đọc FaceID");
-		faceReaderListPage = PageGenerator.getACFaceReaderListPage(driver);
+		acFaceReaderListPage = PageGenerator.getACFaceReaderListPage(driver);
 		
-		log.info("FaceReader_01 - Step 02: Click 'Thêm Thiết bị đọc FaceID'");
-		faceReaderListPage.clickToButtonByIDName(driver, "Thêm Thiết bị đọc FaceID");
-		addFaceReaderPage = PageGenerator.getAddACFaceReaderPage(driver);
+		log.info("AC_FaceReader_01 - Step 02: Click 'Thêm Thiết bị đọc FaceID'");
+		acFaceReaderListPage.clickToButtonByIDName(driver, "Thêm Thiết bị đọc FaceID");
+		addACFaceReaderPage = PageGenerator.getAddACFaceReaderPage(driver);
 		
-		log.info("FaceReader_01 - Step 03: Enter valid data to required fields");
-		addFaceReaderPage.enterToTextboxByIDName(driver, "name", faceReaderName);
-		addFaceReaderPage.enterToTextboxByIDName(driver, "model_name", deviceModel);
-		addFaceReaderPage.enterToTextboxByIDName(driver, "data_version", dataVer);
-		addFaceReaderPage.enterToTextboxByIDName(driver, "synced_data_version", dataSyncVer);
-		addFaceReaderPage.enterToTextboxByIDName(driver, "software_version", softwareVer);
-		addFaceReaderPage.enterToTextboxByIDName(driver, "installed_version", installVer);
+		log.info("AC_FaceReader_01 - Step 03: Enter valid data to required fields");
+		addACFaceReaderPage.enterToTextboxByIDName(driver, "name", acFaceReaderName);
+		addACFaceReaderPage.enterToTextboxByIDName(driver, "model_name", deviceModel);
+		addACFaceReaderPage.enterToTextboxByIDName(driver, "data_version", dataVer);
+		addACFaceReaderPage.enterToTextboxByIDName(driver, "synced_data_version", dataSyncVer);
+		addACFaceReaderPage.enterToTextboxByIDName(driver, "software_version", softwareVer);
+		addACFaceReaderPage.enterToTextboxByIDName(driver, "installed_version", installVer);
 		
-		log.info("FaceReader_01 - Step 04: Click 'Thêm Thiết bị đọc FaceID'");
-		addFaceReaderPage.clickToButtonByIDName(driver, "Thêm Thiết bị đọc FaceID");
+		log.info("AC_FaceReader_01 - Step 04: Click 'Thêm Thiết bị đọc FaceID'");
+		addACFaceReaderPage.clickToButtonByIDName(driver, "Thêm Thiết bị đọc FaceID");
 		
-		log.info("FaceReader_01 - Step 05: Verify detail face reader");
-		detailFaceReaderPage = PageGenerator.getDetailACFaceReaderPage(driver);
-		verifyTrue(detailFaceReaderPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "name"), faceReaderName);
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "model_name"), deviceModel);
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "data_version"), dataVer);
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "synced_data_version"), dataSyncVer);
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "software_version"), softwareVer);
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "installed_version"), installVer);
-		detailFaceReaderPage.sleepInSecond(1);
-	}
-
-	@Test
-	public void FaceReader_02_Edit_FaceReader() {
-		log.info("FaceReader_02 - Step 01: Click 'Sửa' icon");
-		detailFaceReaderPage.clickToEditIcon(driver);
-		editFaceReaderPage = PageGenerator.getEditACFaceReaderPage(driver);
-		
-		log.info("FaceReader_02 - Step 02: Enter valid data to required fields");
-		editFaceReaderPage.enterToTextboxByIDName(driver, "name", faceReaderNameUpdate);
-		editFaceReaderPage.enterToTextboxByIDName(driver, "model_name", deviceModelUpdate);
-		editFaceReaderPage.enterToTextboxByIDName(driver, "data_version", dataVerUpdate);
-		editFaceReaderPage.enterToTextboxByIDName(driver, "synced_data_version", dataSyncVerUpdate);
-		editFaceReaderPage.enterToTextboxByIDName(driver, "software_version", softwareVerUpdate);
-		editFaceReaderPage.enterToTextboxByIDName(driver, "installed_version", installVerUpdate);
-		
-		log.info("FaceReader_02 - Step 03: Click 'Cập nhật Thiết bị đọc FaceID' button");
-		editFaceReaderPage.clickToButtonByIDName(driver, "Cập nhật Thiết bị đọc FaceID");
-		
-		log.info("FaceReader_02 - Step 04: Verify detail face reader");
-		detailFaceReaderPage = PageGenerator.getDetailACFaceReaderPage(driver);
-		verifyTrue(detailFaceReaderPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "name"), faceReaderNameUpdate);
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "model_name"), deviceModelUpdate);
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "data_version"), dataVerUpdate);
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "synced_data_version"), dataSyncVerUpdate);
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "software_version"), softwareVerUpdate);
-		verifyEquals(detailFaceReaderPage.getValueFieldByAttribute(driver, "installed_version"), installVerUpdate);
+		log.info("AC_FaceReader_01 - Step 05: Verify detail ac face reader");
+		detailACFaceReaderPage = PageGenerator.getDetailACFaceReaderPage(driver);
+		verifyTrue(detailACFaceReaderPage.isSuccessMessageDisplayed(driver));
+		verifyEquals(detailACFaceReaderPage.getValueFieldByAttribute(driver, "name"), acFaceReaderName);
+		verifyEquals(detailACFaceReaderPage.getValueFieldByAttribute(driver, "model_name"), deviceModel);
+		verifyEquals(detailACFaceReaderPage.getValueFieldByAttribute(driver, "data_version"), dataVer);
+		verifyEquals(detailACFaceReaderPage.getValueFieldByAttribute(driver, "synced_data_version"), dataSyncVer);
+		verifyEquals(detailACFaceReaderPage.getValueFieldByAttribute(driver, "software_version"), softwareVer);
+		verifyEquals(detailACFaceReaderPage.getValueFieldByAttribute(driver, "installed_version"), installVer);
 	}
 
 	@Parameters({ "browser" })

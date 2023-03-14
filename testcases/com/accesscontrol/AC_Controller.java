@@ -23,7 +23,7 @@ public class AC_Controller extends BaseTest {
 	AddACControllerPageObject addACControllerPage;
 	DetailACControllerPageObject detailACControllerPage;
 	AddACDisPageObject addACDisPage;
-	String acControllerName, acControllerCode, macAddress, ipAddress, acControllerType, swipeCardMode, configVer, configSyncVer, configCardVer, configCardSyncVer, mqttUserName, mqttPassword;
+	String acControllerName, acControllerCode, macAddress, ipAddress, acControllerType, swipeCardMode, configVer, configSyncVer, configCardVer, configCardSyncVer, mqttACControllerUserName, mqttACControllerPassword;
 	String acDisName, acDisNumber;
 	public static String acControllerNameCookie;
 	
@@ -50,8 +50,8 @@ public class AC_Controller extends BaseTest {
 		configSyncVer = "0";
 		configCardVer = "0";
 		configCardSyncVer = "0";
-		mqttUserName = "MQTTElife";
-		mqttPassword = "123456";
+		mqttACControllerUserName = "Controller_1";
+		mqttACControllerPassword = "Controller_1";
 		
 		acDisName = "DI 1";
 		acDisNumber = "DI1";
@@ -78,8 +78,8 @@ public class AC_Controller extends BaseTest {
 		addACControllerPage.enterToTextboxByIDName(driver, "synced_config_version", configSyncVer);
 		addACControllerPage.enterToTextboxByIDName(driver, "card_version", configCardVer);
 		addACControllerPage.enterToTextboxByIDName(driver, "synced_card_version", configCardSyncVer);
-		addACControllerPage.enterToTextboxByIDName(driver, "mqtt_username", mqttUserName);
-		addACControllerPage.enterToTextboxByIDName(driver, "mqtt_password", mqttPassword);
+		addACControllerPage.enterToTextboxByIDName(driver, "mqtt_username", mqttACControllerUserName);
+		addACControllerPage.enterToTextboxByIDName(driver, "mqtt_password", mqttACControllerPassword);
 		
 		log.info("Controller_01 - Step 04: Click 'Thêm Bộ điều khiển' button");
 		addACControllerPage.clickToButtonByIDName(driver, "Thêm Bộ điều khiển");
@@ -97,7 +97,7 @@ public class AC_Controller extends BaseTest {
 		verifyEquals(detailACControllerPage.getValueFieldByAttribute(driver, "synced_config_version"), configSyncVer);
 		verifyEquals(detailACControllerPage.getValueFieldByAttribute(driver, "card_version"), configCardVer);
 		verifyEquals(detailACControllerPage.getValueFieldByAttribute(driver, "synced_card_version"), configCardSyncVer);
-		verifyEquals(detailACControllerPage.getValueFieldByAttribute(driver, "mqtt_username"), mqttUserName);
+		verifyEquals(detailACControllerPage.getValueFieldByAttribute(driver, "mqtt_username"), mqttACControllerUserName);
 		acControllerNameCookie = detailACControllerPage.getValueFieldByAttribute(driver, "name");
 	}
 	

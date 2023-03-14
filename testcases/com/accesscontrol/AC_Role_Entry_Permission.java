@@ -47,7 +47,7 @@ public class AC_Role_Entry_Permission extends BaseTest {
 		addPermissionPage = PageGenerator.getAddACRoleEntryPermissionPage(driver);
 		
 		log.info("Permission_01 - Step 03: Enter valid data to required fields");
-		addPermissionPage.selectItemInCustomDropdownByAttribute(driver, "ac-roles-search-input", AC_Role.userGroupNameUpdateCookie);
+		addPermissionPage.selectItemInCustomDropdownByAttribute(driver, "ac-roles-search-input", AC_Role.acRoleNameCookie);
 		addPermissionPage.selectItemInMultiDropdown(driver, AC_Entry.entryNameUpdateCookie);
 		
 		log.info("Permission_01 - Step 04: Click 'Thêm Phân quyền' button");
@@ -56,7 +56,7 @@ public class AC_Role_Entry_Permission extends BaseTest {
 		log.info("Permission_01 - Step 05: Verify detail user group");
 		detailPermissionPage = PageGenerator.getDetailACRoleEntryPermissionPage(driver);
 		verifyTrue(detailPermissionPage.isSuccessMessageDisplayed(driver));
-		verifyEquals(detailPermissionPage.getValueFieldByAttribute(driver, "role"), AC_Role.userGroupNameUpdateCookie);
+		verifyEquals(detailPermissionPage.getValueFieldByAttribute(driver, "role"), AC_Role.acRoleNameCookie);
 		verifyEquals(detailPermissionPage.getValueFieldByAttribute(driver, "entry"), AC_Entry.entryNameUpdateCookie);
 	}
 

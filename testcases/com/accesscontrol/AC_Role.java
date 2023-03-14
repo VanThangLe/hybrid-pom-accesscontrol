@@ -27,7 +27,7 @@ public class AC_Role extends BaseTest {
 	AssignACUserPageObject assignUserPage;
 	String userGroupName, userGroupCode;
 	String userGroupNameUpdate, userGroupCodeUpdate;
-	public static String userGroupNameUpdateCookie;
+	public static String acRoleNameCookie;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -92,7 +92,7 @@ public class AC_Role extends BaseTest {
 		verifyTrue(detailUserGroupPage.isSuccessMessageDisplayed(driver));
 		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_name"), userGroupNameUpdate);
 		verifyEquals(detailUserGroupPage.getValueFieldByAttribute(driver, "role_code"), userGroupCodeUpdate);
-		userGroupNameUpdateCookie = detailUserGroupPage.getValueFieldByAttribute(driver, "role_name");
+		acRoleNameCookie = detailUserGroupPage.getValueFieldByAttribute(driver, "role_name");
 	}
 
 	@Test
